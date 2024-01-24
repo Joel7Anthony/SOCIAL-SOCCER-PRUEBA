@@ -27,7 +27,7 @@ const playersModel = require('../models/player.model');
 const calendarsModel = require('../models/calendar.model');
 const playerstatisticsModel = require('../models/playerstatistic.model');
 const communicationsModel = require('../models/communication.model');
-const teamsstatisticsModel = require('../models/temasstatistics')
+const teamstatisticsModel = require('../models/teamstatistic.model')
 
 
 
@@ -48,6 +48,8 @@ sequelize.sync({ force: false })
     .catch((err) => {
         console.error("Error al sincronizar las tablas:", err.message);
     });
+
+
 //sincronia
 const users = usersModel(sequelize, Sequelize);
 const teams = teamsModel(sequelize, Sequelize);
@@ -55,7 +57,7 @@ const players = playersModel(sequelize, Sequelize);
 const calendars = calendarsModel(sequelize, Sequelize);
 const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const communications = communicationsModel(sequelize, Sequelize);
-const teamsstatistics = teamsstatisticsModel(sequelize,Sequelize);
+const teamstatistics = teamstatisticsModel(sequelize,Sequelize);
 
 
 //Relaciones
@@ -75,8 +77,8 @@ playerstatistics.belongsTo(users);
 users.hasMany(communications);
 communications.belongsTo(users);
 
-users.hasMany(teamsstatistics);
-teamsstatistics.belongsTo(users)
+users.hasMany(teamstatistics);
+teamstatistics.belongsTo(users)
 
 
 

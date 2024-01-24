@@ -1,114 +1,73 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const fs = require('fs');
-const path = require('path');
-//const axios = require('axios');
-const orm = require('../Database/dataBase.orm');
-const sql = require('../Database/dataBase.sql');
-const helpers = require('./helpers');
-const { cifrarDatos } = require('./encrypDates');
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
+const orm = require('../config/dataBase.orm');
+const pool = require('../config/database');
+const helpers = require("../lib/helpers");
+
+
+passport.use('local.signin', new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password',
+  passReqToCallback: true
+}, async (req, email, password, done) => {
+  const rows = await pool.query('SELECT * FROM users WHERE email = ?', [email])
+
+/*   if(rows[0].roleId == 1){
+    console.log(rows[0].roleId);
+  } else if (rows[0].roleId == 2) {
+    console.log(rows[0].roleId);
+  } else if (rows[0].roleId == 3) {
+    console.log(rows[0].roleId);
+  }else{
+    return done(null, false, req.flash('message', 'no tienes rol comunicate con el administrador'));
+  } */
+
+  if (rows.length > 0) {
+    const user = rows[0];
+    const validPassword = await helpers.matchPassword(password, user.password);
+
+    if (validPassword ) {
+      done(null, user, req.flash('success', 'Bienvenido ' + user.name));
+    } else {
+      done(null, false, req.flash('message', 'Contraseña Incorecta'));
+    }
+  } else {
+    return done(null, false, req.flash('message', 'El email no existe'));
+  }
+}));
 
 passport.use(
-    'local.signin',
-    new LocalStrategy(
-        {
-            usernameField: 'username',
-            passwordField: 'password',
-            passReqToCallback: true,
-        },
-        async (req, username, password, done) => {
-            try {
-                const user = await orm.client.findOne({ where: { usernameClient: username, stateClient: 'activado' } });
+  "local.signup",
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passwordField: "password",
+      passReqToCallback: true
+    },
+    async (req, email, password, done) => {
+      const { name } = req.body;
 
-                if (user) {
-                    const validPassword = await helpers.comparePassword(password, user.passwordClient);
-
-                    if (validPassword) {
-                        return done(null, user, req.flash('message', `Bienvenido ${user.usernameClient}`));
-                    } else {
-                        return done(null, false, req.flash('message', 'Datos incorrectos'));
-                    }
-                } else {
-                    return done(null, false, req.flash('message', 'El nombre de usuario no existe.'));
-                }
-            } catch (error) {
-                return done(error);
-            }
-        }
-    )
+      const newUser = {
+        email,
+        password,
+        name
+      };
+      newUser.password = await helpers.encryptPassword(password);
+      // Saving in the Database
+      const result = await pool.query('INSERT INTO users SET ? ', newUser);
+      newUser.id = result.insertId;
+      return done(null, newUser);
+    }
+  )
 );
 
-passport.use(
-    'local.signup',
-    new LocalStrategy(
-        {
-            usernameField: 'username',
-            passwordField: 'password',
-            passReqToCallback: true,
-        },
-        async (req, username, password, done) => {
-            try {
-                const existingUser = await orm.client.findOne({ where: { usernameClient: username } });
-
-                if (existingUser) {
-                    return done(null, false, req.flash('message', 'El nombre de usuario ya existe.'));
-                }
-
-                const hashedPassword = await helpers.hashPassword(password);
-
-                const {
-                    idUsuarios,
-                    nameClient,
-                    lastNameClient,
-                    typeIdentificationClient,
-                    identificationCardClient,
-                    emailClient,
-                    phoneClient,
-                    nameTypePerson,
-                    nameGener,
-                } = req.body;
-
-                let newClient = {
-                    idClient: idUsuarios,
-                    nameClient: cifrarDatos(nameClient),
-                    lastNameClient: cifrarDatos(lastNameClient),
-                    typeIdentificationClient: cifrarDatos(typeIdentificationClient),
-                    identificationCardClient: cifrarDatos(identificationCardClient),
-                    emailClient: cifrarDatos(emailClient),
-                    phoneClient: cifrarDatos(phoneClient),
-                    usernameClient: username,
-                    passwordClient: hashedPassword,
-                    stateClient: 'activado',
-                };
-
-                if (nameClient !== 'seleccion' && nameTypePerson !== 'seleccion') {
-                    let newDetail = {
-                        clientIdClient: idUsuarios,
-                        generIdGener: nameGener,
-                        typePersonIdTypePerson: nameTypePerson,
-                    };
-
-                    const resultado = await orm.client.create(newClient);
-                    await orm.clientDetail.create(newDetail);
-
-                    newClient.id = resultado.insertId;
-                } else {
-                    req.flash('message', 'Llene todos los campos por favor.');
-                    return done(null, false);
-                }
-            } catch (error) {
-                return done(error);
-            }
-        }
-    )
-);
 
 passport.serializeUser((user, done) => {
-    done(null, user);
+  done(null, user.id);
 });
 
-passport.deserializeUser((user, done) => {
-    done(null, user);
+passport.deserializeUser(async (id, done) => {
+  const rows = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
+  done(null, rows[0]);
 });
-
-module.exports = passport;
