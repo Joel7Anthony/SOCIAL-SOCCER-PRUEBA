@@ -5,13 +5,15 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        creation_date: type, STRING,
-        description: type.STRING,
-        location: type.STRING,
-        participants: type.STRING,
-        programguy: type.INTEGER,
-        reminder: type.STRING,
-        
+        name_team: type, STRING,
+        league_position: type.STRING,
+        goles: type.STRING,
+        categories: type.STRING,
+        foundation_date: type.INTEGER,
+        logo: type.STRING,
+        number_players: type.INTEGER,
+
+
 
         createUsers:{
             type: 'TIMESTAMP',
@@ -27,5 +29,3 @@ const users =(sequelize, type) =>{
         timestamps: false,
     })
 }
-
-

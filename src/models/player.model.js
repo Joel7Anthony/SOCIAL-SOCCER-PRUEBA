@@ -8,14 +8,12 @@ const users =(sequelize, type) =>{
         playername:type, STRING,
         position: type, STRING,
         age: type.STRING,
-        color: type.STRING,
-        category: type.STRING,
-        players: type.INTEGER,
-        coach: type.STRING,
-        administrator: type.STRING,
-        creationdate: type.INTEGER,
-
-
+        skills: type.STRING,
+        categories: type.STRING,
+        equipment: type.INTEGER,
+        birthdate: type.STRING,
+        photoplayer: type.STRING,
+        number: type.INTEGER,
 
         createUsers:{
             type: 'TIMESTAMP',

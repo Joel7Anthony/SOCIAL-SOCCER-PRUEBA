@@ -14,6 +14,7 @@ const users =(sequelize, type) =>{
         coach: type.STRING,
         administrator: type.STRING,
         creationdate: type.INTEGER,
+        rol: type.STRING,
 
 
 

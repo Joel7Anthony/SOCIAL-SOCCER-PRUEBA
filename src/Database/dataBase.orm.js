@@ -25,8 +25,9 @@ const usersModel = require('../models/user.model');
 const teamsModel = require('../models/team.model');
 const playersModel = require('../models/player.model');
 const calendarsModel = require('../models/calendar.model');
-const statisticsModel = require('../models/statistic.model');
+const playerstatisticsModel = require('../models/playerstatistic.model');
 const communicationsModel = require('../models/communication.model');
+const teamsstatisticsModel = require('../models/temasstatistics')
 
 
 
@@ -52,8 +53,9 @@ const users = usersModel(sequelize, Sequelize);
 const teams = teamsModel(sequelize, Sequelize);
 const players = playersModel(sequelize, Sequelize);
 const calendars = calendarsModel(sequelize, Sequelize);
-const statistics = statisticsModel(sequelize, Sequelize);
+const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const communications = communicationsModel(sequelize, Sequelize);
+const teamsstatistics = teamsstatisticsModel(sequelize,Sequelize);
 
 
 //Relaciones
@@ -67,11 +69,14 @@ players.belongsTo(users);
 users.hasMany(calendars);
 calendars.belongsTo(users);
 
-users.hasMany(statistics);
-statistics.belongsTo(users);
+users.hasMany(playerstatistics);
+playerstatistics.belongsTo(users);
 
 users.hasMany(communications);
 communications.belongsTo(users);
+
+users.hasMany(teamsstatistics);
+teamsstatistics.belongsTo(users)
 
 
 

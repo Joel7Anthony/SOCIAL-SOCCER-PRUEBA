@@ -5,13 +5,18 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        creation_date: type, STRING,
-        description: type.STRING,
-        location: type.STRING,
-        participants: type.STRING,
-        programguy: type.INTEGER,
-        reminder: type.STRING,
         
+        name:type.STRING,
+        attacK: type.INTEGER,
+        speed: type.INTEGER,
+        shootingpower: type.INTEGER,
+        endurance: type.INTEGER,
+        ballControl: type.INTEGER,
+        assault: type.INTEGER,
+        
+
+
+
 
         createUsers:{
             type: 'TIMESTAMP',
