@@ -5,6 +5,7 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         playername:type, STRING,
         position: type, STRING,
         age: type.STRING,

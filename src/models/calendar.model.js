@@ -12,6 +12,7 @@ const users =(sequelize, type) =>{
         programguy: type.INTEGER,
         reminder: type.STRING,
         
+        
 
         createUsers:{
             type: 'TIMESTAMP',
