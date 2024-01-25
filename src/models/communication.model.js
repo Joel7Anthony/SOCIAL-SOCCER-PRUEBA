@@ -26,3 +26,5 @@ const users =(sequelize, type) =>{
         timestamps: false,
     })
 }
+
+module.exports = users
