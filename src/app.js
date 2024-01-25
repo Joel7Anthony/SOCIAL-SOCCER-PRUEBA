@@ -39,7 +39,7 @@ const handlebars = exphbs.create({
 });
 
 // Configurar motor de vistas
-app.set('port', process.env.PORT || 4200);
+app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
@@ -83,11 +83,20 @@ app.use(helmet());
 
 // Configurar archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-team')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-player')));
+
 
 // Rutas - Definir tus rutas aquí
-app.use(require('./router/indexRouter'))
-app.get('/dashboard', (req, res) => {
-    res.render('dashboard/dashboard')
-})
+app.use(require('./routes'));
+app.use(require('./routes/authentication.routes'));
+//app.use('/users',require('./routes/users.routes'));
+//app.use('/teams',require('./routes/teams.routes'));
+//app.use('/keys',require('./routes/keys.routes'));
+//app.use('/players', require('./routes/players.routes'));
+
 // Exportar la aplicación
 module.exports = app;
