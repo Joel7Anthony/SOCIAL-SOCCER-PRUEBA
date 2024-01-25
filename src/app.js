@@ -40,9 +40,13 @@ const handlebars = exphbs.create({
 
 // Configurar motor de vistas
 app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/views'));
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
+
+app.get("/", (req, res)=>{
+    res.send("hola mundo")
+})
 
 // Configurar middleware
 app.use(fileUpload({ createParentPath: true }));
@@ -51,7 +55,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(session({
     key: 'session_cookie_name',
-    secret: 'session_cookie_secret',
+    secret: 'SOCIALSOCCER',
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
