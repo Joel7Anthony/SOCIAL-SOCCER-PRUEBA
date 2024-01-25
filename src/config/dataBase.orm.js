@@ -31,7 +31,6 @@ const teamstatcsModel = require('../models/teamstatc.model')
 
 
 
-
 // Autenticar y sincronizar
 sequelize.authenticate()
   .then(() => {
@@ -55,7 +54,6 @@ const calendars = calendarsModel(sequelize, Sequelize);
 const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const communications = communicationsModel(sequelize, Sequelize);
 const teamstatcs = teamstatcsModel(sequelize, Sequelize);
-
 
 
 //Relaciones

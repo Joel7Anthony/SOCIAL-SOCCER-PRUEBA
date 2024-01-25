@@ -5,7 +5,7 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        creation_date: type, STRING,
+        creation_date: type.STRING,
         description: type.STRING,
         location: type.STRING,
         participants: type.STRING,
