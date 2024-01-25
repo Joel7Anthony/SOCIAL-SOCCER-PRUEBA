@@ -34,30 +34,28 @@ const teamstatcsModel = require('../models/teamstatc.model')
 
 // Autenticar y sincronizar
 sequelize.authenticate()
-    .then(() => {
-        console.log("Conexión establecida con la base de datos");
-    })
-    .catch((err) => {
-        console.error("No se pudo conectar a la base de datos:", err.message);
-    });
+  .then(() => {
+    console.log('Connect')
+  })
+  .catch(err => {
+    console.log('No connect')
+  })
 
 sequelize.sync({ force: false })
-    .then(() => {
-        console.log("Tablas sincronizadas");
-    })
-    .catch((err) => {
-        console.error("Error al sincronizar las tablas:", err.message);
-    });
+  .then(() => {
+    console.log("synchronized tables")
+  })
 
 
 //sincronia
 const users = usersModel(sequelize, Sequelize);
 const teams = teamsModel(sequelize, Sequelize);
-const players = playersModel(sequelize, Sequelize);
+const players = playersModel(sequelize, Sequelize)
 const calendars = calendarsModel(sequelize, Sequelize);
 const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const communications = communicationsModel(sequelize, Sequelize);
-const teamstatcs = teamstatcsModel(sequelize,Sequelize);
+const teamstatcs = teamstatcsModel(sequelize, Sequelize);
+
 
 
 //Relaciones

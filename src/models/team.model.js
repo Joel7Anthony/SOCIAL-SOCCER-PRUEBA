@@ -1,12 +1,12 @@
-const users =(sequelize, type) =>{
-    return sequelize.define('users', {
+const teams =(sequelize, type) =>{
+    return sequelize.define('teams', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        name_president:type, STRING,
-        name_team: type, STRING,
+        name_president:type.STRING,
+        name_team: type.STRING,
         photo: type.STRING,
         color: type.STRING,
         category: type.STRING,
@@ -18,12 +18,12 @@ const users =(sequelize, type) =>{
 
 
 
-        createUsers:{
+        createteams:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateUsers:{
+        updateteams:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -34,3 +34,4 @@ const users =(sequelize, type) =>{
 }
 
 
+module.exports = teams
