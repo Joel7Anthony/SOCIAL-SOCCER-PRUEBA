@@ -1,5 +1,5 @@
-const users =(sequelize, type) =>{
-    return sequelize.define('users', {
+const communications =(sequelize, type) =>{
+    return sequelize.define('communications', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -12,12 +12,12 @@ const users =(sequelize, type) =>{
         profileimage: type.STRING,
         description:type.STRING,
 
-        createUsers:{
+        createCommunications:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateUsers:{
+        updateCommunications:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -27,4 +27,4 @@ const users =(sequelize, type) =>{
     })
 }
 
-module.exports = users
+module.exports = communications

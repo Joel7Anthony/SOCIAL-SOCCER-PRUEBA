@@ -1,5 +1,5 @@
-const users = (sequelize, type) => {
-    return sequelize.define('users', {
+const playerstatistics = (sequelize, type) => {
+    return sequelize.define('playerstatistics', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -19,12 +19,12 @@ const users = (sequelize, type) => {
         agility: type.INTEGER,
         balance: type.INTEGER,
 
-        createUsers: {
+        createPlayerstatistics: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateUsers: {
+        updatePlayerstatistics: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -34,4 +34,4 @@ const users = (sequelize, type) => {
     })
 }
 
-module.exports = users
+module.exports = playerstatistics

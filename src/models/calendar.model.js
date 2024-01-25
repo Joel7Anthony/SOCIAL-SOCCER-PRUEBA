@@ -1,5 +1,5 @@
-const users =(sequelize, type) =>{
-    return sequelize.define('users', {
+const calendars =(sequelize, type) =>{
+    return sequelize.define('calendars', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -14,12 +14,12 @@ const users =(sequelize, type) =>{
         
         
 
-        createUsers:{
+        createCalendars:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateUsers:{
+        updateCalendars:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -29,6 +29,6 @@ const users =(sequelize, type) =>{
     })
 }
 
-module.exports = users
+module.exports = calendars
 
 
