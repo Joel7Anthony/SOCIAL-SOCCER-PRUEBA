@@ -28,7 +28,7 @@ const calendarsModel = require('../models/calendar.model');
 const playerstatisticsModel = require('../models/playerstatistic.model');
 const communicationsModel = require('../models/communication.model');
 const teamstatcsModel = require('../models/teamstatc.model')
-
+const resultsModel = require('../models/result.model');
 
 
 // Autenticar y sincronizar
@@ -54,6 +54,7 @@ const calendars = calendarsModel(sequelize, Sequelize);
 const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const communications = communicationsModel(sequelize, Sequelize);
 const teamstatcs = teamstatcsModel(sequelize, Sequelize);
+const results = resultsModel(sequelize, Sequelize);
 
 
 //Relaciones
@@ -74,8 +75,10 @@ users.hasMany(communications);
 communications.belongsTo(users);
 
 users.hasMany(teamstatcs);
-teamstatcs.belongsTo(users)
+teamstatcs.belongsTo(users);
 
+users.hasMany(results);
+results.belongsTo(users);
 
 
 // Exportar el objeto sequelize
