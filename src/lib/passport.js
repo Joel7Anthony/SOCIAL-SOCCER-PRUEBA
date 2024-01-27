@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const orm = require('../config/dataBase.orm');
-const sql = require('../config/dataBase.sql');
+const sql = require('../config/database.sql');
 const helpers = require('./helpers');
 const { cifrarDatos } = require('./encrypDates');
 

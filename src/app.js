@@ -40,13 +40,11 @@ const handlebars = exphbs.create({
 
 // Configurar motor de vistas
 app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
-app.get("/", (req, res)=>{
-    res.send("hola mundo")
-})
+
 
 // Configurar middleware
 app.use(fileUpload({ createParentPath: true }));
@@ -54,7 +52,7 @@ app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(session({
-    key: 'session_cookie_name',
+    key: 'social_soccer_2.0',
     secret: 'SOCIALSOCCER',
     store: sessionStore,
     resave: false,
@@ -88,16 +86,16 @@ app.use(helmet());
 // Configurar archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
-//app.use(express.static(path.join(__dirname, 'public/images/img-team')));
-//app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
-//app.use(express.static(path.join(__dirname, 'public/images/img-player')));
+app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
+app.use(express.static(path.join(__dirname, 'public/images/img-team')));
+app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
+app.use(express.static(path.join(__dirname, 'public/images/img-player')));
 
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
-//app.use(require('./routes/authentication.routes'));
-//app.use('/users',require('./routes/users.routes'));
+app.use(require('./routes/authentication.routes'));
+app.use('/users',require('./routes/users.routes'));
 //app.use('/teams',require('./routes/teams.routes'));
 //app.use('/keys',require('./routes/keys.routes'));
 //app.use('/players', require('./routes/players.routes'));

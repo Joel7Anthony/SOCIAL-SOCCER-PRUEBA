@@ -11,8 +11,6 @@ const results =(sequelize, type) =>{
         teamname: type.STRING,
 
 
-
-
         createresults:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),

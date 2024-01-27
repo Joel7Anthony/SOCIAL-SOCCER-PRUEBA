@@ -1,4 +1,4 @@
-const pool = require("../config/database");
+const pool = require("../config/database.sql");
 const users = require("../models/user.model");
 const { isLoggedIn } = require('../lib/auth');
 const Users = {};
@@ -14,10 +14,7 @@ Users.getListUsers =  async(req, res) => {
 Users.postUsers = async (req, res) => {
     const { name, email, description } = req.body;
     const newUser = {
-        name,
-        email,
-        description
-    };
+        name, email, description   };
     await pool.query("INSERT INTO users set?", [newUser]);
     req.flash('success', 'creado');
     res.redirect("/users/list-users");
