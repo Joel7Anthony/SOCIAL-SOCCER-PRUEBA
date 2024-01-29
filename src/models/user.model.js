@@ -5,6 +5,7 @@ const users =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         email:type.STRING ,
         password: type.STRING,
         name:type.STRING ,
