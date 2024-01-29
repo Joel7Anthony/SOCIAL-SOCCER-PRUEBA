@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const GamesController = require('../controllers/games.controller');
 const gamesModel = require('../models/game.model');
 const { isLoggedIn } = require('../lib/auth');
-const photoGamesModel = require('../models/photoGames.model');
+
 
 //viws calendars
 router.get('/', isLoggedIn, gamesController.getListGames);

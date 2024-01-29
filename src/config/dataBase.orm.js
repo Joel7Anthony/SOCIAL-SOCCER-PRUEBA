@@ -34,7 +34,7 @@ const positionsModel = require('../models/position.model');
 const positiondetailsModel = require('../models/positiondetail.model');
 const splitstatesModel = require('../models/splitstate.model');
 const gamesModel = require('../models/game.model');
-const splitdetailsModel = require('../modelssplitdetail.model')
+const splitdetailsModel = require('../models/splitdetail.model')
 const participantsModel = require('../models/participant.model')
 
 // Autenticar y sincronizar
