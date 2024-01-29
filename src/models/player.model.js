@@ -8,12 +8,10 @@ const players = (sequelize, type) => {
 
         playername: type.STRING,
         age: type.STRING,
-        skills: type.STRING,
-        categories: type.STRING,
         birthdate: type.STRING,
         photoplayer: type.STRING,
         tshirtnumber: type.INTEGER,
-
+        
         createPlayerss: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
