@@ -7,11 +7,12 @@ const photoPlayersController = require('../controllers/photoPlayers.controller')
 //viws players
 router.get('/', isLoggedIn, playersController.getListPlayers);
 router.post('/players', isLoggedIn,playersController.postPlayer);
-router.get('/add', isLoggedIn, playersController.getAddTeams);
+router.get('/add', isLoggedIn, playersController.getAddPlayers);
 router.get('/list-players', isLoggedIn,playersController.getListPlayers);
 router.get('/delete-players/:id', isLoggedIn,playersController.deletePlayer);
 router.get('/edit-players/:id', isLoggedIn,playersController.getPlayer);
 router.post('/edit-players/:id', isLoggedIn,playersController.updatePlayer);
+
 
 
 
