@@ -31,7 +31,11 @@ const teamstatcsModel = require('../models/teamstatc.model')
 const resultsModel = require('../models/result.model');
 const categorisModel = require('../models/categori.model');
 const positionsModel = require('../models/position.model');
-
+const positiondetailsModel = require('../models/positiondetail.model');
+const splitstatesModel = require('../models/splitstate.model');
+const gamesModel = require('../models/game.model');
+const splitdetailsModel = require('../modelssplitdetail.model')
+const participantsModel = require('../models/participant.model')
 
 // Autenticar y sincronizar
 sequelize.authenticate()
@@ -59,7 +63,11 @@ const teamstatcs = teamstatcsModel(sequelize, Sequelize);
 const results = resultsModel(sequelize, Sequelize);
 const categoris = categorisModel(sequelize, Sequelize);
 const positions = positionsModel(sequelize, Sequelize);
-
+const positiondetails = positiondetailsModel(sequelize, Sequelize);
+const splitstates = splitstatesModel(sequelize, Sequelize);
+const games = gamesModel(sequelize, Sequelize);
+const splitdetails = splitdetailsModel(sequelize, Sequelize);
+const participants =participantsModel(sequelize, Sequelize);
 
 //Relaciones
 
@@ -84,6 +92,26 @@ teamstatcs.belongsTo(users);
 users.hasMany(results);
 results.belongsTo(users);
 
+users.hasMany(categoris);
+calendars.belongsTo(users);
+
+users.hasMany(positions);
+positions.belongsTo(users);
+
+users.hasMany(positiondetails);
+positiondetails.belongsTo(users);
+
+users.hasMany(splitstates);
+splitstates.belongsTo(users);
+
+users.hasMany(games);
+games.belongsTo(users)
+
+users.hasMany(splitdetails);
+splitdetails.belongsTo(users);
+
+users.hasMany(participants);
+participants.belongsTo(users);
 
 // Exportar el objeto sequelize
 module.exports = sequelize;

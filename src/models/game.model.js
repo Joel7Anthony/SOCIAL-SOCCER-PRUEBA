@@ -1,31 +1,28 @@
-const teams = (sequelize, type) => {
-    return sequelize.define('teams', {
+const games =(sequelize, type) =>{
+    return sequelize.define('games', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        
-        name_president: type.STRING,
-        name_team: type.STRING,
-        photo: type.STRING,
-        color: type.STRING,
-        creationdate: type.STRING,
+        nameGame: type.STRING,
+        descripcionGame : type.STRING,
+        locationGame : type.STRING,
+        imageGame: type.STRING,
 
-        createteams: {
+        createGames:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateteams: {
+        updateGames:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    }, {
+    },{
         timestamps: false,
     })
 }
 
-
-module.exports = teams
+module.exports = games

@@ -1,27 +1,27 @@
-const results =(sequelize, type) =>{
+const results = (sequelize, type) => {
     return sequelize.define('results', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        discipline:type.STRING,
+        
+        discipline: type.STRING,
         punctuation: type.STRING,
-        category: type.STRING,
-        teamname: type.STRING,
+        result: type.STRING,
+        statistics: type.STRING,
 
-
-        createresults:{
+        createresults: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateresults:{
+        updateresults: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    },{
+    }, {
         timestamps: false,
     })
 }

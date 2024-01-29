@@ -1,31 +1,28 @@
-const teams = (sequelize, type) => {
-    return sequelize.define('teams', {
+const splitstates =(sequelize, type) =>{
+    return sequelize.define('splitstates', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        
-        name_president: type.STRING,
-        name_team: type.STRING,
-        photo: type.STRING,
-        color: type.STRING,
-        creationdate: type.STRING,
+        progress: type.STRING,
+        completed : type.STRING,
+        canceled : type.STRING,
+        finalData : type.STRING,
 
-        createteams: {
+        createSplitstates:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateteams: {
+        updateSplitstates:{
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    }, {
+    },{
         timestamps: false,
     })
 }
 
-
-module.exports = teams
+module.exports = splitstates
