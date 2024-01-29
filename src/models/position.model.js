@@ -5,6 +5,7 @@ const positions =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         archer: type.STRING,
         defense : type.STRING,
         midfielder : type.STRING,

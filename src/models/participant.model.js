@@ -5,6 +5,7 @@ const participants =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         name: type.STRING,
         lastname : type.STRING,
         email : type.STRING,

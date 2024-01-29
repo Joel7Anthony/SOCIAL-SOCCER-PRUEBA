@@ -7,6 +7,7 @@ const categoris =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         sub12: type.STRING,
         sub15: type.STRING,
         sub16: type.STRING,

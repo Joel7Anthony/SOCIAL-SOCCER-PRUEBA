@@ -5,6 +5,7 @@ const splitstates =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         progress: type.STRING,
         completed : type.STRING,
         canceled : type.STRING,

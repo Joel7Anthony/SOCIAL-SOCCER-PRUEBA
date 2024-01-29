@@ -5,6 +5,7 @@ const splitdetails =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         yellowCard:type.STRING ,
         Red_card: type.STRING,
         Goals:type.STRING ,
