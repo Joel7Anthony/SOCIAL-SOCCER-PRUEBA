@@ -1,12 +1,12 @@
-const players =(sequelize, type) =>{
+const players = (sequelize, type) => {
     return sequelize.define('players', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        
-        playername:type.STRING,
+
+        playername: type.STRING,
         age: type.STRING,
         skills: type.STRING,
         categories: type.STRING,
@@ -14,17 +14,17 @@ const players =(sequelize, type) =>{
         photoplayer: type.STRING,
         tshirtnumber: type.INTEGER,
 
-        createPlayerss:{
+        createPlayerss: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updatePlayers:{
+        updatePlayers: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    },{
+    }, {
         timestamps: false,
     })
 }

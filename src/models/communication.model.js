@@ -1,27 +1,28 @@
-const communications =(sequelize, type) =>{
+const communications = (sequelize, type) => {
     return sequelize.define('communications', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        newsdescription:type.STRING ,
+        
+        newsdescription: type.STRING,
         president: type.STRING,
         newsimage: type.STRING,
-        publicationdate:type.STRING ,
-        newsauthor:type.STRING,  
+        publicationdate: type.STRING,
+        newsauthor: type.STRING,
 
-        createCommunications:{
+        createCommunications: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateCommunications:{
+        updateCommunications: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    },{
+    }, {
         timestamps: false,
     })
 }

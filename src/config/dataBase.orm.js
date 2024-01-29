@@ -67,6 +67,7 @@ const positiondetails = positiondetailsModel(sequelize, Sequelize);
 const splitstates = splitstatesModel(sequelize, Sequelize);
 const games = gamesModel(sequelize, Sequelize);
 const splitdetails = splitdetailsModel(sequelize, Sequelize);
+const participants =participantsModel(sequelize, Sequelize);
 
 //Relaciones
 
@@ -108,6 +109,9 @@ games.belongsTo(users)
 
 users.hasMany(splitdetails);
 splitdetails.belongsTo(users);
+
+users.hasMany(participants);
+participants.belongsTo(users);
 
 // Exportar el objeto sequelize
 module.exports = sequelize;
