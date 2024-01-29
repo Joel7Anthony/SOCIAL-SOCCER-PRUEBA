@@ -7,9 +7,8 @@ const results =(sequelize, type) =>{
         },
         discipline:type.STRING,
         punctuation: type.STRING,
-        category: type.STRING,
-        teamname: type.STRING,
-
+        result: type.STRING,
+        statistics: type.STRING,
 
         createresults:{
             type: 'TIMESTAMP',

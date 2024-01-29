@@ -6,11 +6,10 @@ const communications =(sequelize, type) =>{
             autoIncrement: true,
         },
         newsdescription:type.STRING ,
+        president: type.STRING,
         newsimage: type.STRING,
         publicationdate:type.STRING ,
         newsauthor:type.STRING,  
-        profileimage: type.STRING,
-        description:type.STRING,
 
         createCommunications:{
             type: 'TIMESTAMP',

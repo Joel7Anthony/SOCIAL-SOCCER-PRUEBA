@@ -7,14 +7,12 @@ const players =(sequelize, type) =>{
         },
         
         playername:type.STRING,
-        position: type.STRING,
         age: type.STRING,
         skills: type.STRING,
         categories: type.STRING,
-        equipment: type.INTEGER,
         birthdate: type.STRING,
         photoplayer: type.STRING,
-        number: type.INTEGER,
+        tshirtnumber: type.INTEGER,
 
         createPlayerss:{
             type: 'TIMESTAMP',

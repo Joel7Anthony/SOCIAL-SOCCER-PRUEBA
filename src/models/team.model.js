@@ -9,12 +9,7 @@ const teams =(sequelize, type) =>{
         name_team: type.STRING,
         photo: type.STRING,
         color: type.STRING,
-        category: type.STRING,
-        players: type.INTEGER,
-        coach: type.STRING,
-        administrator: type.STRING,
-        creationdate: type.INTEGER,
-        rol: type.STRING,
+        creationdate: type.STRING,
 
 
 
