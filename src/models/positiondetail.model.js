@@ -5,6 +5,7 @@ const positiondetails =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
+        
         archer: type.STRING,
         Libero : type.STRING,
         Center : type.STRING,
