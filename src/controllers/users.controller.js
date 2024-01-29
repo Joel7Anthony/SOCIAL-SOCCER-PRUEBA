@@ -45,8 +45,5 @@ Users.updateUser = async (req, res) => {
 };
 
 
-
-
-
 module.exports = Users;
 
