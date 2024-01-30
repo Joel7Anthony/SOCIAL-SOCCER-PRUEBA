@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const splitstatesModel = require('../models/splitstate.model');
+const splitstatesController = require('../controllers/splitstate.controller');
 const { isLoggedIn } = require('../lib/auth');
-const photoSplitstatesModel = require('../models/photoSplitstates.model');
 
 //viws calendars
 router.get('/', isLoggedIn, splitstatesController.getListSplitstates);

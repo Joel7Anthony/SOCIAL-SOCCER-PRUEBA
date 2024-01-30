@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const positiondetailsModel = require('../models/positiondetail.model');
+const positiondetailsController = require('../controllers/positiondetail.controller');
 const { isLoggedIn } = require('../lib/auth');
-const photoPositiondetailsModel = require('../models/photoPositiondetails.model');
 
 //viws calendars
 router.get('/', isLoggedIn, positiondetailsController.getListPositiondetails);

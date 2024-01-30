@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ComunicationsController = require('../controllers/comunications.controller');
+const comunicationsController = require('../controllers/comunications.controller');
 const { isLoggedIn } = require('../lib/auth');
 const photoComunicationsController = require('../controllers/photoComunications.controller')
 
