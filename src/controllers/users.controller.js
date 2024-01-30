@@ -33,6 +33,7 @@ Users.getUser = async (req, res) => {
     req.flash('success', 'bien');
     res.render('pages/users/edit', { user: user[0] });
 };
+
 Users.updateUser = async (req, res) => {
     const { id } = req.params;
     const { name, email, description } = req.body;
@@ -43,7 +44,6 @@ Users.updateUser = async (req, res) => {
     req.flash('success', 'Actualizado');
     res.redirect('/users/list-users');
 };
-
 
 module.exports = Users;
 

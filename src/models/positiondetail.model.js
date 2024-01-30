@@ -16,7 +16,7 @@ const positiondetails =(sequelize, type) =>{
         Midfielder: type.STRING,
         End: type.STRING,
         SecondStriker : type.STRING,
-        midfielder : type.STRING,
+        
 
         createPositiondetails:{
             type: 'TIMESTAMP',
