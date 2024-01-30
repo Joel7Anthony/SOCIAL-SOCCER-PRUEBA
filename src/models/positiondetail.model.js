@@ -5,7 +5,7 @@ const positiondetails =(sequelize, type) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        
+
         archer: type.STRING,
         Libero : type.STRING,
         Center : type.STRING,
@@ -16,7 +16,7 @@ const positiondetails =(sequelize, type) =>{
         Midfielder: type.STRING,
         End: type.STRING,
         SecondStriker : type.STRING,
-        
+
 
         createPositiondetails:{
             type: 'TIMESTAMP',
