@@ -1,23 +1,23 @@
 const pool = require("../config/database.sql");
-const communications = require("../models/communication.model");
+const comunications = require("../models/comunication.model");
 const keys = require("../keys"); 
-const Communications = {};
+const Comunications = {};
 
 
 //Conseguir lista De comunicado 
-Communications.getListComunications =  async(req, res) => {
+Comunications.getListComunications =  async(req, res) => {
     //res.render("pages/users/list");
-    const communications = await pool.query('SELECT * FROM  comunications');  
+    const comunications = await pool.query('SELECT * FROM  comunications');  
     res.render('pages/comunications/list', {comunications})
 };
 
 //Agregar 
-Communications.getAddComunications = async (req, res) => {
+Comunications.getAddComunications = async (req, res) => {
   res.render('Pages/comunication/comunications')
 };
 
 //Publicar Comunicado 
-Communications.postComunications = async (req, res) => {
+Comunications.postComunications = async (req, res) => {
   const {
     newsdescription,  president, newsimage, publicationdate, newsauthor
   } = req.body;
@@ -31,7 +31,7 @@ Communications.postComunications = async (req, res) => {
 };
 
 //Eliminar Publicado 
-Communications.deleteCommunications = async (req, res) => {
+Comunications.deleteCommunications = async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM comunications WHERE ID = ?", [id]);
   req.flash('success', 'Eliminado');
@@ -39,7 +39,7 @@ Communications.deleteCommunications = async (req, res) => {
 };
 
 //Actualizar Comunicado 
-Communications.getComunications = async (req, res) => {
+Comunications.getComunications = async (req, res) => {
   const { id } = req.params;
   const user = await pool.query('SELECT * FROM comunications WHERE id = ?', [id]);
   req.flash('success', 'bien');
@@ -47,7 +47,7 @@ Communications.getComunications = async (req, res) => {
 };
 
 //Se amostrara lo que se actualizao 
-Communications.updateComunications = async (req, res) => {
+Comunications.updateComunications = async (req, res) => {
   const { id } = req.params;
   const { newsdescription,  president, newsimage, publicationdate, newsauthor } = req.body;
   const newComunications = {
@@ -58,7 +58,7 @@ Communications.updateComunications = async (req, res) => {
   res.redirect('/comunications/list-comunications');
 };
 
-module.exports = Communications;
+module.exports = Comunications;
 
 
 
