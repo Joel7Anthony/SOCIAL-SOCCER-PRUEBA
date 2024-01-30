@@ -1,5 +1,5 @@
-const communications = (sequelize, type) => {
-    return sequelize.define('communications', {
+const comunications = (sequelize, type) => {
+    return sequelize.define('comunications', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -12,12 +12,12 @@ const communications = (sequelize, type) => {
         publicationdate: type.STRING,
         newsauthor: type.STRING,
 
-        createCommunications: {
+        createComunications: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateCommunications: {
+        updateComunications: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -27,4 +27,4 @@ const communications = (sequelize, type) => {
     })
 }
 
-module.exports = communications
+module.exports = comunications
