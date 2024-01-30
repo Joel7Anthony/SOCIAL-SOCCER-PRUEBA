@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const GamesController = require('../controllers/games.controller');
+const gamesController = require('../controllers/games.controller');
 const gamesModel = require('../models/game.model');
 const { isLoggedIn } = require('../lib/auth');
 

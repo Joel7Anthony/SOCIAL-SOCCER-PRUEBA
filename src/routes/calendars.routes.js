@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const CalendarsController = require('../controllers/calendars.controller');
+const calendarsController = require('../controllers/calendars.controller');
 const { isLoggedIn } = require('../lib/auth');
 const photoCalendarsController = require('../controllers/photoCalendars.controller')
 

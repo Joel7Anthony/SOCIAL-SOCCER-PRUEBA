@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const TeamstatisticsController = require('../controllers/teamstatistics.controller');
+const teamstatisticsController = require('../controllers/teamstatistics.controller');
 const { isLoggedIn } = require('../lib/auth');
-const photoTeamsController = require('../controllers/photoTeams.controller');
+
 
 
 router.get('/', isLoggedIn, teamsController.getListTeamstatistics);
