@@ -27,33 +27,69 @@
     </div>
   </div>
 </div> --}}
- <link rel="stylesheet" href="css/register.css" />
-<div class="contenedor">
-      <div class="left">
-        <h1 class="titulo">Bienvenido de vuelta</h1>
-        <p class="parrafo">Si ya tiene un cuenta de click aqui</p>
-        <a href="/signin" class="btn btn-primary">Inicias Sesion</a>
+<link rel="stylesheet" href="css/register.css" />
+{{!--<div class="contenedor">
+  <div class="left">
+    <h1 class="titulo">Bienvenido de vuelta</h1>
+    <p class="parrafo">Si ya tiene un cuenta de click aqui</p>
+    <a href="/signin" class="btn btn-primary">Inicias Sesion</a>
+  </div>
+  <div class="right">
+    <h1 class="titulo2">Crear Cuenta</h1>
+    <form action="/signup" method="POST">
+      <div class="form-group m-3">
+        <input type="type" name="name" placeholder="Nombre" class="form-control" required autofocus>
       </div>
-      <div class="right">
-        <h1 class="titulo2">Crear Cuenta</h1>
-        <form action="/signup" method="POST">
-            <div class="form-group m-3">
-              <input type="type" name="name" placeholder="Nombre" class="form-control" required autofocus>
-            </div>
-            <div class="form-group m-3">
-              <input type="type" name="lastName" placeholder="Apellido" class="form-control" required autofocus>
-            </div>
-            <div class="form-group m-3">
-              <input type="text" name="email" placeholder="Email" class="form-control" required>
-            </div>
-            <div class="form-group m-3">
-              <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
-            </div>
-            <div class="form-group m-3">
-              <button class="btn btn-primary btn-block">
-                Iniciar Sesion
-              </button>
-            </div>
-          </form>
+      <div class="form-group m-3">
+        <input type="type" name="lastName" placeholder="Apellido" class="form-control" required autofocus>
       </div>
+      <div class="form-group m-3">
+        <input type="text" name="email" placeholder="Email" class="form-control" required>
+      </div>
+      <div class="form-group m-3">
+        <input type="password" name="password" placeholder="Contraseña" class="form-control" required>
+      </div>
+      <div class="form-group m-3">
+        <button class="btn btn-primary btn-block">
+          Iniciar Sesion
+        </button>
+      </div>
+    </form>
+  </div>
+</div>--}}
+
+<body>
+  <section>
+    <div class="login-box">
+      <form action="/signup" method="POST">
+        <h2>Bienvenido de vuelta</h2>
+        <div class="register-link">
+          <p>Si ya tiene un cuenta de click aqui<a href="/signin">
+              Inicias Sesion</a></p>
+        </div>
+        <h2>Crear Cuenta</h2>
+        <div class="input-box">
+          <span class="icon"></span>
+          <input type="type" name="name" placeholder="Nombre" class="form-control" required autofocus>
+          <label>Nombre</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"></span>
+          <input type="type" name="lastName" placeholder="Apellido" class="form-control" required autofocus>
+          <label>Apellido</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"></span>
+          <input type="text" name="email" placeholder="Email" class="form-control" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"></span>
+          <input type="password" name="password" placeholder="Password" class="form-control">
+          <label>Password</label>
+        </div>
+        <button type="submit">Iniciar Sesion</button>
+      </form>
     </div>
+  </section>
+</body>
