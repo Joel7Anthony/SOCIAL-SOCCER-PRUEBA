@@ -1,7 +1,5 @@
-const { STRING } = require("sequelize")
-
 const categoris =(sequelize, type) =>{
-    return sequelize.define('categori', {
+    return sequelize.define('categoris', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
