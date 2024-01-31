@@ -101,7 +101,7 @@ app.use('/users',require('./routes/users.routes'));
 //app.use('/teams',require('./routes/teams.routes'));
 //app.use('/calendars',require('./routes/calendars.routes'));
 //app.use('/keys',require('./routes/keys.routes'));
-//app.use('/players', require('./routes/players.routes'));
+app.use('/players', require('./routes/players.routes'));
 
 // Exportar la aplicación
 module.exports = app;
