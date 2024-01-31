@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const positionsController = require('../controllers/position.controller');
+const positionsController = require('../controllers/position.controller.js');
 const { isLoggedIn } = require('../lib/auth');
 
 //viws calendars

@@ -6,3 +6,26 @@ const Categories = {};
 Categories.getListCategories = async ( req, res) => {
     const categories = await pool.query('SELECT * FROM calend')
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = Categories;

@@ -3,6 +3,9 @@ const keys = require("../keys");
 const players = require("../models/player.model");
 const Players = {};
 const Teams = {};
+
+
+
 Players.getListPlayers = async (req, res) => {
   const players = await pool.query('SELECT * FROM  players');
   res.render('Pages/player/list-players', { players });
@@ -49,8 +52,8 @@ Players.updatePlayer = async (req, res) => {
 
 
 Players.getAddPlayers = async (req, res) => {
-  const teams = await pool.query('SELECT * FROM  players');
-  res.render('Pages/player/players', { teams });
+  const players = await pool.query('SELECT * FROM  players');
+  res.render('Pages/player/players', { players });
 };
 
 module.exports = Players;

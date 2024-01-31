@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const teamstatisticsController = require('../controllers/teamstatistics.controller');
+const teamstatisticsController = require('../controllers/teamstatistics.controller.js');
 const { isLoggedIn } = require('../lib/auth');
 
 

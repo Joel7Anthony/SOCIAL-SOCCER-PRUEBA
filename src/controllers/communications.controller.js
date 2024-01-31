@@ -1,5 +1,5 @@
 const pool = require("../config/database.sql");
-const comunications = require("../models/comunication.model");
+const comunications = require("../models/communication.model");
 const keys = require("../keys"); 
 const Comunications = {};
 
@@ -17,7 +17,7 @@ Comunications.getAddComunications = async (req, res) => {
 };
 
 //Publicar Comunicado 
-Comunications.postComunications = async (req, res) => {
+Comunications.postComunication = async (req, res) => {
   const {
     newsdescription,  president, newsimage, publicationdate, newsauthor
   } = req.body;
@@ -31,7 +31,7 @@ Comunications.postComunications = async (req, res) => {
 };
 
 //Eliminar Publicado 
-Comunications.deleteCommunications = async (req, res) => {
+Comunications.deleteComunication = async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM comunications WHERE ID = ?", [id]);
   req.flash('success', 'Eliminado');
@@ -39,7 +39,7 @@ Comunications.deleteCommunications = async (req, res) => {
 };
 
 //Actualizar Comunicado 
-Comunications.getComunications = async (req, res) => {
+Comunications.getComunication = async (req, res) => {
   const { id } = req.params;
   const user = await pool.query('SELECT * FROM comunications WHERE id = ?', [id]);
   req.flash('success', 'bien');
@@ -47,7 +47,7 @@ Comunications.getComunications = async (req, res) => {
 };
 
 //Se amostrara lo que se actualizao 
-Comunications.updateComunications = async (req, res) => {
+Comunications.updateComunication = async (req, res) => {
   const { id } = req.params;
   const { newsdescription,  president, newsimage, publicationdate, newsauthor } = req.body;
   const newComunications = {

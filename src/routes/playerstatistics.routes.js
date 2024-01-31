@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //onst playersController = require('../controllers/players.controller');
-const playerstatisticsController = require('../controllers/playerstatistics.controller');
+const playerstatisticsController = require('../controllers/playerstatistics.controller.js');
 const { isLoggedIn } = require('../lib/auth');
 const photoPlayerstatisticsController = require('../controllers/photoPlayers.controller');
 
@@ -17,6 +17,6 @@ router.post('/edit-players/:id', isLoggedIn,playerstatisticsController.updatePla
 
 
 //views photo
-router.post('/photo-playerstatistics/:id', isLoggedIn, photoPlayersController.updatePhoto);
+router.post('/photo-playerstatistics/:id', isLoggedIn, photoPlayerstatisticsController.updatePhoto);
 
 module.exports = router;
