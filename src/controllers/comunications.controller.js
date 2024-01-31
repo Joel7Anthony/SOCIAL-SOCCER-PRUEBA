@@ -1,5 +1,5 @@
 const pool = require("../config/database.sql");
-const comunications = require("../models/communication.model");
+const comunications = require("../models/comunication.model");
 const keys = require("../keys"); 
 const Comunications = {};
 
