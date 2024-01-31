@@ -1,5 +1,5 @@
-const pool = requiere ("../config/dataBase.sql");
-const participants = requiere ("../models/participant.model")
+const pool = require("../config/database.sql");
+const participants = require ("../models/participant.model")
 
 const Participants = {};
 
