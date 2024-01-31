@@ -6,7 +6,7 @@ const games =(sequelize, type) =>{
             autoIncrement: true,
         },
         
-        nameGame: type.STRING,
+        namegame: type.STRING,
         descripcionGame : type.STRING,
         locationGame : type.STRING,
         imageGame: type.STRING,
