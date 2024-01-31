@@ -23,12 +23,15 @@ Players.postPlayer = async (req, res) => {
   req.flash('success', 'Jugador agregado Correctamenta');
   res.redirect("/players/list-players");
 };
+
 Players.deletePlayer = async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM players WHERE ID = ?", [id]);
   req.flash('success', 'Jugador Eliminado correctamente');
   res.redirect("/players/list-players");
 };
+
+
 
 Players.getPlayer = async (req, res) => {
   const { id } = req.params;
