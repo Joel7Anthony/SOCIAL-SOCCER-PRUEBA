@@ -1,5 +1,5 @@
 const pool = require("../config/database.sql");
-const calendars = require("../models/categori.model")
+const calendars = require("../models/categori.models")
 
 
 const Calendars ={};
@@ -15,48 +15,48 @@ Calendars.postCalendar = async (req, res) => {
         description,programguy,reminder,typeofprogram
     } = req.body;
     const newLink = {
-        namegame, descripcionGame,locationGame,imageGame
+        description,programguy,reminder,typeofprogram
     };
-    await pool.query('INSERT INTO games set ?' [ newLink]);
+    await pool.query('INSERT INTO calendars set ?' [ newLink]);
 
 //FLASH
 
-req.flash('success', 'Partido agregado correctamente');
-res.redirect("/games/list-games");
+req.flash('success', 'agregado correctamente');
+res.redirect("/calendars/list-calendars");
 };
 
 //ELIMINAR 
-Calendars.deleteGame = async (req, res) => {
+Calendars.deletecalendars = async (req, res) => {
     const { id } = req.params;
-        await pool.query('DELETE FROM games WHERE ID = ?', [id]);
-        req.flash('success', 'Partido Eliminado Correctamente');
-        res.redirect("/games/list-game");
+        await pool.query('DELETE FROM calendars WHERE ID = ?', [id]);
+        req.flash('success', 'Eliminado Correctamente');
+        res.redirect("/calendars/list-calendars");
     };
 //EDITAR
-Calendars.getGame = async (req, res) => {
+Calendars.getcalendars = async (req, res) => {
     const { id } = req.params;
-        const game = await pool.query('SELECT * FROM games WHere id = ?', [id]);
+        const calendars = await pool.query('SELECT * FROM calendars WHERE ID = ?', [id]);
 };
 
 
 //ACTUALIZAR
-Calendars.updateEgame = async (req, res) => {
+Calendars.updatecalendars = async (req, res) => {
     const { id } = req.params;
-    const {namegame,descripcionGame,locationGame,imageGame
+    const {description,programguy,reminder,typeofprogram
     } = req.body;
     const newLink = {
-        namegame,descripcionGame,locationGame,imageGame
+        description,programguy,reminder,typeofprogram
     };
     console.log([id,newLink])
-    await pool.query('UPDATE games set ? WHERE id = ?', [newLink, id]);
-    req.flash('success', 'Partido editado correctamente');
-    res.redirect('/games/list-games'); 
+    await pool.query('UPDATE calendars set ? WHERE id = ?', [newLink, id]);
+    req.flash('success', 'editado correctamente');
+    res.redirect('/calendars/list-calendars'); 
 }
 
 //Agregar    
-Calendars.getAddGames = async (req, res) => {
-    const games = await pool.query('SELECT * FROM games');
-    res.render('Games/game/games', {games});
+Calendars.getAddcalendars = async (req, res) => {
+    const games = await pool.query('SELECT * FROM calendars');
+    res.render('calendars/calendar/calendars', {calendars});
 };
 
 module.exports = Calendars;
