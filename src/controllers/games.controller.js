@@ -45,8 +45,8 @@ Games.updateGame = async (req, res) => {
     const newLink = {
         namegame, descripcionGame, locationGame, imageGame
     };
-    console.log({id,newLink})
-    await pool.query('UPDATE games set ? WHERE id = ?', [ newLink, id]);
+    console.log({ id, newLink })
+    await pool.query('UPDATE games set ? WHERE id = ?', [newLink, id]);
     req.flash('success', 'Partido editado correctamente');
     res.redirect('/games/list-games');
 }
@@ -54,7 +54,7 @@ Games.updateGame = async (req, res) => {
 //agregar
 Games.getAddGames = async (req, res) => {
     const games = await pool.query('SELECT * FROM games');
-    res.render('Games/game/games', {games});
+    res.render('Games/game/games', { games });
 };
 
 module.exports = Games;
