@@ -1,65 +1,65 @@
 const pool = require("../config/database.sql");
-const splitstate = require("../models/splitstate.models")
+const splitstates = require("../models/splitstate.model")
 
 
-const splitstate ={};
+const Splitstates = {};
 
-plitstate.getListsplitstate = async (req, res) => {
-    const splitstate = await pool.query('SELECT * FROM splitstate');
-    res,render('Pages/splitstate/list-splitstate', {splitstate});
+Splitstates.getListSplitstates = async (req, res) => {
+    const splitstates = await pool.query('SELECT * FROM splitstates');
+    res, render('Pages/splitstate/list-splitstates', { splitstates });
 
 };
 
-splitstate.postsplitstate = async (req, res) => {
+Splitstates.postSplitstate = async (req, res) => {
     const {
-        description,programguy,reminder,typeofprogram
+        description, programguy, reminder, typeofprogram
     } = req.body;
     const newLink = {
-        description,programguy,reminder,typeofprogram
+        description, programguy, reminder, typeofprogram
     };
-    await pool.query('INSERT INTO splitstate set ?' [ newLink]);
+    await pool.query('INSERT INTO splitstates set ?'[newLink]);
 
-//FLASH
-
-req.flash('success', 'agregado correctamente');
-res.redirect("/splitstate/list-splitstate");
+    //FLASH
+    req.flash('success', 'agregado correctamente');
+    res.redirect("/splitstates/list-splitstates");
 };
 
 //ELIMINAR 
-splitstate.deletesplitstate = async (req, res) => {
+Splitstates.deleteSplitstate = async (req, res) => {
     const { id } = req.params;
-        await pool.query('DELETE FROM splitstate WHERE ID = ?', [id]);
-        req.flash('success', 'Eliminado Correctamente');
-        res.redirect("/splitstate/splitstate");
-    };
+    await pool.query('DELETE FROM splitstates WHERE ID = ?', [id]);
+    req.flash('success', 'Eliminado Correctamente');
+    res.redirect("/splitstates/list-splitstates");
+};
 //EDITAR
-splitstate.getsplitstate = async (req, res) => {
+Splitstates.getSplitstate = async (req, res) => {
     const { id } = req.params;
-        const splitstate = await pool.query('SELECT * FROM splitstate WHERE ID = ?', [id]);
+    const splitstate = await pool.query('SELECT * FROM splitstates WHERE id = ?', [id]);
+    res.render('Splitstes/splitste/edit-splitstes', { splitste: splitstate[0] });
 };
 
 
 //ACTUALIZAR
-splitstate.updatesplitstate = async (req, res) => {
+Splitstates.updateSplitstate = async (req, res) => {
     const { id } = req.params;
-    const {description,programguy,reminder,typeofprogram
+    const { description, programguy, reminder, typeofprogram
     } = req.body;
     const newLink = {
-        description,programguy,reminder,typeofprogram
+        description, programguy, reminder, typeofprogram
     };
-    console.log([id,newLink])
-    await pool.query('UPDATE splitstate set ? WHERE id = ?', [newLink, id]);
+    console.log([id, newLink])
+    await pool.query('UPDATE splitstates set ? WHERE id = ?', [newLink, id]);
     req.flash('success', 'editado correctamente');
-    res.redirect('/splitstate/splitstate'); 
+    res.redirect('/splitstates/list-splitstates');
 }
 
 //Agregar    
-splitstate.getAddsplitstate = async (req, res) => {
-    const splitstate = await pool.query('SELECT * FROM splitstate');
-    res.render('splitstates/splitstate/splitstates', {splitstate});
+Splitstates.getAddSplitstates = async (req, res) => {
+    const splitstate = await pool.query('SELECT * FROM splitstates');
+    res.render('Splitstates/splitstate/splitstates', { splitstate });
 };
 
-module.exports = splitstate;
+module.exports = Splitstates;
 
 
 

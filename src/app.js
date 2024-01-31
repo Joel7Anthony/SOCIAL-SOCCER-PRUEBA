@@ -108,8 +108,8 @@ app.use('/participants', require('./routes/participants.routes'));
 //app.use('/positiondetails', require('./routes/positiondetails.routes'));
 //app.use('/playerstatistics', require('./routes/playerstatistics.routes'));
 app.use('/positions', require('./routes/positions.routes'));
-//app.use('/splitdetails', require('./routes/splitdetails.routes'));
-//app.use('/splitstates', require('./routes/splitstates.routes'));
+app.use('/splitdetails', require('./routes/splitdetails.routes'));
+app.use('/splitstates', require('./routes/splitstates.routes'));
 //app.use('./teamstatistics', require('./routes/teamstatistics.routes'));
 
 

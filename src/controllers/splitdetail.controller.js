@@ -1,46 +1,47 @@
 const pool = require("../config/database.sql");
-const splitdetail = require("../models/splidetail.models")
+const splitdetails = require("../models/splitdetail.model")
 
 
-const splitdetail ={};
+const Splitdetails ={};
 
-splitdetail.getListsplitdetail = async (req, res) => {
-    const calendars = await pool.query('SELECT * FROM splitdetail');
-    res,render('Pages/splitdetail/list-splitdetails', {splitdetail});
+Splitdetails.getListSplitdetails = async (req, res) => {
+    const calendars = await pool.query('SELECT * FROM splitdetails');
+    res,render('Pages/splitdetail/list-splitdetails', {splitdetails});
 
 };
 
-splitdetail.postsplitdetail = async (req, res) => {
+Splitdetails.postSplitdetail = async (req, res) => {
     const {
         description,programguy,reminder,typeofprogram
     } = req.body;
     const newLink = {
         description,programguy,reminder,typeofprogram
     };
-    await pool.query('INSERT INTO splitdetail set ?' [ newLink]);
+    await pool.query('INSERT INTO splitdetails set ?' [ newLink]);
 
 //FLASH
 
 req.flash('success', 'agregado correctamente');
-res.redirect("/splitdetail/list-splitdetails");
+res.redirect("/splitdetails/list-splitdetails");
 };
 
 //ELIMINAR 
-splitdetail.deletesplitdetail = async (req, res) => {
+Splitdetails.deleteSplitdetail = async (req, res) => {
     const { id } = req.params;
-        await pool.query('DELETE FROM splitdetail WHERE ID = ?', [id]);
+        await pool.query('DELETE FROM splitdetails WHERE ID = ?', [id]);
         req.flash('success', 'Eliminado Correctamente');
-        res.redirect("/splitdetail/splitdetail");
+        res.redirect("/splitdetails/splitdetails");
     };
 //EDITAR
-splitdetail.getsplitdetail = async (req, res) => {
+Splitdetails.getSplitdetail = async (req, res) => {
     const { id } = req.params;
-        const splitdetail = await pool.query('SELECT * FROM splitdetail WHERE ID = ?', [id]);
+        const splitdetail = await pool.query('SELECT * FROM splitdetails WHERE ID = ?', [id]);
+        res.render('Splitdetails/splitdetail/edit-splitdetails', {splitdetail:splitdetail[0]});
 };
 
 
 //ACTUALIZAR
-splitdetail.updatesplitdetail = async (req, res) => {
+Splitdetails.updateSplitdetail = async (req, res) => {
     const { id } = req.params;
     const {description,programguy,reminder,typeofprogram
     } = req.body;
@@ -48,18 +49,18 @@ splitdetail.updatesplitdetail = async (req, res) => {
         description,programguy,reminder,typeofprogram
     };
     console.log([id,newLink])
-    await pool.query('UPDATE splitdetail set ? WHERE id = ?', [newLink, id]);
+    await pool.query('UPDATE splitdetails set ? WHERE id = ?', [newLink, id]);
     req.flash('success', 'editado correctamente');
-    res.redirect('/splitdetail/splitdetail'); 
+    res.redirect('/splitdetails/list-splitdetails'); 
 }
 
 //Agregar    
-splitdetail.getAddsplitdetail = async (req, res) => {
-    const splitdetail = await pool.query('SELECT * FROM splitdetail');
-    res.render('csplitdetails/splitdetail/splitdetails', {splitdetail});
+Splitdetails.getAddSplitdetails = async (req, res) => {
+    const splitdetails = await pool.query('SELECT * FROM splitdetail');
+    res.render('Splitdetails/splitdetail/splitdetails', {splitdetails});
 };
 
-module.exports = splitdetail;
+module.exports = Splitdetails;
 
 
 
