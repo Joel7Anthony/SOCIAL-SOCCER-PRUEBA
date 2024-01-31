@@ -90,6 +90,7 @@ app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-team')));
 app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-player')));
+app.use(express.static(path.join(__dirname, 'public/images/img-calendar')))
 
 
 // Rutas - Definir tus rutas aquí
@@ -98,6 +99,7 @@ app.use(require('./routes/authentication.routes'));
 app.use('/users',require('./routes/users.routes'));
 //app.use('/comunications',require('./routes/comunications.routes'));
 //app.use('/teams',require('./routes/teams.routes'));
+//app.use('/calendars',require('./routes/calendars.routes'));
 //app.use('/keys',require('./routes/keys.routes'));
 //app.use('/players', require('./routes/players.routes'));
 
