@@ -25,3 +25,14 @@ Calnedars.postCalendar = async( req, res) => {
     req.flash('success', 'Agrefado Corectamente');
     res.redirect("calendars/list-calendars");
 }
+
+
+
+
+
+
+
+
+
+
+module.exports = Calnedars;

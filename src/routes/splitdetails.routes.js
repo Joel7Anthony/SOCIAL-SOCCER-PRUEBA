@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const splitdetailsController = require('../controllers/splitdetail.controller');
+const splitdetailsController = require('../controllers/splitdetail.controller.js');
 const { isLoggedIn } = require('../lib/auth');
 
 //viws calendars
