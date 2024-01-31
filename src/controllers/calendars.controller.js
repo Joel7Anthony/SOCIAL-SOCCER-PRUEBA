@@ -1,5 +1,5 @@
 const pool = require("../config/database.sql");
-const calendars = require("../models/categori.models")
+const calendars = require("../models/calendar.model")
 
 
 const Calendars ={};
@@ -26,21 +26,21 @@ res.redirect("/calendars/list-calendars");
 };
 
 //ELIMINAR 
-Calendars.deletecalendars = async (req, res) => {
+Calendars.deleteCalendar = async (req, res) => {
     const { id } = req.params;
         await pool.query('DELETE FROM calendars WHERE ID = ?', [id]);
         req.flash('success', 'Eliminado Correctamente');
         res.redirect("/calendars/list-calendars");
     };
 //EDITAR
-Calendars.getcalendars = async (req, res) => {
+Calendars.getCalendar = async (req, res) => {
     const { id } = req.params;
         const calendars = await pool.query('SELECT * FROM calendars WHERE ID = ?', [id]);
 };
 
 
 //ACTUALIZAR
-Calendars.updatecalendars = async (req, res) => {
+Calendars.updateCalendar = async (req, res) => {
     const { id } = req.params;
     const {description,programguy,reminder,typeofprogram
     } = req.body;
@@ -54,7 +54,7 @@ Calendars.updatecalendars = async (req, res) => {
 }
 
 //Agregar    
-Calendars.getAddcalendars = async (req, res) => {
+Calendars.getAddCalendars = async (req, res) => {
     const games = await pool.query('SELECT * FROM calendars');
     res.render('calendars/calendar/calendars', {calendars});
 };
