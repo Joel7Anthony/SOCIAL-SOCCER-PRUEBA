@@ -1,8 +1,5 @@
-const players = require("../models/player.model");
-const { param } = require("../routes/participants.routes");
-
-const pool = requiere ("../config/dataBase.sql");
-const participants = requiere ("../models/participant.model")
+const pool = require("../config/database.sql");
+const participant = require("../models/participant.model")
 
 const Participants = {};
 
