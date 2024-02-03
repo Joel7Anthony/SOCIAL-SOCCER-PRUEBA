@@ -6,6 +6,7 @@ const comunications = (sequelize, type) => {
             autoIncrement: true,
         },
         
+        title:type.STRING,
         newsdescription: type.STRING,
         president: type.STRING,
         newsimage: type.STRING,
