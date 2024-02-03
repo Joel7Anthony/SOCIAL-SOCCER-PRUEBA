@@ -7,9 +7,9 @@ const games =(sequelize, type) =>{
         },
         
         namegame: type.STRING,
-        descripcionGame : type.STRING,
-        locationGame : type.STRING,
-        imageGame: type.STRING,
+        descripciongame : type.STRING,
+        locationgame : type.STRING,
+        imagegame: type.STRING,
 
         createGames:{
             type: 'TIMESTAMP',

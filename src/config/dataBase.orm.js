@@ -27,15 +27,15 @@ const playersModel = require('../models/player.model');
 const calendarsModel = require('../models/calendar.model');
 const playerstatisticsModel = require('../models/playerstatistic.model');
 const comunicationsModel = require('../models/comunication.model');
-const teamstatcsModel = require('../models/teamstatc.model')
+const teamstatiticsModel = require('../models/teamstatitic.model')
 const resultsModel = require('../models/result.model');
-const categorisModel = require('../models/categori.model');
 const positionsModel = require('../models/position.model');
 const positiondetailsModel = require('../models/positiondetail.model');
 const splitstatesModel = require('../models/splitstate.model');
 const gamesModel = require('../models/game.model');
 const splitdetailsModel = require('../models/splitdetail.model')
 const participantsModel = require('../models/participant.model')
+const coachsModel = require('../models/coach.model.js');
 
 // Autenticar y sincronizar
 sequelize.authenticate()
@@ -59,15 +59,15 @@ const players = playersModel(sequelize, Sequelize)
 const calendars = calendarsModel(sequelize, Sequelize);
 const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const comunications = comunicationsModel(sequelize, Sequelize);
-const teamstatcs = teamstatcsModel(sequelize, Sequelize);
+const teamstatitics = teamstatiticsModel(sequelize, Sequelize);
 const results = resultsModel(sequelize, Sequelize);
-const categoris = categorisModel(sequelize, Sequelize);
 const positions = positionsModel(sequelize, Sequelize);
 const positiondetails = positiondetailsModel(sequelize, Sequelize);
 const splitstates = splitstatesModel(sequelize, Sequelize);
 const games = gamesModel(sequelize, Sequelize);
 const splitdetails = splitdetailsModel(sequelize, Sequelize);
 const participants =participantsModel(sequelize, Sequelize);
+const coachs = coachsModel(sequelize, Sequelize);
 
 //Relaciones
 
@@ -86,14 +86,11 @@ playerstatistics.belongsTo(users);
 users.hasMany(comunications);
 comunications.belongsTo(users);
 
-users.hasMany(teamstatcs);
-teamstatcs.belongsTo(users);
+users.hasMany(teamstatitics);
+teamstatitics.belongsTo(users);
 
 users.hasMany(results);
 results.belongsTo(users);
-
-users.hasMany(categoris);
-calendars.belongsTo(users);
 
 users.hasMany(positions);
 positions.belongsTo(users);
@@ -112,6 +109,9 @@ splitdetails.belongsTo(users);
 
 users.hasMany(participants);
 participants.belongsTo(users);
+
+users.hasMany(coachs);
+coachs.belongsTo(users)
 
 // Exportar el objeto sequelize
 module.exports = sequelize;

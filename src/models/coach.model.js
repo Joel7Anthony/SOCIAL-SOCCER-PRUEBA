@@ -1,34 +1,31 @@
-const categoris =(sequelize, type) =>{
-    return sequelize.define('categoris', {
+const coachs = (sequelize, type) => {
+    return sequelize.define('coachs', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
         
-        sub12: type.STRING,
-        sub15: type.STRING,
-        sub16: type.STRING,
-        first: type.STRING,
-        second : type.INTEGER,
-        maximum : type.STRING,
-        championOfChampions : type.STRING,
-        league: type.STRING,
-        
+        name_coach: type.STRING,
+        coach_mail: type.STRING,
+        phone: type.INTEGER,
+        coaching_team: type.STRING,
 
-        createCategoris:{
+        createCalendars: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateCategoris:{
+        updateCalendars: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
         }
-    },{
+    }, {
         timestamps: false,
     })
 }
 
-module.exports = categoris
+module.exports = coachs
+
+

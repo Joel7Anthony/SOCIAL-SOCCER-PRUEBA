@@ -90,27 +90,26 @@ app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-team')));
 app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-player')));
-app.use(express.static(path.join(__dirname, 'public/images/img-calendar')))
+app.use(express.static(path.join(__dirname, 'public/images/img-comunication')))
 
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
 app.use(require('./routes/authentication.routes'));
-app.use('/users',require('./routes/users.routes'));
+app.use('/users', require('./routes/users.routes'));
 //app.use('/comunications',require('./routes/comunications.routes'));
 //app.use('/teams',require('./routes/teams.routes'));
-app.use('/players', require('./routes/players.routes'));
-app.use('/comunications',require('./routes/comunications.routes'));
-app.use('/calendars', require('./routes/calendars.routes'));
-app.use('/categories', require('./routes/categories.routes'));
-app.use('/games', require('./routes/games.routes'));
-app.use('/participants', require('./routes/participants.routes'));
+//app.use('/players', require('./routes/players.routes'));
+//app.use('/comunications',require('./routes/comunications.routes'));
+//app.use('/calendars', require('./routes/calendars.routes'));
+//app.use('/games', require('./routes/games.routes'));
+//app.use('/participants', require('./routes/participants.routes'));
 //app.use('/positiondetails', require('./routes/positiondetails.routes'));
 //app.use('/playerstatistics', require('./routes/playerstatistics.routes'));
-app.use('/positions', require('./routes/positions.routes'));
-app.use('/splitdetails', require('./routes/splitdetails.routes'));
-app.use('/splitstates', require('./routes/splitstates.routes'));
-//app.use('./teamstatistics', require('./routes/teamstatistics.routes'));
+//app.use('/positions', require('./routes/positions.routes'));
+//app.use('/splitdetails', require('./routes/splitdetails.routes'));
+//app.use('/splitstates', require('./routes/splitstates.routes'));
+app.use('/teamstatistics', require('./routes/teamstatistics.routes'));
 
 
 // Exportar la aplicación

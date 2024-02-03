@@ -6,7 +6,6 @@ const playerstatistics = (sequelize, type) => {
             autoIncrement: true,
         },
 
-        name: type.STRING,
         attacK: type.INTEGER,
         speed: type.INTEGER,
         shootingpower: type.INTEGER,

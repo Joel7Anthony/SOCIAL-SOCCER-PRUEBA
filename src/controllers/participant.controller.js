@@ -31,7 +31,7 @@ Participants.deleteParticipant = async (req, res) => {
 Participants.getParticipant = async (req, res) =>{
     const {id} = req.params;
     const participant = await pool.querry('SELECT participants WHERE id = ?', [id]);
-    req.render('Participants/participant/edit-participant', {participant: participant[0]});
+    req.render('Pages/participant/edit-participant', {participant: participant[0]});
 };
 
 Participants.updateParticipant = async (req, res) =>{
@@ -54,3 +54,5 @@ Participants.getAddParticipants = async (req, res) =>{
 }
 
 module.exports = Participants
+
+//

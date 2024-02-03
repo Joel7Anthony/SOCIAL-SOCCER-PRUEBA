@@ -35,7 +35,7 @@ Splitstates.deleteSplitstate = async (req, res) => {
 Splitstates.getSplitstate = async (req, res) => {
     const { id } = req.params;
     const splitstate = await pool.query('SELECT * FROM splitstates WHERE id = ?', [id]);
-    res.render('Splitstes/splitste/edit-splitstes', { splitste: splitstate[0] });
+    res.render('Pages/splitste/edit-splitstes', { splitste: splitstate[0] });
 };
 
 
@@ -56,7 +56,7 @@ Splitstates.updateSplitstate = async (req, res) => {
 //Agregar    
 Splitstates.getAddSplitstates = async (req, res) => {
     const splitstate = await pool.query('SELECT * FROM splitstates');
-    res.render('Splitstates/splitstate/splitstates', { splitstate });
+    res.render('Pages/splitstate/splitstates', { splitstate });
 };
 
 module.exports = Splitstates;

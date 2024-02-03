@@ -6,10 +6,11 @@ const splitstates =(sequelize, type) =>{
             autoIncrement: true,
         },
         
+        field: type.STRING,
         progress: type.STRING,
         completed : type.STRING,
         canceled : type.STRING,
-        finalData : type.STRING,
+
 
         createSplitstates:{
             type: 'TIMESTAMP',

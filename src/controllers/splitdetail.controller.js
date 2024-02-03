@@ -36,7 +36,7 @@ Splitdetails.deleteSplitdetail = async (req, res) => {
 Splitdetails.getSplitdetail = async (req, res) => {
     const { id } = req.params;
         const splitdetail = await pool.query('SELECT * FROM splitdetails WHERE ID = ?', [id]);
-        res.render('Splitdetails/splitdetail/edit-splitdetails', {splitdetail:splitdetail[0]});
+        res.render('Page/splitdetail/edit-splitdetails', {splitdetail:splitdetail[0]});
 };
 
 
@@ -57,7 +57,7 @@ Splitdetails.updateSplitdetail = async (req, res) => {
 //Agregar    
 Splitdetails.getAddSplitdetails = async (req, res) => {
     const splitdetails = await pool.query('SELECT * FROM splitdetail');
-    res.render('Splitdetails/splitdetail/splitdetails', {splitdetails});
+    res.render('Pages/splitdetail/splitdetails', {splitdetails});
 };
 
 module.exports = Splitdetails;

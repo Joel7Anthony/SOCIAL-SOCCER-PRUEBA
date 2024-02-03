@@ -1,17 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const teamstatisticsController = require('../controllers/teamstatistics.controller.js');
-const { isLoggedIn } = require('../lib/auth');
+const teamstatisticsController = require ('../controllers/teamstatistics.controller');
+//const { isLoggedIn } = require('../lib/auth');
 
 
 
-router.get('/', isLoggedIn, teamstatisticsController.getListTeamstatistics);
-router.post('/teams', isLoggedIn,teamstatisticsController.postTeamstatistics);
-router.get('/add', isLoggedIn, teamstatisticsController.getAddTeamstatistics);
-router.get('/list-teams', isLoggedIn,teamstatisticsController.getListTeamstatistics);
-router.get('/delete-teams/:id', isLoggedIn,teamstatisticsController.deleteTeamstatistics);
-router.get('/edit-teams/:id', isLoggedIn,teamstatisticsController.getTeamstatistics);
-router.post('/edit-teams/:id', isLoggedIn,teamstatisticsController.updateTeamstatistics);
+router.get('/', teamstatisticsController.getListTeamstatistics);
+router.post('/teamstatistics',teamstatisticsController.postTeamstatistic);
+router.get('/add', teamstatisticsController.getAddTeamstatistics);
+router.get('/list-teamstatistics',teamstatisticsController.getListTeamstatistics);
+router.get('/delete-teamstatistics/:id',teamstatisticsController.deleteTeamstatistic);
+router.get('/edit-teamstatistics/:id',teamstatisticsController.getTeamstatistic);
+router.post('/edit-teamstatistics/:id',teamstatisticsController.updateTeamstatistic);
 
 
 module.exports = router;

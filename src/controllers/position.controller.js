@@ -31,7 +31,7 @@ Positions.deletePosition = async (req, res) => {
 Positions.getPosition = async (req, res) => {
     const { id } = req.params;
     const position = await pool.query('SELECT * FROM positions WHERE id = ?', [id]);
-    res.render('Positions/position/edit-positions', { position: position[0] });
+    res.render('Pages/position/edit-positions', { position: position[0] });
 };
 
 //Actualizar
@@ -50,7 +50,7 @@ Positions.updatePosition = async (req, res) => {
 //Agregar
 Positions.getAddPositions = async (req, res) => {
     const positions = await pool.query('SELECT * FROM positions')
-    res.render('Positions/position/positions', { positions });
+    res.render('Pages/position/positions', { positions });
 };
 //views photo
 module.exports = Positions;

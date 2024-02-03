@@ -7,15 +7,15 @@ const positiondetails =(sequelize, type) =>{
         },
 
         archer: type.STRING,
-        Libero : type.STRING,
-        Center : type.STRING,
-        Carrilero: type.STRING,
-        Pivot: type.STRING,
-        Inside : type.STRING,
-        Flyer : type.STRING,
-        Midfielder: type.STRING,
-        End: type.STRING,
-        SecondStriker : type.STRING,
+        libero : type.STRING,
+        center : type.STRING,
+        carrilero: type.STRING,
+        pivot: type.STRING,
+        inside : type.STRING,
+        flyer : type.STRING,
+        midfielder: type.STRING,
+        end: type.STRING,
+        secondStriker : type.STRING,
 
 
         createPositiondetails:{
