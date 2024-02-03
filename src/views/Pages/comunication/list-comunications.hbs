@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/list-comunication.css">
+<div class="col-md-12" style="margin-bottom: 5px; ">
+    <div class="card text-center border border-primary">
+        <div style="display: flex; justify-content: left; padding: 10px;">
+            <h3 class="card-title text-uppercase"
+                style="color: rgb(0, 0, 0); font-family: 'Bungee', sans-serif; margin: 0;">
+                Lista de noticias
+            </h3>
+        </div>
+    </div>
+</div>
+<button><a href="/comunications/add" style="text-decoration: none; color: inherit;">Añadir noticia </a></button>
+
+{{#each comunications}}
+
+<div class="noticia-card">
+    <div class="noticia-img">
+        <div class="fecha-publicacion">{{publicationdate}}</div>
+
+        {{#if newsimage}}
+        <img class="card__image" src="/{{newsimage}}" loading="lazy" alt="User Profile">
+        {{else}}
+        <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+        {{/if}}
+
+    </div>
+    <div class="noticia-content">
+        <div class="noticia-title">{{title}}</div>
+        <p class="el-transpaso-de-no">{{newsdescription}} </p>
+        <p class="el-transpaso-de-no">{{newsauthor}} </p>
+    </div>
+    <center>
+        <a href="/comunications/delete-comunications/{{id}}" style="text-decoration: none; color: inherit;"
+            class="danger">Eliminar</a>
+        <a href="/comunications/edit-comunications/{{id}}" style="text-decoration: none; color: inherit;"
+            class="secondary">Editar</a>
+        <form action="/comunications/photo-comunication/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" name="sampleFile" accept="image/*" />
+            <input type="submit">
+        </form>
+    </center>
+</div>
+
+{{else}}
+<center>
+    <p>No hay registro guardados a un </p>
+    <a href="/teams/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}
