@@ -1,0 +1,273 @@
+/*------------------------GUARDAR------------------------------------------*/
+.form-group {
+    margin-bottom: 10px;
+}
+
+#container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(24, 23, 51);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    width: 97%;
+    margin:0.2em;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+label {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+
+#button1 {
+    background-color: green;
+}
+
+#button1:hover {
+    background-color: rgb(14, 207, 50);
+}
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+        padding: 10px;
+    }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    #container, h2, input,label {
+        width: 95%; /* Ajustado para dispositivos móviles */
+        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+ }
+
+/*-----------------------------------------EDITAR-----------------------*/
+ .form-group {
+    margin-bottom: 10px;
+}
+
+#container-edit {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 1em;
+    margin-bottom: 4em;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(24, 23, 51);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    width: 97%;
+    margin:0.2em;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+label {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+
+#button2 {
+    background-color: green;
+}
+
+#button2 {
+    background-color: rgb(14, 207, 50);
+}
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+        padding: 10px;
+    }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    #container, h2, input,label {
+        width: 95%; /* Ajustado para dispositivos móviles */
+        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+ }
+
+
+ /*-------------------------------botones-------------------------------------*/
+
+ h3 {
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ #title {
+    text-align: center;
+    color: white;
+    height: 50px;
+    background-color: rgb(24, 23, 51);
+    border-radius: 1em;
+}
+ #datos {
+    float: right;
+    margin-left: 1em;
+ }
+
+ #input {
+    width: 20em;
+    margin-top: 11em;
+    margin-left: -9em;
+    color: white;
+    position: absolute;
+ }
+
+ #button-edit {
+    width: 8em;
+    margin-top: 14em;
+    margin-left: -9em;
+    float: right;
+    color: black;
+    position: absolute;
+ }
+ 
+ 
+.secondary {
+    background-color:green ;
+    width: 7em;
+    margin-top: 18em;
+    margin-right: -15em;
+    float: right;
+    padding: 5px;
+    border-radius: 1em;
+}
+.danger {
+    background-color: red;
+    position: absolute;
+    margin-top: 18em;
+    margin-right: -20em;
+    width: 7em;
+    padding: 5px;
+    border-radius: 1em;
+ }
+
+ .danger:hover {
+    background-color: rgb(235, 5, 5);
+ }
+/**/
+ .card-body {
+    background-color: rgb(24, 23, 51);
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 1em;
+    padding: 5px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 22em; 
+    margin-bottom: 3em;
+ }
+ 
+ /*.card text-center border border-primary {
+    margin: 1em;
+    padding: auto;
+
+ }*/
+
+ .card__image {
+    position: absolute;
+    margin-left: 4em;
+    margin-top: 1em;
+    width: 9em;
+    height: 9em;
+    display: inline;
+ }
+
+
+ #data-one,  #data-two,  #data-three,  #data-four {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1em;
+    width: 25em;
+    margin:1em;
+    padding-left: 5px;
+ }
+
+ /*#add {
+    background-color: red;
+    width: 7em;
+    padding: 5px;
+    border-radius: 1em;
+ }*/s
+
+/*@media screen and (max-width: 768px) {
+     #card-body, #title {
+        width: 95%; 
+        padding: 10px; 
+    }
+    #data-one,  #data-two,  #data-three,  #data-four {
+        max-width: 100%; 
+        font-size: 0.8em; /
+    }
+    #input, #button-edit  {
+            width: calc(50% - 20px);  
+            width: 6em; 
+            margin-top: 10em;
+        }
+    
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

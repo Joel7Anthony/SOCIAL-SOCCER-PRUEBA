@@ -1,0 +1,34 @@
+ <link rel="stylesheet" href="/css/teamstatistics.css">
+    <div class="card text-center border border-primary">
+     <div id="title"><h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+            Lista de estadisticas
+        </h3></div>
+    </div>
+</div> 
+{{#each teamstatistics}}
+<div class="card-body">
+    {{#if logo}}
+    <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
+    {{else}}
+    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+    {{/if}}
+    <div id="datos">
+    <div id="data-one"><p>Posición de la liga:   {{league_position}}</p></div>
+    <div id="data-two"><p>Goles:   {{goles}}</p></div>
+    <div id="data-three"><p>Fecha de Fundación:    {{foundation_date}}</p></div>
+    <div id="data-four"><p>Numero de jugadores:  {{number_players}}</p></div>
+    </div>
+    <center>
+        <a href="/teamstatistics/delete-teamstatistics/{{id}}" class="danger">Eliminar</a>
+        <a href="/teamstatistics/edit-teamstatistics/{{id}}" class="secondary">Editar</a> 
+        <form action="/teamstatistics/photo-teamstatistic/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" id="input" name="sampleFile" accept="image/*" />
+            <input type="submit" id="button-edit">
+        </form>
+    </center>
+</div>
+{{else}}
+<center> <p>No hay registro guardados a un </p>
+    <a href="/teamstatistics/add" id="add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}

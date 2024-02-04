@@ -1,5 +1,5 @@
-const teamstatitics = (sequelize, type) => {
-    return sequelize.define('teamstatitics', {
+const teamstatistics = (sequelize, type) => {
+    return sequelize.define('teamstatistics', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -17,7 +17,7 @@ const teamstatitics = (sequelize, type) => {
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        updateTeamstatitics: {
+        updateTeamstatistics: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP '),
             allowNull: false
@@ -27,4 +27,4 @@ const teamstatitics = (sequelize, type) => {
     })
 }
 
-module.exports = teamstatitics
+module.exports = teamstatistics
