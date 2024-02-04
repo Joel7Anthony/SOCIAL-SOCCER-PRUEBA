@@ -1,4 +1,4 @@
-const pool = require("../config/dataBase.sql");
+const pool = require("../config/database.sql");
 const teamstatistics = require("../models/teamstatitic.model");
 
 const Teamstatistics = {};
