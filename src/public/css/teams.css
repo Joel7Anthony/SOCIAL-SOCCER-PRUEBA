@@ -1,12 +1,15 @@
+body {
+	background-image: url("/images/img fondo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-body {
-  background:#121315;
-}
+
  
 h3  {
    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -39,3 +42,6 @@ form label {
 font-family: cursive;
 
 }
+/*estilos de lista */
+ 
+
