@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const coachsController = require('../controllers/coachs.controller.js');
+const coachsController = require('../controllers/coachs.controller');
 //const { isLoggedIn } = require('../lib/auth');
 
 //viws comunication
 router.get('/',  coachsController.getListCoachs);
-router.post('/coachs', coachsController.postComunication);
+router.post('/coachs', coachsController.postCoach);
 router.get('/add',  coachsController.getAddCoachs);
 router.get('/list-coachs', coachsController.getListCoachs);
 router.get('/delete-coachs/:id', coachsController.deleteCoach);

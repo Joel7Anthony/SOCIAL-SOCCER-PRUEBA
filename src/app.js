@@ -95,8 +95,8 @@ app.use(express.static(path.join(__dirname, 'public/images/img-comunication')))
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
-//app.use(require('./routes/authentication.routes'));
-//app.use('/users', require('./routes/users.routes'));
+app.use(require('./routes/authentication.routes'));
+app.use('/users', require('./routes/users.routes'));
 app.use('/comunications',require('./routes/comunications.routes'));
 app.use('/teams',require('./routes/teams.routes'));
 //app.use('/players', require('./routes/players.routes'));
@@ -110,6 +110,7 @@ app.use('/teams',require('./routes/teams.routes'));
 //app.use('/splitdetails', require('./routes/splitdetails.routes'));
 //app.use('/splitstates', require('./routes/splitstates.routes'));
 app.use('/teamstatistics', require('./routes/teamstatistics.routes'));
+app.use('/coachs', require('./routes/coachs.routes'));
 
 
 // Exportar la aplicación

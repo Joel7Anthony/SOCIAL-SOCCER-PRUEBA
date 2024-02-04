@@ -1,5 +1,5 @@
-const pool = require("../config/dataBase.sql");
-const Coachs = require("../models/coach.model");
+const pool = require("../config/database.sql");
+const coachs = require("../models/coach.model");
 
 const  Coachs = {};
 
