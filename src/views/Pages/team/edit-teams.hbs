@@ -1,0 +1,51 @@
+<div class="col-md-12" style="margin-bottom: 5px; ">
+    <div class="card text-center border border-primary">
+        <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+            Editar al equipo
+        </h3>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/teams.css">
+<div class="card-body">
+    <form action="/teams/edit-teams/{{team.id}}" method="POST">
+        <div id="logo"></div>
+        <div id="title">Crear</div>
+        <div id="sub-title">Equipo a ser agregado</div>
+        <div id="input">
+            <div id="inputBox">
+                <label>Nombre Director</label>
+                <input type="text" value="{{team.name_president}}" name="name_president" class="form-control"
+                    placeholder="Nombre Director" />
+            </div>
+            <div id="inputBox">
+                <label>Nombre del Equipo</label>
+                <input type="text" value="{{team.name_team}}" name="name_team" class="form-control"
+                    placeholder="Nombre del Equipo" />
+            </div>
+            <div id="inputBox">
+                <label>Color</label>
+                <input type="text" value="{{team.color}}" class="form-control" name="color"
+                    placeholder="Color" autofocus />
+            </div>
+           
+            <div id="inputBox">
+                <label>Fecha Creacion</label>
+                <input type="date" value="{{team.creationdate}}" name="creationdate" class="form-control"
+                    placeholder="Fecha Creacion" />
+            </div>
+            <div id="inputBox">
+                <label>Rol</label>
+                <input type="text" value="{{team.rol}}" name="rol" class="form-control"
+                    placeholder="Rol" />
+            </div>
+            
+            
+            <div id="inputBox">
+                <input type="submit" value="Guardar" />
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,81 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Inscripcion Equipos</title>
+  <link rel="stylesheet" type="text/css" href="/css/teams.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand">
+        <div class="container">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                ATRAS
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+  <center><h3>Gestion de equipos</h3></center>
+  <div class="form-container4" id="form-container4">
+    <form action="/teams/teams" method="POST">
+      <label for="numeroe">NOMBRE  DIRECTOR</label>
+      <input
+        id="numeroe"
+        name="name_president"
+        type="text"
+        placeholder=""
+        class="form-control"
+      />
+  
+      <label for="nombree">NOMBRE DEL EQUIPO</label>
+      <input
+        id="nombree"
+        name="name_team"
+        type="text"
+        placeholder=""
+        class="form-control"        
+        required
+      />
+  
+      <label for="color">COLOR</label>
+      <input
+        id="nombred"
+        name="color"
+        type="text"
+        placeholder=""
+        class="form-control"
+        required
+      />
+     <label for="rol">ROL</label>
+      <input
+        id="nombred"
+        name="rol"
+        type="text"
+        placeholder=""
+        class="form-control"
+        required
+      />
+
+      <label for="fecha creacion">FECHA CREACION</label>
+      <input
+        id="telefono"
+        name="creationdate"
+        type="date"
+        placeholder=""
+        class="form-control"
+        required
+      />
+        <label for="categoria">CATEGORIA</label>
+
+     
+      </select>
+      <br>
+      <center><input type="submit" value="Guardar"></center>
+     </form>
+  </div>
+  
+  
+ 
