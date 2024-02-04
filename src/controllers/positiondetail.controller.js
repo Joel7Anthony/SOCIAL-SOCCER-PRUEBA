@@ -1,4 +1,3 @@
-const { polygon } = require("leaflet");
 const pool = require("../config/database.sql");
 const positiondetails = require ("../models/positiondetail.model");
 

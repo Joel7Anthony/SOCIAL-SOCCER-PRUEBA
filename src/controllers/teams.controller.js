@@ -1,4 +1,4 @@
-const pool = require("../config/dataBase.sql");
+const pool = require("../config/database.sql");
 const teams = require("../models/team.model");
 
 const Teams = {};

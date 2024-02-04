@@ -20,7 +20,7 @@ photoComunication.updatePhoto = async (req, res) => {
 
     sampleFile.mv(uploadPath, function (err) {
         if (err) return res.status(500).send(err);
-        pool.query('UPDATE comunications SET newsimage = ? WHERE id = ?', [sampleFile.name, id])
+        pool.query('UPDATE comunications SET logo = ? WHERE id = ?', [sampleFile.name, id])
         req.flash('success', 'Foto actualizado');
         res.redirect('/comunications');
 

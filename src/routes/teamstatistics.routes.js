@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const teamstatisticsController = require ('../controllers/teamstatistics.controller');
 //const { isLoggedIn } = require('../lib/auth');
+const photoTeamstatisticsController = require('../controllers/photoTeamstatistics.controller.js')
 
 
 
@@ -13,5 +14,5 @@ router.get('/delete-teamstatistics/:id',teamstatisticsController.deleteTeamstati
 router.get('/edit-teamstatistics/:id',teamstatisticsController.getTeamstatistic);
 router.post('/edit-teamstatistics/:id',teamstatisticsController.updateTeamstatistic);
 
-
+router.post('/photo-teamstatistics/:id',  photoTeamstatisticsController.updatePhoto);
 module.exports = router;
