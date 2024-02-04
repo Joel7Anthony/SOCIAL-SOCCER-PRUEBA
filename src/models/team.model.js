@@ -11,6 +11,7 @@ const teams = (sequelize, type) => {
         photo: type.STRING,
         color: type.STRING,
         creationdate: type.STRING,
+        categori: type.STRING,
 
         createteams: {
             type: 'TIMESTAMP',

@@ -1,5 +1,5 @@
 const pool = require("../config/dataBase.sql");
-const comunications = require("../models/comunication.model");
+const comunications = require("../models/coach.model");
 //const { isLoggedIn } = require('../lib/auth');
 
 const photoComunication = {};
