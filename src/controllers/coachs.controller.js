@@ -1,59 +1,56 @@
 const pool = require("../config/dataBase.sql");
-const teams = require("../models/team.model");
+const Coachs = require("../models/coach.model");
 
-const Teams = {};
+const  Coachs = {};
 
-Teams.getListTeams = async (req, res) => {
-    const teams = await pool.query("SELECT * FROM  teams");
-    res.render("Pages/team/list-teams", { teams });
+Coachs.getListCoachs = async (req, res) => {
+    const coachs = await pool.query("SELECT * FROM  coachs");
+    res.render("Pages/coach/list-coachs", { coachs });
 };
 
-Teams.getAddTeams = async (req, res) => {
-    res.render("Pages/team/teams");
+Coachs.getAddCoachs = async (req, res) => {
+    res.render("Pages/coach/coachs");
 };
 
-Teams.postTeam = async (req, res) => {
-    const { name_president, name_team, photo, color, creationdate, rol, categori } =
+Coachs.postCoach= async (req, res) => {
+    const { name_coach, coach_mail, phone, coaching_team } =
         req.body;
     const newLink = {
-        name_president,
-        name_team,
-        photo,
-        color,
-        creationdate,
-        rol,
-        categori,
-
+        name_coach,
+        coach_mail,
+        phone,
+        coaching_team,
+        
     };
-    await pool.query("INSERT INTO teams set ?", [newLink]);
+    await pool.query("INSERT INTO coachs set ?", [newLink]);
     //Flash
     req.flash("success", "Agregado Correctamenta");
-    res.redirect("/teams/list-teams");
+    res.redirect("/coachs/list-coachs");
 };
 
-Teams.deleteTeam = async (req, res) => {
+Coachs.deleteCoach = async (req, res) => {
     const { id } = req.params;
-    await pool.query("DELETE FROM teams WHERE ID = ?", [id]);
+    await pool.query("DELETE FROM coachs WHERE ID = ?", [id]);
     req.flash("success", "Eliminado correctamente");
-    res.redirect("/teams/list-teams");
+    res.redirect("/coachs/list-coachs");
 };
 
 //actualizar//
-Teams.getTeam = async (req, res) => {
+Coachs.getCoach = async (req, res) => {
     const { id } = req.params;
-    const team = await pool.query("SELECT * FROM teams WHERE id = ?", [id]);
-    res.render("Pages/team/edit-teams", { team: team[0] });
+    const coach = await pool.query("SELECT * FROM coachs WHERE id = ?", [id]);
+    res.render("Pages/coach/edit-coachs", { coach: coach[0] });
 };
 
 //se mostrara actualizado en la lista//
-Teams.updateTeam = async (req, res) => {
+Coachs.updateCoach= async (req, res) => {
     const { id } = req.params;
-    const { name_president, name_team, color, creationdate, rol, categori } = req.body;
-    const newLink = { name_president, name_team, color, creationdate, rol, categori };
+    const { name_coach, coach_mail, phone, coaching_team} = req.body;
+    const newLink = { name_coach, coach_mail, phone, coaching_team };
     console.log({ id, newLink });
-    await pool.query("UPDATE teams set ? WHERE id = ?", [newLink, id]);
+    await pool.query("UPDATE coachs set ? WHERE id = ?", [newLink, id]);
     req.flash("success", "Editado Correctamente");
-    res.redirect("/teams/list-teams");
+    res.redirect("/coachs/list-coachs");
 };
 
-module.exports = Teams;
+module.exports = Coachs;
