@@ -7,6 +7,8 @@ button a {
     text-decoration: none; 
     color: #ffffff;
     font-family: 'Bungee', sans-serif;
+    text-align: center;
+    margin-bottom: auto;
 }
 
 button {
@@ -14,11 +16,12 @@ button {
     background-color: #004B08;
     color: #ffffff;
     border: 2px solid #000000;
-    padding: 8px 12px;
+    padding: 5px 10px;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    float: left;
 }
 
 button:hover {
@@ -43,7 +46,6 @@ button:hover {
     box-shadow: 0 0 30px rgba(24, 23, 51, 0.7);
     float:left;
     overflow: hidden;
-
 }
 
 .noticia-img {
@@ -84,6 +86,40 @@ button:hover {
     font-size: 14px;
     color: #ffffff91;
     text-align: center;
+}
+
+/* Selecionar imagen*/
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    font-family: 'Bungee', sans-serif;
+    background-color: #004B08;
+    border: 2px solid #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #096615;
 }
 
 /* botones de editar y eliminar */
