@@ -1,0 +1,118 @@
+.form-group {
+    margin-bottom: 10px;
+}
+
+#container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(24, 23, 51);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    width: 97%;
+    margin:0.2em;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+label {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+#button1 {
+    background-color: green;
+}
+
+#button1:hover {
+    background-color: rgb(14, 207, 50);
+}
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+        padding: 10px;
+    }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    #container, h2, input,label {
+        width: 95%; /* Ajustado para dispositivos móviles */
+        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+ }
+
+ /*--------------------------------------EDITAR--------------------------------------------------------*/
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+#container-edit {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 1em;
+    margin-bottom: 4em;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    background-color: rgb(24, 23, 51);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    width: 97%;
+    margin:0.2em;
+    height: 2em;
+    border-radius: 0.5em;
+}
+
+label {
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+
+#button2 {
+    background-color: green;
+}
+
+#button2 {
+    background-color: rgb(14, 207, 50);
+}
+
+
+@media screen and (max-width: 768px) {
+    #container {
+        width: 90%;
+        padding: 10px;
+    }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    #container, h2, input,label {
+        width: 95%; /* Ajustado para dispositivos móviles */
+        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+ }
+
+ /*--------------------------------------------------------------------------------------------------*/

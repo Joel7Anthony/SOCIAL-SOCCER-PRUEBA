@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/playerstatistics.css">
+    <div class="card text-center border border-primary">
+        <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+            Lista de estadisticas jugadores
+        </h3>
+    </div>
+</div> 
+<button><a href="/teamstatistics/add" style="text-decoration: none; color: inherit;">Añadir  </a></button>
+{{#each playerstatistics}}
+<div class="card-body">
+    {{#if logo}}
+    <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
+    {{else}}
+    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+    {{/if}}
+    <div id="datos">
+    <div id="data-one"><p>   {{name}}</p></div>
+    <div id="data-two"><p>   {{attacK}}</p></div>
+    <div id="data-three"><p> {{speed}}</p></div>
+    <div id="data-four"><p>  {{ shootingpower}}</p></div>
+    <div id="data-four"><p>  {{endurance}}</p></div>
+    <div id="data-four"><p>  {{ballControl}}</p></div>
+    <div id="data-four"><p>  {{assault}}</p></div>
+    <div id="data-four"><p>  {{shortpass}}</p></div>
+    <div id="data-four"><p>  {{passover}}</p></div>
+    <div id="data-four"><p>  {{dribbling}}</p></div>
+    <div id="data-four"><p>  {{agility}}</p></div>
+    <div id="data-four"><p>  {{balanced}}</p></div>
+    
+    </div>
+    <center>
+        <a href="/playerstatistics/delete-playerstatistics/{{id}}" class="danger">Eliminar</a>
+        <a href="/playerstatistics/edit-playerstatistics/{{id}}" class="secondary">Editar</a> 
+        <form action="/playerstatistics/photo-playerstatistic/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" id="input" name="sampleFile" accept="image/*" />
+            <input type="submit" id="button-edit">
+        </form>
+    </center>
+</div>
+{{else}}
+<center> <p>No hay registro guardados a un </p>
+    <a href="/playerstadistics/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}
+

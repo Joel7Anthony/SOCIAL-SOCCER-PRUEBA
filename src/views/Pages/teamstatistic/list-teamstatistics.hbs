@@ -1,34 +1,58 @@
  <link rel="stylesheet" href="/css/teamstatistics.css">
     <div class="card text-center border border-primary">
-     <div id="title"><h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+     <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
             Lista de estadisticas
-        </h3></div>
+    </h3>
     </div>
 </div> 
+
+<button><a href="/teamstatistics/add" id="boton-añadir" style="text-decoration: none; color: inherit;">Añadir  </a></button>
+<table id="table">
+    <thead id="encabezado">
+       
+        <tr>
+            <th>Logo</th>
+            <th>equipo</th>
+            <th>Posición de la liga</th>
+            <th>Goles</th>
+            <th>Fecha de Fundación</th>
+            <th>Número de jugadores</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
 {{#each teamstatistics}}
-<div class="card-body">
+<tr>
+    <td>
     {{#if logo}}
     <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
     {{else}}
     <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
     {{/if}}
-    <div id="datos">
-    <div id="data-one"><p>Posición de la liga:   {{league_position}}</p></div>
-    <div id="data-two"><p>Goles:   {{goles}}</p></div>
-    <div id="data-three"><p>Fecha de Fundación:    {{foundation_date}}</p></div>
-    <div id="data-four"><p>Numero de jugadores:  {{number_players}}</p></div>
-    </div>
+    </td>
+    <td>{{#each teams}}
+                <option value="{{name}}">{{name}}</option>
+        {{/each}}</td>
+    <td><p>  {{league_position}}</p></td>
+    <td><p>  {{goles}}</p></td>
+    <td><p>  {{foundation_date}}</p></td>
+    <td><p>  {{number_players}}</p></td>
+    <td>
     <center>
         <a href="/teamstatistics/delete-teamstatistics/{{id}}" class="danger">Eliminar</a>
-        <a href="/teamstatistics/edit-teamstatistics/{{id}}" class="secondary">Editar</a> 
+        <a href="/teamstatistics/edit-teamstatistics/{{id}}" class="secondary">Editar  </a> 
         <form action="/teamstatistics/photo-teamstatistic/{{id}}" method="POST" encType="multipart/form-data">
             <input type="file" id="input" name="sampleFile" accept="image/*" />
             <input type="submit" id="button-edit">
         </form>
     </center>
-</div>
+    </td>
+    </tr>
+
 {{else}}
-<center> <p>No hay registro guardados a un </p>
-    <a href="/teamstatistics/add" id="add"> Agrega uno haciendo click aqui</a>
+<center > <p>No hay registro guardados a un </p>
+    <a href="/teamstatistics/add" id="add" type="button"> Agrega uno haciendo click aqui</a>
 </center>
 {{/each}}
+
+

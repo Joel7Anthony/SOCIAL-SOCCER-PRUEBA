@@ -36,6 +36,7 @@ h2 {
 
 #button1 {
     background-color: green;
+    margin-left: 0.5em;
 }
 
 #button1:hover {
@@ -47,13 +48,14 @@ h2 {
     #container {
         width: 90%;
         padding: 10px;
+        
     }
  }
  
  @media screen and (max-width: 600px) {
     #container, h2, input,label {
         width: 95%; /* Ajustado para dispositivos móviles */
-        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+        font-size: 0.6em; 
     }
  }
 
@@ -95,9 +97,10 @@ h2 {
 
 #button2 {
     background-color: green;
+    margin-left: 0.5em;
 }
 
-#button2 {
+#button2:hover {
     background-color: rgb(14, 207, 50);
 }
 
@@ -123,117 +126,106 @@ h2 {
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
 }
- #title {
+.card-title text-uppercase {
     text-align: center;
     color: white;
     height: 50px;
     background-color: rgb(24, 23, 51);
+    margin-top: 3em;
     border-radius: 1em;
+    margin-bottom: 1em;
 }
- #datos {
-    float: right;
-    margin-left: 1em;
- }
-
- #input {
-    width: 20em;
-    margin-top: 11em;
-    margin-left: -9em;
-    color: white;
-    position: absolute;
- }
-
- #button-edit {
-    width: 8em;
-    margin-top: 14em;
-    margin-left: -9em;
-    float: right;
-    color: black;
-    position: absolute;
- }
- 
- 
-.secondary {
-    background-color:green ;
-    width: 7em;
-    margin-top: 18em;
-    margin-right: -15em;
-    float: right;
-    padding: 5px;
-    border-radius: 1em;
-}
-.danger {
-    background-color: red;
-    position: absolute;
-    margin-top: 18em;
-    margin-right: -20em;
-    width: 7em;
-    padding: 5px;
-    border-radius: 1em;
- }
-
- .danger:hover {
-    background-color: rgb(235, 5, 5);
- }
-/**/
- .card-body {
-    background-color: rgb(24, 23, 51);
+ .buscador {
     margin: 1em;
-    border: 1px solid black;
+    width: 40%;
+   /* background-color: rgb(24, 23, 51);
+    padding:6px;
     border-radius: 1em;
-    padding: 5px;
-    width: 90%;
+    transform: translateX(140%);*/
+ }
+ #table {
+    width: 95%;
+    border-collapse: collapse;
+    border-radius: 1em;
     margin-left: auto;
     margin-right: auto;
-    height: 22em; 
-    margin-bottom: 3em;
+    margin-bottom: 2em ;
+    margin-top: 2em;
+    color: white;
+    background-color: rgb(24, 23, 51);
  }
- 
- /*.card text-center border border-primary {
-    margin: 1em;
-    padding: auto;
+ #encabezado {
+    margin-top: 0.5em;
+    
+ }
 
+ th {
+    height: 3em;
+    border-top: 1px solid white;
+    border-bottom: 4px solid white ;
+    text-align: center;
+    padding: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1em;
+ }
+
+
+ td {
+    border-bottom: 4px solid white;
+    text-align: center;
+    font-size: 1em;
+    padding: 5px;
+ }
+
+ /*tr:hover {
+    background-color: rgb(95, 160, 235);
  }*/
 
  .card__image {
-    position: absolute;
-    margin-left: 4em;
-    margin-top: 1em;
-    width: 9em;
-    height: 9em;
-    display: inline;
+    width: 4em;
+    height: 4em;
+    margin: 5px;
  }
 
-
- #data-one,  #data-two,  #data-three,  #data-four {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 1em;
-    width: 25em;
-    margin:1em;
-    padding-left: 5px;
+ #input {
+    width: 15em;
+    color: white;
+    border-radius: 0.5em;
  }
 
- /*#add {
+ #button-edit {
+    width: 5em;
+    border-radius: 1em ;
+ }
+
+ .danger {
     background-color: red;
+    padding: 2px;
+    border-radius: 0.5em;
+ }
+
+ .secondary {
+    background-color: green;
+    padding: 2px;
+    border-radius: 0.5em;
+ }
+
+ #add {
+    color: black ;
+    margin: 1em;
+    background-color: green;
+    padding: 2px;
+    border-radius:0.5em ;
+ }
+
+ #add, #boton-añadir:hover {
+    background-color: rgb(14, 207, 50);
+ }
+
+ #boton-añadir {
+    background-color: green;
+    margin: 2em;
     width: 7em;
     padding: 5px;
-    border-radius: 1em;
- }*/
-
-/*@media screen and (max-width: 768px) {
-     #card-body, #title {
-        width: 95%; 
-        padding: 10px; 
-    }
-    #data-one,  #data-two,  #data-three,  #data-four {
-        max-width: 100%; 
-        font-size: 0.8em; /
-    }
-    #input, #button-edit  {
-            width: calc(50% - 20px);  
-            width: 6em; 
-            margin-top: 10em;
-        }
-    
-}*/
+ }
