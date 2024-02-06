@@ -225,7 +225,8 @@ h2 {
 
  #boton-añadir {
     background-color: green;
-    margin: 2em;
+    margin: 1em;
     width: 7em;
     padding: 5px;
+    position: absolute;
  }
