@@ -35,8 +35,9 @@ router.post('/signup', passport.authenticate('local.signup', {
 }));
 
 router.get('/logout', (req, res) => {
-  req.logOut();
-  res.redirect('/signin');
+  req.logout(() => {
+    res.redirect('/signin');
+  });
 });
 
 
