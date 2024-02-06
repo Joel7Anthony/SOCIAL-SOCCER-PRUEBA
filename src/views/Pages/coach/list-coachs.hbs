@@ -1,6 +1,8 @@
  <link rel="stylesheet" href="/css/teams.css">
- {{#each teams}}
-<div class="card-body">
+ {{#each coachs}}
+ <form action="/teams/photo-team/{{id}}" method="POST" encType="multipart/form-data">
+<div class="card-body" id="lcb ">
+    <center>
     <p>{{name_president}}</p>
     <p>{{name}}</p>
      {{#if photo}}
@@ -8,25 +10,26 @@
     {{else}}
     <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
     {{/if}}
-    <p>{{name_president}}</p>
-    <p>{{name_team}}</p>
-    <p>{{color}}</p>
-    <p>{{creationdate}}</p>
-    <p>{{rol}}</p>
-    <p>{{categori}}</p>
+    <th><p>{{name_coach}}</p>
+    <p>{{coach_mail}}</p>
+    <p>{{phone}}</p>
+    <p>{{coaching_team}}</p>
+     
 
    
-    <center>
-        <a href="/teams/delete-teams/{{id}}" class="danger">Eliminar</a>
-        <a href="/teams/edit-teams/{{id}}" class="secondary">Editar</a>
-        <form action="/teams/photo-team/{{id}}" method="POST" encType="multipart/form-data">
-            <input type="file" name="sampleFile" accept="image/*" />
-            <input type="submit">
-        </form>
+    
+        <input type="file" name="sampleFile" accept="image/*"  id="foto"/> <br> <br>
+        <a href="/coachs/delete-coachs/{{id}}" class="danger">Eliminar</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/coachs/edit-coachs/{{id}}" class="secondary">Editar</a> <br> <br>
+        
+        
+        <input type="submit" id="env">
+      
     </center>
-</div>
+</div> </th>
+  </form>
 {{else}}
 <center> <p>No hay registro guardados a un </p>
-    <a href="/teams/add"> Agrega uno haciendo click aqui</a>
+    <a href="/coachs/add"> Agrega uno haciendo click aqui</a>
 </center>
 {{/each}}

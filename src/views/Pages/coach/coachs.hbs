@@ -18,7 +18,7 @@
         </div>
       </nav>
 </header>
-  <center><h3>Gestion de equipos</h3></center>
+  <center><h3>ENTRENADORES</h3></center>
   <div class="form-container4" id="form-container4">
     <form action="/coachs/coachs" method="POST">
       <label for="nombre entrenador">NOMBRE ENTRENADOR</label>
@@ -29,7 +29,13 @@
         placeholder=""
         class="form-control"
       />
-  
+  <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+        <select id="country" name="country" class="btn btn-secondary col-12" required>
+         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+        {{#each teams}}
+                <option value="{{name}}">{{name}}</option>
+        {{/each}}        
+        </select>
       <label for="nombre">CORREO ENTRENADOR</label>
       <input
         id="nombree"

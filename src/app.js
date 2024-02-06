@@ -109,7 +109,7 @@ app.use('/players', require('./routes/players.routes'));
 //app.use('/splitdetails', require('./routes/splitdetails.routes'));
 //app.use('/splitstates', require('./routes/splitstates.routes'));
 app.use('/teamstatistics', require('./routes/teamstatistics.routes'));
-//app.use('/coachs', require('./routes/coachs.routes'));
+app.use('/coachs', require('./routes/coachs.routes'));
 
 
 // Exportar la aplicación
