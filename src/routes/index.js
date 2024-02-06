@@ -3,7 +3,7 @@ const router = express.Router();
 //const { isLoggedIn } = require('../lib/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/',isLoggedIn,  async (req, res) => {
     res.render('Pages/Dashboard');
 });
 

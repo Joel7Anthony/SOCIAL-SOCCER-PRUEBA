@@ -9,8 +9,12 @@ const players = (sequelize, type) => {
         playername: type.STRING,
         age: type.STRING,
         birthdate: type.STRING,
-        photoplayer: type.STRING,
+        photo: type.STRING,
         tshirtnumber: type.INTEGER,
+        position: type.STRING,
+        positiondetail: type.STRING,
+
+
         
         createPlayerss: {
             type: 'TIMESTAMP',

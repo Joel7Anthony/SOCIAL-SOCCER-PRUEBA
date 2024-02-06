@@ -13,10 +13,10 @@ Players.getListPlayers = async (req, res) => {
 
 Players.postPlayer = async (req, res) => {
   const {
-    name, lastname, age, cedula, typePlayer, goalsMarked
+    playername, age,birthdate,photo,tshirtnumber,position,positiondetail
   } = req.body;
   const newLink = {
-    name, lastname, age, cedula, typePlayer, goalsMarked
+    playername, age,birthdate,photo,tshirtnumber,position,positiondetail
   };
   await pool.query('INSERT INTO players set ?', [newLink]);
   //Flash
@@ -41,10 +41,10 @@ Players.getPlayer = async (req, res) => {
 };
 Players.updatePlayer = async (req, res) => {
   const { id } = req.params;
-  const { name, lastname, age, cedula, typePlayer, goalsMarked
+  const { playername, age,birthdate,photo,tshirtnumber,position,positiondetail
   } = req.body;
   const newLink = {
-    name, lastname, age, cedula, typePlayer, goalsMarked
+    playername, age,birthdate,photo,tshirtnumber,position,positiondetail
 
   };
   console.log({ id, newLink })

@@ -29,8 +29,6 @@ const playerstatisticsModel = require('../models/playerstatistic.model');
 const comunicationsModel = require('../models/comunication.model');
 const teamstatiticsModel = require('../models/teamstatitic.model')
 const resultsModel = require('../models/result.model');
-const positionsModel = require('../models/position.model');
-const positiondetailsModel = require('../models/positiondetail.model');
 const splitstatesModel = require('../models/splitstate.model');
 const gamesModel = require('../models/game.model');
 const splitdetailsModel = require('../models/splitdetail.model')
@@ -61,8 +59,6 @@ const playerstatistics = playerstatisticsModel(sequelize, Sequelize);
 const comunications = comunicationsModel(sequelize, Sequelize);
 const teamstatitics = teamstatiticsModel(sequelize, Sequelize);
 const results = resultsModel(sequelize, Sequelize);
-const positions = positionsModel(sequelize, Sequelize);
-const positiondetails = positiondetailsModel(sequelize, Sequelize);
 const splitstates = splitstatesModel(sequelize, Sequelize);
 const games = gamesModel(sequelize, Sequelize);
 const splitdetails = splitdetailsModel(sequelize, Sequelize);
@@ -91,12 +87,6 @@ teamstatitics.belongsTo(users);
 
 users.hasMany(results);
 results.belongsTo(users);
-
-users.hasMany(positions);
-positions.belongsTo(users);
-
-users.hasMany(positiondetails);
-positiondetails.belongsTo(users);
 
 users.hasMany(splitstates);
 splitstates.belongsTo(users);

@@ -1,9 +1,10 @@
 const timeago = require('timeago.js');
+const timeagoInstance = timeago;
 
 const helpers = {};
 
-helpers.formatTimeAgo = (savedTimestamp) => {
-    return timeago.format(savedTimestamp);
+helpers.timeago = (savedTimestamp) => {
+    return timeagoInstance.format(savedTimestamp);
 };
 
 module.exports = helpers;
