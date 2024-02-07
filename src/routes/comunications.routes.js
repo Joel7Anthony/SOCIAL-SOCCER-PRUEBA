@@ -7,7 +7,7 @@ const photoComunicationsController = require('../controllers/photoComunications.
 //viws comunication
 router.get('/',isLoggedIn,  comunicationsController.getListComunications);
 router.post('/comunications',isLoggedIn, comunicationsController.postComunication);
-router.get('/add',  comunicationsController.getAddComunications);
+router.get('/add',isLoggedIn, comunicationsController.getAddComunications);
 router.get('/list-comunications',isLoggedIn,comunicationsController.getListComunications);
 router.get('/delete-comunications/:id',isLoggedIn, comunicationsController.deleteComunication);
 router.get('/edit-comunications/:id',isLoggedIn, comunicationsController.getComunication);

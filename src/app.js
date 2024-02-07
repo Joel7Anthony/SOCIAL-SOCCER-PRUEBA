@@ -100,7 +100,7 @@ app.use('/users', require('./routes/users.routes'));
 app.use('/comunications',require('./routes/comunications.routes'));
 app.use('/teams',require('./routes/teams.routes'));
 app.use('/players', require('./routes/players.routes'));
-//app.use('/calendars', require('./routes/calendars.routes'));
+app.use('/calendars', require('./routes/calendars.routes'));
 //app.use('/games', require('./routes/games.routes'));
 //app.use('/participants', require('./routes/participants.routes'));
 //app.use('/positiondetails', require('./routes/positiondetails.routes'));
