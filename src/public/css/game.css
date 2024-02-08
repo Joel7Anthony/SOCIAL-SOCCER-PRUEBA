@@ -1,0 +1,71 @@
+/* Publicacion de noticia */
+form {
+    max-width: 600px;
+    margin: 0 auto; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(24, 23, 51, 0.7);
+    font-family: 'Bungee', sans-serif;
+    box-sizing: border-box; /
+}
+
+h2 {
+    text-align: center;
+    color: #000000;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-family: 'Bungee', sans-serif;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #181733;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#guardarBotton,
+#cancelButton {
+    text-align: center;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #004B08;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1dbe2d;
+    border: 2px solid #000000;
+}
+
+/* Estilos específicos para el botón Cancelar */
+#cancelButton input[type="submit"] {
+    background-color: #700000;
+    border: 2px solid #000000;
+}
+
+#cancelButton input[type="submit"]:hover {
+    background-color: #c0392b;
+    border: 2px solid #000000;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    form {
+        max-width: 100%;
+        margin: 0 10px; 
+    }
+}

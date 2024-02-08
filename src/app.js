@@ -91,6 +91,7 @@ app.use(express.static(path.join(__dirname, 'public/images/img-team')));
 app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-player')));
 app.use(express.static(path.join(__dirname, 'public/images/img-comunication')))
+app.use(express.static(path.join(__dirname, 'public/images/img-game')))
 
 
 // Rutas - Definir tus rutas aquí
@@ -101,7 +102,7 @@ app.use('/comunications',require('./routes/comunications.routes'));
 app.use('/teams',require('./routes/teams.routes'));
 app.use('/players', require('./routes/players.routes'));
 app.use('/calendars', require('./routes/calendars.routes'));
-//app.use('/games', require('./routes/games.routes'));
+app.use('/games', require('./routes/games.routes'));
 //app.use('/participants', require('./routes/participants.routes'));
 //app.use('/positiondetails', require('./routes/positiondetails.routes'));
 //app.use('/playerstatistics', require('./routes/playerstatistics.routes'));

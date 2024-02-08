@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/game.css">
+
+<form action="/games/edit-games/{{game.id}}" method="POST">  
+        <h2>Añadir Juego</h2>
+        <label for="titulo">Nombre del Juego</label>
+        <input type="text" value="{{game.namegame}}" name="namegame" class="form-control" placeholder="Editar Nombre del Juego "/ >
+
+        <label for="descripcion">Descripción del Juego</label>
+        <textarea type="text" value="{{game.descripciongame}}" name="descripciongame" class="form-control" placeholder="Editar Descipcion del Juego"></textarea>
+
+        <label for="autor">Agregar lugar del Juego</label>
+        <input type="text" value="{{game.locationgame}}" name="locationgame" class="form-control" placeholder="Editar Lugar del juego" />
+
+        <div id="guardarBotton">
+            <input type="submit" value="Guardar" />
+        </div>
+
+        <div id="cancelButton">
+            <input type="submit" value="Canclear" />
+        </div>
+        
+</form>
