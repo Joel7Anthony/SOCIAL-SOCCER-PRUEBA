@@ -1,6 +1,7 @@
 const pool = require("../config/database.sql");
 const keys = require("../keys");
 const players = require("../models/player.model");
+const { isLoggedIn } = require('../lib/auth');
 const Players = {};
 const Teams = {};
 

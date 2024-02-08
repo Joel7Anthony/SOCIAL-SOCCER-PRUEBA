@@ -1,5 +1,6 @@
 const pool = require("../config/database.sql");
 const splitdetails = require("../models/splitdetail.model")
+const { isLoggedIn } = require('../lib/auth');
 
 
 const Splitdetails ={};

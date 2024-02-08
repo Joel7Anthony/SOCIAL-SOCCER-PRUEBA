@@ -10,6 +10,7 @@ const coachs = (sequelize, type) => {
         coach_mail: type.STRING,
         phone: type.INTEGER,
         coaching_team: type.STRING,
+        photo:type.STRING,
 
         createCalendars: {
             type: 'TIMESTAMP',

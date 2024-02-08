@@ -1,35 +1,41 @@
- <link rel="stylesheet" href="/css/teams.css">
- {{#each coachs}}
- <form action="/teams/photo-team/{{id}}" method="POST" encType="multipart/form-data">
+<link rel="stylesheet" href="/css/teams.css">
+{{#each coachs}}
 <div class="card-body" id="lcb ">
     <center>
-    <p>{{name_president}}</p>
-    <p>{{name}}</p>
-     {{#if photo}}
-    <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
-    {{else}}
-    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
-    {{/if}}
-    <th><p>{{name_coach}}</p>
-    <p>{{coach_mail}}</p>
-    <p>{{phone}}</p>
-    <p>{{coaching_team}}</p>
-     
+        <p>{{name_president}}</p>
+        <div class="noticia-img">
 
-   
-    
-        <input type="file" name="sampleFile" accept="image/*"  id="foto"/> <br> <br>
-        <a href="/coachs/delete-coachs/{{id}}" class="danger">Eliminar</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="/coachs/edit-coachs/{{id}}" class="secondary">Editar</a> <br> <br>
-        
-        
-        <input type="submit" id="env">
-      
-    </center>
-</div> </th>
-  </form>
+            {{#if photo}}
+            <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
+            {{else}}
+            <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+            {{/if}}
+
+        </div>
+
+        <th>
+            <p>{{name_coach}}</p>
+            <p>{{coach_mail}}</p>
+            <p>{{phone}}</p>
+            <p>{{coaching_team}}</p>
+
+
+            <center>
+                <a href="/coachs/delete-coachs/{{id}}" style="text-decoration: none; color: inherit;"
+                    class="danger">Eliminar</a>
+                <a href="/coachs/edit-coachs/{{id}}" style="text-decoration: none; color: inherit;"
+                    class="secondary">Editar</a>
+                <form action="/coachs/photo-coach/{{id}}" method="POST" encType="multipart/form-data">
+                    <input type="file" name="sampleFile" accept="image/*" />
+                    <input type="submit">
+                </form>
+            </center>
+</div>
+</th>
+</form>
 {{else}}
-<center> <p>No hay registro guardados a un </p>
+<center>
+    <p>No hay registro guardados a un </p>
     <a href="/coachs/add"> Agrega uno haciendo click aqui</a>
 </center>
 {{/each}}

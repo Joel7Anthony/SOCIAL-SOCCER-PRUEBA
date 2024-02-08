@@ -1,30 +1,30 @@
 const pool = require("../config/database.sql");
-const comunications = require("../models/comunication.model");
+const coahs = require("../models/coach.model");
 const { isLoggedIn } = require('../lib/auth');
 
-const photoComunication = {};
+const photoCoach = {};
 
-photoComunication.updatePhoto = async (req, res) => {
+photoCoach.updatePhoto = async (req, res) => {
     const { id } = req.params;
     let sampleFile;
     let uploadPath;
 
     if(!req.files || Object.keys(req.files).length === 0 ) {
         req.flash('message', 'No ingresas la imagne')
-        return res.status(400).redirect('/comunications');
+        return res.status(400).redirect('/coachs');
     }
     sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/../public/images/img-comunication/' + sampleFile.name;
+    uploadPath = __dirname + '/../public/images/img-coach/' + sampleFile.name;
 
     console.log(sampleFile);
 
     sampleFile.mv(uploadPath, function (err) {
         if (err) return res.status(500).send(err);
-        pool.query('UPDATE comunications SET newsimage = ? WHERE id = ?', [sampleFile.name, id])
+        pool.query('UPDATE coachs SET photo = ? WHERE id = ?', [sampleFile.name, id])
         req.flash('success', 'Foto actualizado');
-        res.redirect('/comunications');
+        res.redirect('/coachs');
 
     });
 
 };
-module.exports = photoComunication
+module.exports = photoCoach

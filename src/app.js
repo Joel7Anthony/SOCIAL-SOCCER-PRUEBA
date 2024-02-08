@@ -90,9 +90,9 @@ app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-team')));
 app.use(express.static(path.join(__dirname, 'public/images/img-profile')));
 app.use(express.static(path.join(__dirname, 'public/images/img-player')));
-app.use(express.static(path.join(__dirname, 'public/images/img-comunication')))
-app.use(express.static(path.join(__dirname, 'public/images/img-game')))
-
+app.use(express.static(path.join(__dirname, 'public/images/img-comunication')));
+app.use(express.static(path.join(__dirname, 'public/images/img-game')));
+app.use(express.static(path.join(__dirname, 'public/images/img-coach')));
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
