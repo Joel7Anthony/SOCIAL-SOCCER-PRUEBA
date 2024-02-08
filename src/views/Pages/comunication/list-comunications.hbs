@@ -1,21 +1,20 @@
 <link rel="stylesheet" href="/css/list-comunication.css">
-<div class="col-md-12" >
-    <div class="card text-center border border-primary">
+<div id="col-md-12">
+    <div id="card" class="text-center border border-primary">
         <div style="display: flex; justify-content: center; padding: 10px;">
-            <h3 class="card-title text-uppercase"
-                style="margin: 0;">
+            <h3 id="card-title" class="text-uppercase" style="margin: 0;">
                 Lista de noticias
             </h3>
         </div>
     </div>
 </div>
-<button><a href="/comunications/add" style="text-decoration: none; color: inherit;">Añadir </a></button>
+<button id="addButton"><a href="/comunications/add" style="text-decoration: none; color: inherit;">Añadir </a></button>
 
 {{#each comunications}}
 
-<div class="noticia-card">
-    <div class="noticia-img">
-        <div class="fecha-publicacion">{{publicationdate}}</div>
+<div id="noticia-card">
+    <div id="noticia-img">
+        <div id="fecha-publicacion">{{publicationdate}}</div>
 
         {{#if newsimage}}
         <img class="card__image" src="/{{newsimage}}" loading="lazy" alt="User Profile">
@@ -24,8 +23,8 @@
         {{/if}}
 
     </div>
-    <div class="noticia-content">
-        <div class="noticia-title">{{title}}</div>
+    <div id="noticia-content">
+        <div id="noticia-title">{{title}}</div>
         <p class="el-transpaso-de-no">{{newsdescription}} </p>
         <p class="el-transpaso-de-no">{{newsauthor}} </p>
     </div>
@@ -40,7 +39,10 @@
         </form>
     </center>
 </div>
-{{/each}}
+
 {{else}}
-<h1>logueate </h1>
-{{/if}}
+<center>
+    <p>No hay registro guardados a un </p>
+    <a href="/teams/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}

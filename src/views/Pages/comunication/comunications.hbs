@@ -1,21 +1,21 @@
 <link rel="stylesheet" href="/css/comunication.css">
 
-<form action="/comunications/comunications" method="POST">
+<form id="comunicationsForm" action="/comunications/comunications" method="POST">
 
         <h2>Añadir Noticia</h2>
         <label for="titulo">Título de la Noticia</label>
-        <input type="text" name="title" placeholder="Agrega titulo de la noticia" class="form-control">
+        <input type="text" id="title" name="title" placeholder="Agrega titulo de la noticia">
 
         <label for="descripcion">Descripción de la Noticia</label>
-        <textarea type="text" name="newsdescription" class="form-control" placeholder="Agrega descipcion de la noticia"></textarea>
+        <textarea type="text" id="newsDescription" name="newsdescription" placeholder="Agrega descipcion de la noticia"></textarea>
 
         <label for="autor">Autor de la Noticia</label>
-        <input type="text" name="newsauthor" placeholder="Agrega el autor de la noticia" class="form-control">
+        <input type="text" id="newsAuthor" name="newsauthor" placeholder="Agrega el autor de la noticia">
 
         <label for="fecha">Fecha de Publicación</label>
-        <input type="date" name="publicationdate" placeholder="Ingresa la fecha de la noticia" class="form-control">
+        <input type="date" id="publicationDate" name="publicationdate" placeholder="Ingresa la fecha de la noticia">
 
-        <div id="guardarBotton">
+        <div id="guardarButton">
             <input type="submit" value="Guardar" />
         </div>
         

@@ -3,6 +3,7 @@ h3 {
     font-family: 'Bungee', sans-serif;
 }
 
+
 button a {
     text-decoration: none; 
     color: #ffffff;
@@ -11,7 +12,7 @@ button a {
     margin-bottom: auto;
 }
 
-button {
+#addButton {
     margin-top: 10px;
     background-color: #004B08;
     color: #ffffff;
@@ -24,22 +25,22 @@ button {
     float: left;
 }
 
-button:hover {
+#addButton:hover {
     background-color: #096615;
 }   
 
 /*Parte de la publicacion de listas */
-.Lista {
+#Lista {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
 }
 
-.noticia-card {
+#noticia-card {
     margin-top: 40px;
     margin:10px;
-    background-color: #181733;
+    background-color: #275925;
     color: #FFFFFF;
     max-width: 400px;
     border-radius: 10px;
@@ -48,12 +49,12 @@ button:hover {
     overflow: hidden;
 }
 
-.noticia-img {
+#noticia-img {
     position: relative;
     overflow: hidden;
 }
 
-.fecha-publicacion {
+#fecha-publicacion {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -69,11 +70,11 @@ button:hover {
     height: auto;
 }
 
-.noticia-content {
+#noticia-content {
     padding: 20px;
 }
 
-.noticia-title {
+#noticia-title {
     font-family: 'Bungee', sans-serif;
     font-size: 20px;
     font-weight: bold;
@@ -155,6 +156,7 @@ input[type="submit"]:hover {
 .secondary:hover {
     background-color: #d68910;
 }
+
 
 @media only screen and (max-width: 600px) {
     h3 {
