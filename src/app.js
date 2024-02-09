@@ -35,7 +35,7 @@ const handlebars = exphbs.create({
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
     extname: '.hbs',
-    helpres: require('./lib/handlebars')
+    helpers: require('./lib/handlebars')
 });
 
 // Configurar motor de vistas
@@ -97,7 +97,7 @@ app.use(express.static(path.join(__dirname, 'public/images/img-coach')));
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
 app.use(require('./routes/authentication.routes'));
-app.use('/users', require('./routes/users.routes'));
+app.use('/users',require('./routes/users.routes'));
 app.use('/comunications',require('./routes/comunications.routes'));
 app.use('/teams',require('./routes/teams.routes'));
 app.use('/players', require('./routes/players.routes'));
