@@ -13,6 +13,7 @@ const users =(sequelize, type) =>{
         profile_image: type.STRING,
         description:type.STRING,
         phone:type.STRING,
+        dni:type.STRING,
 
         createUsers:{
             type: 'TIMESTAMP',
