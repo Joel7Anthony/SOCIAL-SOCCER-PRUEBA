@@ -12,14 +12,15 @@ Users.getListUsers =  async(req, res) => {
 };
 
 Users.postUsers = async (req, res) => {
-    const { name, email, description,lastName,phone,dni } = req.body;
+    const { name, email, description,lastName,phone,dni, profession } = req.body;
     const newUser = {
         name,
         email,
         description, 
         lastName,
         phone,
-        dni
+        dni, 
+        profession
     };
     await pool.query("INSERT INTO users set?", [newUser]);
     req.flash('success', 'creado');
@@ -41,14 +42,15 @@ Users.getUser = async (req, res) => {
 };
 Users.updateUser = async (req, res) => {
     const { id } = req.params;
-    const { name, email, description,lastName,phone,dni } = req.body;
+    const { name, email, description,lastName,phone,dni, profession } = req.body;
     const newUser = {
         name, 
         email, 
         description,
         lastName,
         phone,
-        dni
+        dni,
+        profession
     };
     console.log({newUser, id})
     await pool.query("UPDATE users set ? WHERE id = ?", [newUser, id]);

@@ -14,6 +14,7 @@ const users =(sequelize, type) =>{
         description:type.STRING,
         phone:type.STRING,
         dni:type.STRING,
+        profession:type.STRING,
 
         createUsers:{
             type: 'TIMESTAMP',
