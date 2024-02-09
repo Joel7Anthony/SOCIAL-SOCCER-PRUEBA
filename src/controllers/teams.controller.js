@@ -1,5 +1,6 @@
 const pool = require("../config/database.sql");
 const teams = require("../models/team.model");
+const { isLoggedIn } = require('../lib/auth');
 
 const Teams = {};
 

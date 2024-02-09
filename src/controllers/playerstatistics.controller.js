@@ -1,5 +1,6 @@
 const pool = require("../config/database.sql");
 const playerstatistics = require("../models/playerstatistic.model");
+const { isLoggedIn } = require('../lib/auth');
 
 const Playerstatistics = {};
 

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/list-game.css">
+<div class="col-md-12" >
+    <div class="card text-center border border-primary">
+        <div style="display: flex; justify-content: center; padding: 10px;">
+            <h3 class="card-title text-uppercase"
+                style="margin: 0;">
+                Lista de Partidos
+            </h3>
+        </div>
+    </div>
+</div>
+<button><a href="/games/add" style="text-decoration: none; color: inherit;">Añadir </a></button>
+
+{{#each games}}
+
+<div class="noticia-card">
+    <div class="noticia-img">
+
+        {{#if imagegame}}
+        <img class="card__image" src="/{{imagegame}}" loading="lazy" alt="User Profile">
+        {{else}}
+        <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+        {{/if}}
+
+    </div>
+    <div class="noticia-content">
+        <div class="noticia-title">{{namegame}}</div>
+        <p class="el-transpaso-de-no">{{descripciongame}} </p>
+        <p class="el-transpaso-de-no">{{locationgame}} </p>
+    </div>
+    <center>
+        <a href="/games/delete-games/{{id}}" style="text-decoration: none; color: inherit;"
+            class="danger">Eliminar</a>
+        <a href="/games/edit-games/{{id}}" style="text-decoration: none; color: inherit;"
+            class="secondary">Editar</a>
+        <form action="/games/photo-game/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" name="sampleFile" accept="image/*" />
+            <input type="submit">
+        </form>
+    </center>
+</div>
+
+{{else}}
+<center>
+    <p>No hay registro guardados a un </p>
+    <a href="/games/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}

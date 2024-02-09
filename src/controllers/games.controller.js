@@ -8,15 +8,17 @@ Games.getListGames = async (req, res) => {
     const games = await pool.query('SELECT * FROM games');
     res.render('Pages/game/list-games', { games });
 };
+
+
 //Publicar 
 Games.postGame = async (req, res) => {
     const {
-        namegame, descripcionGame, locationGame, imageGame
+        namegame, descripciongame, locationgame, imagegame
     } = req.body;
     const newLink = {
-        namegame, descripcionGame, locationGame, imageGame
+        namegame, descripciongame, locationgame, imagegame
     };
-    await pool.query('INSERT INTO games set ?'[newLink]);
+    await pool.query('INSERT INTO games set ?', [newLink]);
     //FLASH
     req.flash('success', 'Partido agregado correctamente');
     res.redirect("/games/list-games");
@@ -34,16 +36,16 @@ Games.deleteGame = async (req, res) => {
 Games.getGame = async (req, res) => {
     const { id } = req.params;
     const game = await pool.query('SELECT * FROM games WHERE id = ?', [id]);
-    res.render('Games/game/edit-games', { game: game[0] });
+    res.render('Pages/game/edit-games', { game: game[0] });
 };
 
 //actualizar
 Games.updateGame = async (req, res) => {
     const { id } = req.params;
-    const { namegame, descripcionGame, locationGame, imageGame
+    const { namegame, descripciongame, locationgame, imagegame
     } = req.body;
     const newLink = {
-        namegame, descripcionGame, locationGame, imageGame
+        namegame, descripciongame, locationgame, imagegame
     };
     console.log({ id, newLink })
     await pool.query('UPDATE games set ? WHERE id = ?', [newLink, id]);
@@ -53,8 +55,7 @@ Games.updateGame = async (req, res) => {
 
 //agregar
 Games.getAddGames = async (req, res) => {
-    const games = await pool.query('SELECT * FROM games');
-    res.render('Games/game/games', { games });
+    res.render ('Pages/game/games')
 };
 
 module.exports = Games;

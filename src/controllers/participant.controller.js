@@ -1,5 +1,6 @@
 const pool = require("../config/database.sql");
-const participants = require ("../models/participant.model")
+const participants = require ("../models/participant.model");
+const { isLoggedIn } = require('../lib/auth');
 
 const Participants = {};
 

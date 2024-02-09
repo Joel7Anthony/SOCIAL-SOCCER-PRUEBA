@@ -1,5 +1,7 @@
 const pool = require("../config/database.sql");
 const coachs = require("../models/coach.model");
+const { isLoggedIn } = require('../lib/auth');
+const teams = require("../models/team.model");
 
 const  Coachs = {};
 
@@ -11,6 +13,8 @@ Coachs.getListCoachs = async (req, res) => {
 Coachs.getAddCoachs = async (req, res) => {
     res.render("Pages/coach/coachs");
 };
+
+
 
 Coachs.postCoach= async (req, res) => {
     const { name_coach, coach_mail, phone, coaching_team } =

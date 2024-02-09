@@ -12,9 +12,12 @@ Users.getListUsers =  async(req, res) => {
 };
 
 Users.postUsers = async (req, res) => {
-    const { name, email, description } = req.body;
+    const { name, email, description,lastName,phone } = req.body;
     const newUser = {
-        name, email, description   };
+        name,
+        email,
+        description, lastName,phone
+    };
     await pool.query("INSERT INTO users set?", [newUser]);
     req.flash('success', 'creado');
     res.redirect("/users/list-users");
@@ -33,17 +36,21 @@ Users.getUser = async (req, res) => {
     req.flash('success', 'bien');
     res.render('pages/users/edit', { user: user[0] });
 };
-
 Users.updateUser = async (req, res) => {
     const { id } = req.params;
-    const { name, email, description } = req.body;
+    const { name, email, description,lastName,phone } = req.body;
     const newUser = {
-        name, email, description
+        name, email, description,lastName,phone
     };
+    console.log({newUser, id})
     await pool.query("UPDATE users set ? WHERE id = ?", [newUser, id]);
     req.flash('success', 'Actualizado');
     res.redirect('/users/list-users');
 };
+
+
+
+
 
 module.exports = Users;
 
