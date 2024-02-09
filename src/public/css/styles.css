@@ -1,9 +1,6 @@
 body {
   background: #ffffff;
   font-family:'Times New Roman', Times, serif
-
-
-
   /*   overflow: hidden; */
 }
 
@@ -26,7 +23,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   box-shadow: 0 10px 20px #3180ff4d, 0 6px 36px #3180ff47;
-  border: 3px solid #317FFF;
+  border: 3px solid #275925;
 }
 
 .nav-link {
@@ -40,7 +37,6 @@ body {
   height: 100%;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: url('/img/background.jpeg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
