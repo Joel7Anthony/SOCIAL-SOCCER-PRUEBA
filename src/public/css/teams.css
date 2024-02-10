@@ -1,8 +1,9 @@
 body {
-	background-image: url("/images/bg.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url("/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -10,69 +11,78 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
- 
-h3  {
-   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   color: #f9f6f6;
+
+h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #f9f6f6;
 }
+
 form {
-    width: 55% ;
+    width: 55%;
     background: transparent;
     border: 2px solid rgb(251, 253, 253);
     backdrop-filter: blur(20px);
     padding: 10px;
     margin: auto;
     margin-top: 30px;
-    border-radius: 20px 50px ;
+    border-radius: 20px 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 80px;
     height: 520px;
     box-shadow: 7px 13px 100px #8ad3e0;
-    
-}
-input {
-    cursor:pointer;
-	position:relative;
-	padding:10px 20px;
-	background:white;
-	font-size:28px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:15px;
-	transition:all 1s;
-	&:after,&:before{
-		content:" ";
-		width:10px;
-		height:10px;
-		position:absolute;
-		border :0px solid #fff;
-		transition:all 1s;
-		}
-        &:after{
-            top:-1px;
-            left:-1px;
-            border-top:5px solid black;
-            border-left:5px solid rgb(11, 11, 11);
-        }
-        &:before{
-            bottom:-1px;
-            right:-1px;
-            border-bottom:5px solid rgb(8, 8, 8);
-            border-right:5px solid rgb(250, 248, 248);
-        }
-        &:hover{
-            border-top-right-radius:0px;
-        border-bottom-left-radius:0px;
-            background:rgba(249, 247, 247, 0.5);
-             color:rgb(249, 243, 243);
-            &:before,&:after{
-                width:50%;
-                height:50%;
-                 border-color:rgb(254, 251, 251);
-            }
-        }
+
 }
 
-select{
+input {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: white;
+    font-size: 28px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    transition: all 1s;
+
+    &:after,
+    &:before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border: 0px solid #fff;
+        transition: all 1s;
+    }
+
+    &:after {
+        top: -1px;
+        left: -1px;
+        border-top: 5px solid black;
+        border-left: 5px solid rgb(11, 11, 11);
+    }
+
+    &:before {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 5px solid rgb(8, 8, 8);
+        border-right: 5px solid rgb(250, 248, 248);
+    }
+
+    &:hover {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background: rgba(249, 247, 247, 0.5);
+        color: rgb(249, 243, 243);
+
+        &:before,
+        &:after {
+            width: 50%;
+            height: 50%;
+            border-color: rgb(254, 251, 251);
+        }
+    }
+}
+
+select {
     width: 100%;
     padding: 10px;
 }
@@ -168,13 +178,14 @@ p {
     border-radius: 10px;
     display: inline-block;
     justify-content: center;
-    max-height: 410px; /* Altura máxima del contenedor */
+    max-height: 410px;
+    /* Altura máxima del contenedor */
     overflow-y: auto;
 }
 
 .div-table::-webkit-scrollbar-thumb {
-    background-color: #808080; 
-    border-radius: 5px; 
+    background-color: #808080;
+    border-radius: 5px;
 }
 
 .fila-titulos {
@@ -193,7 +204,8 @@ p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.270);
 }
 
-button[type="editar"], button {
+button[type="editar"],
+button {
     padding: 10px 20px;
     margin-right: 10px;
     color: #fff;
@@ -202,7 +214,8 @@ button[type="editar"], button {
     cursor: pointer;
 }
 
-button[type="eliminar"], button {
+button[type="eliminar"],
+button {
     padding: 10px 20px;
     margin-right: 10px;
     color: #fff;
