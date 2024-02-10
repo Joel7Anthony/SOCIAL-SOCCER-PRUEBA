@@ -1,20 +1,20 @@
 const pool = require("../config/database.sql");
-const teamstatistics = require("../models/teamstatitic.model");
+const playerstatistics = require("../models/playerstatistic.model");
 const { isLoggedIn } = require('../lib/auth');
 
-const photoTeamstatistics = {};
+const photoPlayerstatistics = {};
 
-photoTeamstatistics.updatePhoto = async (req, res) => {
+photoPlayerstatistics.updatePhoto = async (req, res) => {
     const { id } = req.params;
     let sampleFile;
     let uploadPath;
 
     if(!req.files || Object.keys(req.files).length === 0 ) {
         req.flash('message', 'No ingresas la imagne')
-        return res.status(400).redirect('/teamstatistics');
+        return res.status(400).redirect('/playerstatistics');
     }
     sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/../public/images/img-teamstatistic/' + sampleFile.name;
+    uploadPath = __dirname + '/../public/images/img-playerstatistic/' + sampleFile.name;
 
     console.log(sampleFile);
 
@@ -22,9 +22,9 @@ photoTeamstatistics.updatePhoto = async (req, res) => {
         if (err) return res.status(500).send(err);
         pool.query('UPDATE teamstatistics SET logo = ? WHERE id = ?', [sampleFile.name, id])
         req.flash('success', 'Foto actualizado');
-        res.redirect('/teamstatistics');
+        res.redirect('/playerstatistics');
 
     });
 
 };
-module.exports = photoTeamstatistics
+module.exports = photoPlayerstatistics
