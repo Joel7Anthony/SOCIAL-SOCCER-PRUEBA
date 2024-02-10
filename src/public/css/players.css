@@ -1,0 +1,166 @@
+/* Estilos para agregar jugadores */
+form {
+    max-width: 600px;
+    margin: 0 auto; 
+    background-color: #275925;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(23, 51, 27, 0.7);
+    font-family: 'Bungee', sans-serif;
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido */
+}
+
+.subtitulo {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.label-container {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.select-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: calc(100% - 20px); /* Ajuste para el borde */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #275925;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #b1f5c7; /* Fondo blanco */
+    color: #275925; /* Texto oscuro */
+}
+
+/* Personalización de la apariencia de la flecha del select */
+.select-container::after {
+    content: '\25BC'; /* Flecha hacia abajo */
+    font-size: 20px;
+    color: #275925;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+    pointer-events: none; /* Evita que la flecha sea seleccionable */
+}
+
+input[type="submit"] {
+    width: 30%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #004B08;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1dbe2d;
+}
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    form {
+        padding: 30px;
+    }
+}
+/* Estilos para la lista de jugadores */
+.card {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #275925;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(24, 23, 51, 0.7);
+    font-family: 'Bungee', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  #title h3 {
+    color: #30b847;
+    text-align: center;
+  }
+  
+  .card-body {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .card__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #datos p {
+    color: #ffffff;
+    margin: 5px 0;
+  }
+  
+  #data-one,
+  #data-two,
+  #data-three,
+  #data-four {
+    text-align: center;
+  }
+  
+  .danger,
+  .secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .danger {
+    background-color: #700000;
+  }
+  
+  .danger:hover {
+    background-color: #c0392b;
+  }
+  
+  .secondary {
+    background-color: #004B08;
+  }
+  
+  .secondary:hover {
+    background-color: #1dbe2d;
+  }
+  
+  #add {
+    color: #55c55b;
+    text-decoration: underline;
+  }

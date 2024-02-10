@@ -2,20 +2,21 @@
   @import
   url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 </style>
+    
     <div class="col-md-12" style="margin-bottom: 5px; ">
         <div class="card text-center border border-primary">
-            <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+            <h3 class="card-title text-uppercase" style="color: rgb(255, 255, 255);">
                 Jugadores
             </h3>
         </div>
     </div>
 <link rel="stylesheet" href="/css/players.css" />
 <form action="/players/players" method="POST">
-  <title>Jugadores</title>
+  <title>Jugador</title>
 <body>
 
   <section>
-    <h1>Jugadores</h1>
+    <h1>Agregar Jugadores</h1>
     <form>
         <option value="selecionar equipo XD">Seleciona a tu equipo</option>
         <select id="country" name="country" class="btn btn-secondary col-12" required>
@@ -25,7 +26,7 @@
         {{/each}}        
       </select>
       <label for="playername">Nombre Jugador:</label>
-      <input type="text" id="nombre" name="playername" placeholder="Nombre Jugador" class="form-control" required>
+      <input type="text" id="nombre" name="playername" placeholder="Nombre Jugador" required>
 
       <label for="age">Edad:</label>
       <input type="number" id="edad" name="age" required>
@@ -37,7 +38,7 @@
       <input type="text" id="numeroCamiseta" name="tshirtnumber" required>
 
       <div id="inputBox">
-        <input type="submit" value="Agregar Jugador" id="button1"/>
+        <center><input type="submit" value="Agregar" id="button2" /></center> 
     </div>
     </form>
 
