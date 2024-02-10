@@ -1,6 +1,10 @@
-/*------------------------GUARDAR------------------------------------------*/
+/*------------------------ADD------------------------------------------*/
 .form-group {
     margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
 }
 
 #container {
@@ -13,53 +17,74 @@
     padding: 1em;
     border-radius: 0.5em;
     font-size: 1.3em;
-    background-color: rgb(24, 23, 51);
+    background-color: #4f7358;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
+#country{
+    color: black;
+    background-color: white;
+}
 input {
     width: 97%;
     margin:0.2em;
-    height: 2em;
+    height: 3em;
     border-radius: 0.5em;
 }
 
 label {
-    color: white;
+    color: black;
 }
 
 h2 {
     text-align: center;
-    color: white;
+    color: black;
 }
+
 
 
 #button1 {
     background-color: green;
     margin-left: 0.5em;
+    height: 2em;
 }
 
 #button1:hover {
     background-color: rgb(14, 207, 50);
 }
 
+#cancelButton {
+    background-color: red;
+    margin-left: 0.5em;
+    height: 2em;
+}
+
 
 @media screen and (max-width: 768px) {
     #container {
-        width: 90%;
+        width: 100%;
         padding: 10px;
-        
+        height: 95%;
+        margin-top: 2em;
+        margin-bottom: 4em;
     }
  }
  
  @media screen and (max-width: 600px) {
-    #container, h2, input,label {
-        width: 95%; /* Ajustado para dispositivos móviles */
-        font-size: 0.6em; 
+    h2, input,label {
+        width: 100%; /* Ajustado para dispositivos móviles */
+        font-size: 1.5em; 
+        /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    #cancelButton, #button1 {
+        width: 95%;
+        padding: 8px;
     }
  }
 
 /*-----------------------------------------EDITAR-----------------------*/
+
  .form-group {
     margin-bottom: 10px;
 }
@@ -69,35 +94,36 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
-    margin-top: 1em;
+    margin-top: 3em;
     margin-bottom: 4em;
     padding: 1em;
     border-radius: 0.5em;
     font-size: 1.3em;
-    background-color: rgb(24, 23, 51);
+    background-color: #4f7358;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 input {
     width: 97%;
     margin:0.2em;
-    height: 2em;
+    height: 3em;
     border-radius: 0.5em;
 }
 
 label {
-    color: white;
+    color: black;
 }
 
 h2 {
     text-align: center;
-    color: white;
+    color: black;
 }
 
 
 #button2 {
     background-color: green;
     margin-left: 0.5em;
+    height: 2em;
 }
 
 #button2:hover {
@@ -106,62 +132,75 @@ h2 {
 
 
 @media screen and (max-width: 768px) {
-    #container {
-        width: 90%;
+    #container-edit {
+        width: 100%;
         padding: 10px;
+        height: 95%;
+        margin-top: 2em;
+        margin-bottom: 4em;
     }
  }
  
  @media screen and (max-width: 600px) {
-    #container, h2, input,label {
-        width: 95%; /* Ajustado para dispositivos móviles */
-        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    h2, input,label {
+        width: 100%; /* Ajustado para dispositivos móviles */
+        font-size: 1.5em; 
+        /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+
+    #cancelButton,  #button2 {
+        width: 95%;
+        padding: 8px;
     }
  }
 
 
- /*-------------------------------botones-------------------------------------*/
+ /*-------------------------------TABLA-------------------------------------*/
 
  h3 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
-.card-title text-uppercase {
+#card-title text-uppercase {
     text-align: center;
     color: white;
     height: 50px;
-    background-color: rgb(24, 23, 51);
     margin-top: 3em;
     border-radius: 1em;
     margin-bottom: 1em;
 }
- .buscador {
-    margin: 1em;
-    width: 40%;
-   /* background-color: rgb(24, 23, 51);
-    padding:6px;
-    border-radius: 1em;
-    transform: translateX(140%);*/
+ #boton-añadir {
+    background-color: green;
+    width: 5em;
+    padding: 7px;
+    border-radius: 0.5em;  
  }
- #table {
+
+ #button-add {
+    margin-top: 2em;
+
+ }
+ 
+#table-teamstatistics {
     width: 95%;
     border-collapse: collapse;
     border-radius: 1em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2em ;
+    margin-bottom: 3em ;
     margin-top: 2em;
     color: white;
-    background-color: rgb(24, 23, 51);
+    background-color:#4f7358;
  }
- #encabezado {
+ #header-teamstatistics {
     margin-top: 0.5em;
+   
     
  }
 
  th {
     height: 3em;
-    border-top: 1px solid white;
     border-bottom: 4px solid white ;
     text-align: center;
     padding: 5px;
@@ -172,40 +211,30 @@ h2 {
 
 
  td {
-    border-bottom: 4px solid white;
+    
     text-align: center;
     font-size: 1em;
     padding: 5px;
+    border-bottom: 4px solid white;
  }
 
- /*tr:hover {
-    background-color: rgb(95, 160, 235);
- }*/
 
  .card__image {
     width: 4em;
     height: 4em;
     margin: 5px;
+    margin-left: 1.5em;
  }
 
- #input {
-    width: 15em;
-    color: white;
-    border-radius: 0.5em;
- }
 
- #button-edit {
-    width: 5em;
-    border-radius: 1em ;
- }
 
- .danger {
+ #danger {
     background-color: red;
     padding: 2px;
     border-radius: 0.5em;
  }
 
- .secondary {
+ #secondary {
     background-color: green;
     padding: 2px;
     border-radius: 0.5em;
@@ -223,10 +252,54 @@ h2 {
     background-color: rgb(14, 207, 50);
  }
 
- #boton-añadir {
-    background-color: green;
-    margin: 1em;
-    width: 7em;
-    padding: 5px;
-    position: absolute;
+  #input {
+    width: 15em;
+    color: white;
+    border-radius: 0.5em;
  }
+
+ #button-edit {
+    width: 5em;
+    border-radius: 1em ;
+ }
+
+/*-----------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    #table-teamstatistics {
+        width: 95%;
+        padding: 0.6em;
+    }
+ }
+ 
+ @media screen and (max-width: 600px) {
+    #table-teamstatistics {
+        width: 95%; /* Ajustado para dispositivos móviles */
+        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
+    }
+ 
+     th, #button-add{
+       font-size: 0.6em;
+    }
+    td {
+       font-size: 0.6em;
+    }
+    #button-edit , #boton-añadir {
+        width: 5em;
+        font-size: 0.7em;
+    }
+
+    #secondary, #danger  {
+        width: 5em;
+        font-size: 0.6em;
+        
+    }
+
+    #boton-añadir {
+        width: 5em;
+        font-size: 0.6em;
+        padding: 3px;
+    }
+ }
+ 
+ 
+   

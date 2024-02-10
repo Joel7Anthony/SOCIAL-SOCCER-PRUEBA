@@ -1,18 +1,20 @@
- <link rel="stylesheet" href="/css/teamstatistics.css">
-    <div class="card text-center border border-primary">
-     <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
-            Lista de estadisticas
-    </h3>
-    </div>
-</div> 
+<link rel="stylesheet" href="/css/teamstatistics.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-<button><a href="/teamstatistics/add" id="boton-añadir" style="text-decoration: none; color: inherit;">Añadir  </a></button>
-<table id="table">
-    <thead id="encabezado">
-       
+<div class="card text-center border border-primary">
+    <h3 id="card-title text-uppercase" >
+        Lista de estadisticas
+    </h3>
+</div>
+
+<div id="button-add">Añadir equipo: <button><a href="/teamstatistics/add" id="boton-añadir" style="text-decoration: none; color: inherit;">Añadir
+    </a></button>
+</div>
+<table id="table-teamstatistics">
+    <thead id="header-teamstatistics">
+
         <tr>
             <th>Logo</th>
-            <th>equipo</th>
             <th>Posición de la liga</th>
             <th>Goles</th>
             <th>Fecha de Fundación</th>
@@ -21,38 +23,43 @@
         </tr>
     </thead>
     <tbody>
-{{#each teamstatistics}}
-<tr>
-    <td>
-    {{#if logo}}
-    <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
-    {{else}}
-    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
-    {{/if}}
-    </td>
-    <td>{{#each teams}}
-                <option value="{{name}}">{{name}}</option>
-        {{/each}}</td>
-    <td><p>  {{league_position}}</p></td>
-    <td><p>  {{goles}}</p></td>
-    <td><p>  {{foundation_date}}</p></td>
-    <td><p>  {{number_players}}</p></td>
-    <td>
-    <center>
-        <a href="/teamstatistics/delete-teamstatistics/{{id}}" class="danger">Eliminar</a>
-        <a href="/teamstatistics/edit-teamstatistics/{{id}}" class="secondary">Editar  </a> 
-        <form action="/teamstatistics/photo-teamstatistic/{{id}}" method="POST" encType="multipart/form-data">
-            <input type="file" id="input" name="sampleFile" accept="image/*" />
-            <input type="submit" id="button-edit">
-        </form>
-    </center>
-    </td>
-    </tr>
+        {{#each teamstatistics}}
+        <tr>
+            <td>
+                {{#if logo}}
+                <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
+                {{else}}
+                <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+                {{/if}}
+            </td>
+            <td>
+                <p> {{league_position}}</p>
+            </td>
+            <td>
+                <p> {{goles}}</p>
+            </td>
+            <td>
+                <p> {{foundation_date}}</p>
+            </td>
+            <td>
+                <p> {{number_players}}</p>
+            </td>
+            <td>
+                <center>
+                    <a href="/teamstatistics/delete-teamstatistics/{{id}}" id="danger">Eliminar</a>
+                    <a href="/teamstatistics/edit-teamstatistics/{{id}}" id="secondary">Editar </a>
+                    <form action="/teamstatistics/photo-teamstatistic/{{id}}" method="POST"
+                        encType="multipart/form-data">
+                        <input type="file" id="input" name="sampleFile" accept="image/*" />
+                        <input type="submit" id="button-edit">
+                    </form>
+                </center>
+            </td>
+        </tr>
 
-{{else}}
-<center > <p>No hay registro guardados a un </p>
-    <a href="/teamstatistics/add" id="add" type="button"> Agrega uno haciendo click aqui</a>
-</center>
-{{/each}}
-
-
+        {{else}}
+        <center>
+            <p>No hay registro guardados a un </p>
+            <a href="/teamstatistics/add" id="add" type="button"> Agrega uno haciendo click aqui</a>
+        </center>
+        {{/each}}

@@ -1,8 +1,10 @@
 <link rel="stylesheet" href="/css/playerstatistics.css">
 <form action="/playerstatistics/playerstatistics" method="POST">
-<div id="container">
 
-    <h2>Estadisticas Jugador</h2>
+<h1>Estadisticas de Jugador</h1>
+<div id="container">
+    <h2>Resultados</h2>
+    
     <div class="form-group">
         <label for="posicion">Ataque: </label><br>
         <input type="number" name="attacK" class="form-control" placeholder="Ataque" autofocus />
@@ -61,6 +63,9 @@
         <input type="submit" value="Guardar" id="button1"/>
     </div>
 
+    <div >
+            <input type="submit" value="Cancelar" id="cancelButton"/>
+    </div>
 </div>
 </form>
 
