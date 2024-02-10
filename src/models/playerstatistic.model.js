@@ -5,7 +5,7 @@ const playerstatistics = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true,
         },
-
+        photo:type.STRING,
         attacK: type.STRING,
         speed: type.STRING,
         shootingpower: type.STRING,
