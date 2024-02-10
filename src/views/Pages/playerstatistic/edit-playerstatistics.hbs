@@ -1,76 +1,69 @@
-<link rel="stylesheet" href="/css/teamstatistics.css">
-<form action="/teamstatistics/edit-teamstatistics/{{playerstatistic.id}}" method="POST">
+<link rel="stylesheet" href="/css/playerstatistics.css">
+<form action="/playerstatistics/edit-playerstatistics/{{playerstatistic.id}}" method="POST">
     <div id="container-edit">
     <h2>Editar resultados</h2>
 
     <div class="form-group">
         <label for="posicion">Ataque:</label>
-        <input type="text" value="{{playerstatistic.attacK}}" name="attacK" class="form-control"
+        <input type="number" value="{{playerstatistic.attacK}}" name="attacK" class="form-control"
                     placeholder="Ataque" />
     </div>
     <div class="form-group">
         <label for="pts">Velocidad:</label>
-        <input type="text" value="{{playerstatistic.speed}}" name="speed" class="form-control"
+        <input type="number" value="{{playerstatistic.speed}}" name="speed" class="form-control"
                     placeholder="Velocidad" />
     </div>
     <div class="form-group">
         <label for="totales-gf">Potencia de tiro:</label>
-        <input type="text" value="{{playerstatistic.shootingpower}}" name="shootingpower" class="form-control"
+        <input type="number" value="{{playerstatistic.shootingpower}}" name="shootingpower" class="form-control"
                     placeholder="Potencia de tiro" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Resistencia:</label>
-        <input type="text" value="{{playerstatistic.number_players}}" name="name" class="form-control"
-                    placeholder="Resistenciar" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Resistencia:</label>
-        <input type="text" value="{{playerstatistic.number_players}}" name="name" class="form-control"
-                    placeholder="Resistenciar" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Resistencia:</label>
-        <input type="text" value="{{playerstatistic.endurance}}" name="endurance" class="form-control"
+        <input type="number" value="{{playerstatistic.endurance}}" name="endurance" class="form-control"
                     placeholder="Resistencia" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Control del Balón:</label>
-        <input type="text" value="{{playerstatistic.ballControl}}" name="ballControl" class="form-control"
+        <input type="number" value="{{playerstatistic.ballControl}}" name="ballControl" class="form-control"
                     placeholder="Control del Balón" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Agresión:</label>
-        <input type="text" value="{{playerstatistic.assault}}" name="assault" class="form-control"
+        <input type="number" value="{{playerstatistic.assault}}" name="assault" class="form-control"
                     placeholder="Agresión" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Pase corto:</label>
-        <input type="text" value="{{playerstatistic.shortpass}}" name="shortpass" class="form-control"
+        <input type="number" value="{{playerstatistic.shortpass}}" name="shortpass" class="form-control"
                     placeholder="Pase corto" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Pase largo:</label>
-        <input type="text" value="{{playerstatistic.passover}}" name="passover" class="form-control"
+        <input type="number" value="{{playerstatistic.passover}}" name="passover" class="form-control"
                     placeholder="Pase largo" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Dribbling:</label>
-        <input type="text" value="{{playerstatistic.dribbling}}" name="dribbling" class="form-control"
+        <input type="number" value="{{playerstatistic.dribbling}}" name="dribbling" class="form-control"
                     placeholder="dribbling" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Agilidad:</label>
-        <input type="text" value="{{playerstatistic.agility}}" name="agility" class="form-control"
+        <input type="number" value="{{playerstatistic.agility}}" name="agility" class="form-control"
                     placeholder="Agilidad" />
     </div>
     <div class="form-group">
         <label for="totales-gc">Equilibrio:</label>
-        <input type="text" value="{{playerstatistic.balance}}" name="balance" class="form-control"
+        <input type="number" value="{{playerstatistic.balance}}" name="balance" class="form-control"
                     placeholder="Equilibrio" />
     </div>
     
     <div id="inputBox">
-        <input type="submit" value="Guardar" />
+        <input type="submit" value="Guardar" id="button2" />
+    </div>
+    <div >
+            <input type="submit" value="Cancelar" id="cancelButton"/>
     </div>
 </div>
 </form>

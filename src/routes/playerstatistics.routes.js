@@ -16,6 +16,6 @@ router.post('/edit-playerstatistics/:id',isLoggedIn, playerstatisticsController.
 
 
 //views photo
-router.post('/photo-playerstatistics/:id', photoPlayerstatisticsController.updatePhoto);
+router.post('/photo-playerstatistic/:id', photoPlayerstatisticsController.updatePhoto);
 
 module.exports = router;
