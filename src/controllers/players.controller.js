@@ -13,6 +13,14 @@ Players.getListPlayers = async (req, res) => {
   res.render('Pages/player/list-players', { players });
 };
 
+
+//agregar
+Players.getAddPlayers = async (req, res) => {
+  const teams = await pool.query('SELECT * FROM  teams');
+  res.render('Pages/player/players', { teams });
+};
+
+
 Players.postPlayer = async (req, res) => {
   const id=req.user.id
   const {
@@ -66,10 +74,5 @@ Players.updatePlayer = async (req, res) => {
   res.redirect('/players/list-players');
 };
 
-
-Players.getAddPlayers = async (req, res) => {
-  const teams = await pool.query('SELECT * FROM  teams');
-  res.render('Pages/player/players', { teams });
-};
 
 module.exports = Players;

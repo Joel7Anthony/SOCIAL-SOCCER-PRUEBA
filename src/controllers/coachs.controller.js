@@ -3,7 +3,7 @@ const coachs = require("../models/coach.model");
 const { isLoggedIn } = require('../lib/auth');
 const teams = require("../models/team.model");
 
-const  Coachs = {};
+const Coachs = {};
 
 Coachs.getListCoachs = async (req, res) => {
     const coachs = await pool.query("SELECT * FROM  teamscoachs");
@@ -12,22 +12,22 @@ Coachs.getListCoachs = async (req, res) => {
 
 Coachs.getAddCoachs = async (req, res) => {
     const teams = await pool.query('SELECT * from teams')
-    res.render("Pages/coach/coachs",{ teams});
+    res.render("Pages/coach/coachs", { teams });
 };
 
 
 
-Coachs.postCoach= async (req, res) => {
+Coachs.postCoach = async (req, res) => {
     const id = req.user.id
-    const { name_coach, coach_mail, phone, country } =
+    const { name_coach, coach_mail, phonecoach, country } =
         req.body;
     const newLink = {
         name_coach,
         coach_mail,
-        phonecoach:phone,
-        teamIdteams:country,
+        phonecoach,
+        teamIdteams: country,
         userId: id
-        
+
     };
     await pool.query("INSERT INTO coachs set ?", [newLink]);
     //Flash
@@ -50,9 +50,9 @@ Coachs.getCoach = async (req, res) => {
 };
 
 //se mostrara actualizado en la lista//
-Coachs.updateCoach= async (req, res) => {
+Coachs.updateCoach = async (req, res) => {
     const { idcoachs } = req.params;
-    const { name_coach, coach_mail, phonecoach, coaching_team} = req.body;
+    const { name_coach, coach_mail, phonecoach, coaching_team } = req.body;
     const newLink = { name_coach, coach_mail, phonecoach, coaching_team };
     console.log({ idcoachs, newLink });
     await pool.query("UPDATE coachs set ? WHERE idcoachs = ?", [newLink, idcoachs]);
