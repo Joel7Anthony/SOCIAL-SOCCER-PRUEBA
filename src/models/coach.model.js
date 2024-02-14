@@ -9,7 +9,6 @@ const coachs = (sequelize, type) => {
         name_coach: type.STRING,
         coach_mail: type.STRING,
         phonecoach: type.INTEGER,
-        coaching_team: type.STRING,
         photocoach:type.STRING,
 
         createCalendars: {
