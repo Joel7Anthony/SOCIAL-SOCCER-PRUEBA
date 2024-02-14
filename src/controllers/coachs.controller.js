@@ -52,8 +52,8 @@ Coachs.getCoach = async (req, res) => {
 //se mostrara actualizado en la lista//
 Coachs.updateCoach = async (req, res) => {
     const { idcoachs } = req.params;
-    const { name_coach, coach_mail, phonecoach, coaching_team } = req.body;
-    const newLink = { name_coach, coach_mail, phonecoach, coaching_team };
+    const { name_coach, coach_mail, phonecoach,  } = req.body;
+    const newLink = { name_coach, coach_mail, phonecoach,  };
     console.log({ idcoachs, newLink });
     await pool.query("UPDATE coachs set ? WHERE idcoachs = ?", [newLink, idcoachs]);
     req.flash("success", "Editado Correctamente");

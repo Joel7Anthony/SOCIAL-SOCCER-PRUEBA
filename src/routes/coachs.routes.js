@@ -14,7 +14,6 @@ router.get('/edit-coachs/:idcoachs',isLoggedIn, coachsController.getCoach);
 router.post('/edit-coachs/:idcoachs',isLoggedIn, coachsController.updateCoach);
 
 
-
 //views photo
 router.post('/photo-coach/:idcoachs', isLoggedIn, photoCoahsController.updatePhoto);
 
