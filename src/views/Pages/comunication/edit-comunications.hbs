@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/comunication.css">
 
-<form action="/comunications/edit-comunications/{{comunication.id}}" method="POST">  
+<form action="/comunications/edit-comunications/{{comunication.idcomunica}}" method="POST">  
 
         <h2>Editar Noticia</h2>
         <label for="titulo">Título de la Noticia</label>
@@ -11,6 +11,14 @@
 
         <label for="autor">Autor de la Noticia</label>
         <input type="text" value="{{comunication.newsauthor}}" name="newsauthor" class="form-control" placeholder="Editar Autor" />
+
+        <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+        <select id="country" name="country" class="btn btn-secondary col-12" required>
+         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+        {{#each teams}}
+                <option value="{{idteams}}">{{name_president}}</option>
+        {{/each}}        
+        </select>
 
         <label for="fecha">Fecha de Publicación</label>
         <input type="date" value="{{comunication.publicationdate}}"  name="publicationdate" class="form-control" placeholder="Editar Fecha" />

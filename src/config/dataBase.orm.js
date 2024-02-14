@@ -113,14 +113,16 @@ players.belongsTo(teams);
 teams.hasMany(playerstatistics);
 playerstatistics.belongsTo(teams);
 
+teams.hasMany(comunications);
+comunications.belongsTo(teams);
+
 /*teams.hasMany(games);
 games.belongsTo(teams);
 
 teams.hasMany( teamstatitics);
-teamstatitics.belongsTo(teams);
+teamstatitics.belongsTo(teams);*/
 
-temas.hasMany(comunications);
-comunications.belongsTo(teams);*/
+
 
 // Exportar el objeto sequelize
 module.exports = sequelize;
