@@ -36,26 +36,26 @@ Coachs.postCoach= async (req, res) => {
 };
 
 Coachs.deleteCoach = async (req, res) => {
-    const { id } = req.params;
-    await pool.query("DELETE FROM coachs WHERE ID = ?", [id]);
+    const { idcoachs } = req.params;
+    await pool.query("DELETE FROM coachs WHERE idcoachs = ?", [idcoachs]);
     req.flash("success", "Eliminado correctamente");
     res.redirect("/coachs/list-coachs");
 };
 
 //actualizar//
 Coachs.getCoach = async (req, res) => {
-    const { id } = req.params;
-    const coach = await pool.query("SELECT * FROM coachs WHERE id = ?", [id]);
+    const { idcoachs } = req.params;
+    const coach = await pool.query("SELECT * FROM coachs WHERE idcoachs = ?", [idcoachs]);
     res.render("Pages/coach/edit-coachs", { coach: coach[0] });
 };
 
 //se mostrara actualizado en la lista//
 Coachs.updateCoach= async (req, res) => {
-    const { id } = req.params;
-    const { name_coach, coach_mail, phone, coaching_team} = req.body;
-    const newLink = { name_coach, coach_mail, phone, coaching_team };
-    console.log({ id, newLink });
-    await pool.query("UPDATE coachs set ? WHERE id = ?", [newLink, id]);
+    const { idcoachs } = req.params;
+    const { name_coach, coach_mail, phonecoach, coaching_team} = req.body;
+    const newLink = { name_coach, coach_mail, phonecoach, coaching_team };
+    console.log({ idcoachs, newLink });
+    await pool.query("UPDATE coachs set ? WHERE idcoachs = ?", [newLink, idcoachs]);
     req.flash("success", "Editado Correctamente");
     res.redirect("/coachs/list-coachs");
 };

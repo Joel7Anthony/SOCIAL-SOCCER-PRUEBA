@@ -6,8 +6,8 @@
     <p>{{name_president}}</p>
     <div class="noticia-img">
 
-        {{#if photo}}
-        <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
+        {{#if photocoach}}
+        <img class="card__image" src="/{{photocoach}}" loading="lazy" alt="User Profile">
         {{else}}
         <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
         {{/if}}
@@ -17,16 +17,15 @@
 
     <p>{{name_coach}}</p>
     <p>{{coach_mail}}</p>
-    <p>{{phone}}</p>
-    <p>{{coaching_team}}</p>
+    <p>{{phonecoach}}</p>
     <p>{{name_team}}</p>
 
 
     <center>
-        <a href="/coachs/delete-coachs/{{id}}" style="text-decoration: none; color: inherit;"
+        <a href="/coachs/delete-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;"
             class="danger">Eliminar</a>
-        <a href="/coachs/edit-coachs/{{id}}" style="text-decoration: none; color: inherit;" class="secondary">Editar</a>
-        <form action="/coachs/photo-coach/{{id}}" method="POST" encType="multipart/form-data">
+        <a href="/coachs/edit-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;" class="secondary">Editar</a>
+        <form action="/coachs/photo-coach/{{idcoachs}}" method="POST" encType="multipart/form-data">
             <input type="file" name="sampleFile" accept="image/*" />
             <input type="submit">
         </form>
