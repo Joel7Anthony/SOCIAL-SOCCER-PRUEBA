@@ -110,10 +110,10 @@ coachs.belongsTo(teams);
 teams.hasMany(players);
 players.belongsTo(teams);
 
-/*teams.hasMany(playerstatistics);
+teams.hasMany(playerstatistics);
 playerstatistics.belongsTo(teams);
 
-teams.hasMany(games);
+/*teams.hasMany(games);
 games.belongsTo(teams);
 
 teams.hasMany( teamstatitics);

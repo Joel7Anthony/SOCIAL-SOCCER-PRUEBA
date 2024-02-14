@@ -1,6 +1,6 @@
 <div class="col-md-12" style="margin-bottom: 5px; ">
     <div class="card text-center border border-primary">
-        <h3 class="card-title text-uppercase" style="color: rgb(44, 142, 253);">
+        <h3 class="card-title text-uppercase" style="color: rgb(10, 10, 10);">
             Editar al equipo
         </h3>
     </div>
@@ -38,8 +38,21 @@
                 <input type="text" value="{{team.rol}}" name="rol" class="form-control"
                     placeholder="Rol" />
             </div>
+            <label for="categoria">SELECCIONA TU CATEGORIA: </label>
+       
+      <select name="categori" id="categori">
+        <option value="Sub 12">Sub 12</option>
+        <option value="Sub 15">Sub 15</option>
+        <option value="Sub 18">Sub 18</option>
+        <option value="Segunda"selected>Segunda</option>
+        <option value="Primera">Primera</option>
+        <option value="Maxima">Maxima</option>
+        <option value="Campion de Camepones">Campeon de Camepones</option>
+        <option value="Lugilla">Liguilla</option>
+        
+      </select>
             <br>
-            
+            <br>
             <div id="inputBox">
               <center><input type="submit" value="Guardar" /></center>
             </div>

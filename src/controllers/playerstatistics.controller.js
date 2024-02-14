@@ -1,6 +1,7 @@
 const pool = require("../config/database.sql");
 const playerstatistics = require("../models/playerstatistic.model");
 const { isLoggedIn } = require('../lib/auth');
+const teams = require("../models/team.model");
 
 const Playerstatistics = {};
 
@@ -12,15 +13,18 @@ Playerstatistics.getListPlayerstatistics = async (req, res) => {
 
 //agregar
 Playerstatistics.getAddPlayerstatistics = async (req, res) => {
-    res.render('Pages/playerstatistic/playerstatistics');
+  const teams = await pool.query ('SELECT * FROM teams'); 
+    res.render('Pages/playerstatistic/playerstatistics', {teams});
 };
 
 //Publicar
 Playerstatistics.postPlayerstatistic = async (req, res) => {
-    const {
-       attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
+  const id= req.user.id 
+  const {
+  country, attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
     } = req.body;
-    const newLink = {
+    const newLink = { teamIdteams:country,
+      userId: id,
         attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
     };
     await pool.query('INSERT INTO playerstatistics set ? ', [newLink]);
@@ -30,28 +34,28 @@ Playerstatistics.postPlayerstatistic = async (req, res) => {
 
 //Eliminar Publicado 
 Playerstatistics.deletePlayerstatistic = async (req, res) => {
-    const { id } = req.params;
-    await pool.query("DELETE FROM playerstatistics WHERE ID = ?", [id]);
+    const { idstats } = req.params;
+    await pool.query("DELETE FROM playerstatistics WHERE idstats = ?", [idstats]);
     req.flash('success', 'Eliminado');
     res.redirect("/playerstatistics/list-playerstatistics");
   };
   
   //Actualizar Comunicado 
   Playerstatistics.getPlayerstatistic = async (req, res) => {
-    const { id } = req.params;
-    const playerstatistic = await pool.query('SELECT * FROM playerstatistics WHERE id = ?', [id]);
+    const { idstats } = req.params;
+    const playerstatistic = await pool.query('SELECT * FROM playerstatistics WHERE idstats = ?', [idstats]);
     res.render('Pages/playerstatistic/edit-playerstatistics', { playerstatistic: playerstatistic[0] });
   };
   
   //Se amostrara lo que se actualizao 
   Playerstatistics.updatePlayerstatistic = async (req, res) => {
-    const { id } = req.params;
+    const { idstats } = req.params;
     const {attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance } = req.body;
     const newLink = {
         attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
     };
-    console.log({ id, newLink });
-    await pool.query("UPDATE playerstatistics set ? WHERE id = ?", [newLink, id]);
+    console.log({ idstats, newLink });
+    await pool.query("UPDATE playerstatistics set ? WHERE idstats = ?", [newLink, idstats]);
     req.flash('success', 'Actualizado');
     res.redirect('/playerstatistics/list-playerstatistics');
   };

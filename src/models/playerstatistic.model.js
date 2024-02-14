@@ -1,6 +1,6 @@
 const playerstatistics = (sequelize, type) => {
     return sequelize.define('playerstatistics', {
-        id: {
+        idstats: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,

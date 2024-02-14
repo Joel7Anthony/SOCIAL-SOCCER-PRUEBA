@@ -50,12 +50,12 @@
     <td><p>  {{dribbling}}</p></td>
     <td><p>  {{agility}}</p></td>
     <td><p>  {{balance}}</p></td>
-    
+    <td><p>{{name_team}}</p></td>
     <td>
     <center>
-        <a href="/playerstatistics/delete-playerstatistics/{{id}}" id="danger">Eliminar</a>
-        <a href="/playerstatistics/edit-playerstatistics/{{id}}" id="secondary">Editar</a> 
-        <form action="/playerstatistics/photo-playerstatistic/{{id}}" method="POST" encType="multipart/form-data">
+        <a href="/playerstatistics/delete-playerstatistics/{{idstats}}" id="danger">Eliminar</a>
+        <a href="/playerstatistics/edit-playerstatistics/{{idstats}}" id="secondary">Editar</a> 
+        <form action="/playerstatistics/photo-playerstatistic/{{idstats}}" method="POST" encType="multipart/form-data">
             <input type="file" id="input" name="sampleFile" accept="image/*" />
             <input type="submit" id="button-edit">
         </form>
