@@ -6,24 +6,27 @@ const teams = require("../models/team.model");
 const  Coachs = {};
 
 Coachs.getListCoachs = async (req, res) => {
-    const coachs = await pool.query("SELECT * FROM  coachs");
+    const coachs = await pool.query("SELECT * FROM  teamscoachs");
     res.render("Pages/coach/list-coachs", { coachs });
 };
 
 Coachs.getAddCoachs = async (req, res) => {
-    res.render("Pages/coach/coachs");
+    const teams = await pool.query('SELECT * from teams')
+    res.render("Pages/coach/coachs",{ teams});
 };
 
 
 
 Coachs.postCoach= async (req, res) => {
-    const { name_coach, coach_mail, phone, coaching_team } =
+    const id = req.user.id
+    const { name_coach, coach_mail, phone, country } =
         req.body;
     const newLink = {
         name_coach,
         coach_mail,
-        phone,
-        coaching_team,
+        phonecoach:phone,
+        teamIdteams:country,
+        userId: id
         
     };
     await pool.query("INSERT INTO coachs set ?", [newLink]);

@@ -17,7 +17,13 @@ Players.postPlayer = async (req, res) => {
     playername, age,birthdate,photo,tshirtnumber,position,positiondetail
   } = req.body;
   const newLink = {
-    playername, age,birthdate,photo,tshirtnumber,position,positiondetail
+    playername, 
+    age,
+    birthdate,
+    photo,
+    tshirtnumber,
+    position,
+    positiondetail
   };
   await pool.query('INSERT INTO players set ?', [newLink]);
   //Flash

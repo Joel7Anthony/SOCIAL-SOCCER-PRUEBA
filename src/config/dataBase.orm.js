@@ -35,6 +35,7 @@ const splitdetailsModel = require('../models/splitdetail.model')
 const participantsModel = require('../models/participant.model')
 const coachsModel = require('../models/coach.model.js');
 
+
 // Autenticar y sincronizar
 sequelize.authenticate()
   .then(() => {
@@ -92,7 +93,7 @@ users.hasMany(splitstates);
 splitstates.belongsTo(users);
 
 users.hasMany(games);
-games.belongsTo(users)
+games.belongsTo(users);
 
 users.hasMany(splitdetails);
 splitdetails.belongsTo(users);
@@ -101,7 +102,25 @@ users.hasMany(participants);
 participants.belongsTo(users);
 
 users.hasMany(coachs);
-coachs.belongsTo(users)
+coachs.belongsTo(users);
+
+teams.hasMany(coachs);
+coachs.belongsTo(teams);
+
+/* teams.hasMany(players);
+players.belongsTo(teams);
+
+teams.hasMany(playerstatistics);
+playerstatistics.belongsTo(teams);
+
+teams.hasMany(games);
+games.belongsTo(teams);
+
+teams.hasMany( teamstatitics);
+teamstatitics.belongsTo(teams);
+
+temas.hasMany(comunications);
+comunications.belongsTo(teams);*/
 
 // Exportar el objeto sequelize
 module.exports = sequelize;
