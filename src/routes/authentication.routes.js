@@ -5,12 +5,11 @@ const passport = require('passport');
 const pool = require('../config/database.sql');
 const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 const users = require('../models/user.model');
+const { viwssingin } = require('../controllers/auth.controller');
 
 
 
-router.get('/signin', isNotLoggedIn, (req, res) => {
-  res.render('auth/signin');
-});
+router.get('/signin', isNotLoggedIn, viwssingin );
 
 router.post('/signin', isNotLoggedIn, async (req, res, next) => {
 
@@ -39,6 +38,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/signin');
   });
 });
+
 
 
 

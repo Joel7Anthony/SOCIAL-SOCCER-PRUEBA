@@ -3,7 +3,7 @@ form {
     max-width: 600px;
     margin: 0 auto; 
     background-color: #275925;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(23, 51, 27, 0.7);
     font-family: 'Bungee', sans-serif;
@@ -122,21 +122,22 @@ input[type="submit"]:hover {
   }
   
   #datos p {
-    color: #ffffff;
+    color: #004B08;
     margin: 5px 0;
   }
   
   #data-one,
   #data-two,
   #data-three,
-  #data-four {
+  #data-four,
+  #data-five {
     text-align: center;
   }
   
   .danger,
   .secondary {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 20px;
     margin: 0 10px;
     border-radius: 5px;
     text-decoration: none;

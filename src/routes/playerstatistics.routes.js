@@ -9,13 +9,13 @@ router.get('/', isLoggedIn, playerstatisticsController.getListPlayerstatistics);
 router.post('/playerstatistics', isLoggedIn, playerstatisticsController.postPlayerstatistic);
 router.get('/add', isLoggedIn, playerstatisticsController.getAddPlayerstatistics);
 router.get('/list-playerstatistics', isLoggedIn,playerstatisticsController.getListPlayerstatistics);
-router.get('/delete-playerstatistics/:id', isLoggedIn, playerstatisticsController.deletePlayerstatistic);
-router.get('/edit-playerstatistics/:id', isLoggedIn, playerstatisticsController.getPlayerstatistic);
-router.post('/edit-playerstatistics/:id',isLoggedIn, playerstatisticsController.updatePlayerstatistic);
+router.get('/delete-playerstatistics/:idstats', isLoggedIn, playerstatisticsController.deletePlayerstatistic);
+router.get('/edit-playerstatistics/:idstats', isLoggedIn, playerstatisticsController.getPlayerstatistic);
+router.post('/edit-playerstatistics/:idstats',isLoggedIn, playerstatisticsController.updatePlayerstatistic);
 
 
 
 //views photo
-router.post('/photo-playerstatistics/:id', photoPlayerstatisticsController.updatePhoto);
+router.post('/photo-playerstatistic/:idstats', photoPlayerstatisticsController.updatePhoto);
 
 module.exports = router;

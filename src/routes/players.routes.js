@@ -9,14 +9,14 @@ router.get('/', isLoggedIn, playersController.getListPlayers);
 router.post('/players', isLoggedIn,playersController.postPlayer);
 router.get('/add', isLoggedIn, playersController.getAddPlayers);
 router.get('/list-players', isLoggedIn,playersController.getListPlayers);
-router.get('/delete-players/:id', isLoggedIn,playersController.deletePlayer);
-router.get('/edit-players/:id', isLoggedIn,playersController.getPlayer);
-router.post('/edit-players/:id', isLoggedIn,playersController.updatePlayer);
+router.get('/delete-players/:idplayers', isLoggedIn,playersController.deletePlayer);
+router.get('/edit-players/:idplayers', isLoggedIn,playersController.getPlayer);
+router.post('/edit-players/:idplayers', isLoggedIn,playersController.updatePlayer);
 
 
 
 
 //views photo
-router.post('/photo-player/:id', isLoggedIn, photoPlayersController.updatePhoto);
+router.post('/photo-player/:idplayers', isLoggedIn, photoPlayersController.updatePhoto);
 
 module.exports = router;

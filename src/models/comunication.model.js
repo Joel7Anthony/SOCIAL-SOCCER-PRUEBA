@@ -1,6 +1,6 @@
 const comunications = (sequelize, type) => {
     return sequelize.define('comunications', {
-        id: {
+        idcomunica: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,

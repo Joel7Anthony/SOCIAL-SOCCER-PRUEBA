@@ -7,7 +7,7 @@
 </div>
 <link rel="stylesheet" href="/css/teams.css">
 <div class="card-body">
-    <form action="/coachs/edit-coachs/{{coach.id}}" method="POST">
+    <form action="/coachs/edit-coachs/{{coach.idcoachs}}" method="POST">
         <div id="logo"></div>
         <div id="title"></div>
         <div id="sub-title"></div>
@@ -24,15 +24,10 @@
             </div>
             <div id="inputBox">
                 <label>TELEFONO</label>
-                <input type="text" value="{{coach.phone}}" class="form-control" name="phone"
+                <input type="text" value="{{coach.phonecoach}}" class="form-control" name="phone"
                     placeholder="Telefono" autofocus />
             </div>
            
-            <div id="inputBox">
-                <label>ENTRENADOR EQUIPO</label>
-                <input type="date" value="{{coach.coaching_team}}" name="coaching_team" class="form-control"
-                    placeholder="Entrenador Equipo" />
-            </div>
            
             <br>
             

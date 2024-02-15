@@ -9,77 +9,40 @@
         </a></button>
 </div>
 {{#each playerstatistics}}
-<div id="container-players">
+    <tr>
+    <td>
+    {{#if logo}}
+    <img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
+    {{else}}
+    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+    {{/if}}
+    </td>
+
+    <td><p>   {{attacK}}</p></td>
+    <td><p> {{speed}}</p></td>
+    <td><p>  {{shootingpower}}</p></td>
+    <td><p>  {{endurance}}</p></td>
+    <td><p>  {{ballControl}}</p></td>
+    <td><p>  {{assault}}</p></td>
+    <td><p>  {{shortpass}}</p></td>
+    <td><p>  {{passover}}</p></td>
+    <td><p>  {{dribbling}}</p></td>
+    <td><p>  {{agility}}</p></td>
+    <td><p>  {{balance}}</p></td>
     
-{{#if logo}}
-<img class="card__image" src="/{{logo}}" loading="lazy" alt="User Profile">
-{{else}}
-<img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
-{{/if}}
+    <td>
+    <center>
+        <a href="/playerstatistics/delete-playerstatistics/{{id}}" id="danger">Eliminar</a>
+        <a href="/playerstatistics/edit-playerstatistics/{{id}}" id="secondary">Editar</a> 
+        <form action="/playerstatistics/photo-playerstatistic/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" id="input" name="sampleFile" accept="image/*" />
+            <input type="submit" id="button-edit">
+        </form>
+    </center>
+    </td>
 
-<div id="line"><p>ESTADISTICAS</p></div>
- <table id="data-one">
-    <tr>
-        <td>Ataque</td>
-        <td>{{attacK}}</td>
-    </tr>
-    <tr>
-        <td>Velocidad</td>
-        <td>{{speed}}</td>
-    </tr>
-    <tr>
-        <td>Potencia de tiro</td>
-        <td>{{shootingpower}}</td>
-    </tr>
-    <tr>
-        <td>Resistencia</td>
-        <td>{{endurance}}</td>
-    </tr>
-    <tr>
-        <td>Control del balón</td>
-        <td>{{ballControl}}</td>
-    </tr>
- </table>
+</tr>
 
- <table id="data-two">
-    <tr>
-        <td>Agresión</td>
-        <td>{{assault}}</td>
-    </tr>
-    <tr>
-        <td>Pase corto</td>
-        <td>{{shortpass}}</td>
-    </tr>
-    <tr>
-        <td>Pase largo</td>
-        <td>{{passover}}</td>
-    </tr>
-    <tr>
-        <td>Dribbling</td>
-        <td>{{dribbling}}</td>
-    </tr>
-    <tr>
-        <td>Agilidad</td>
-        <td>{{agility}}</td>
-    </tr>
-    <tr>
-        <td>Equilibrio</td>
-        <td>{{balance}}</td>
-    </tr>
- </table>
- <br>
- <br>
-<div id="card-button">
-<center>
-    <a href="/playerstatistics/delete-playerstatistics/{{id}}" id="danger">Eliminar</a>
-    <a href="/playerstatistics/edit-playerstatistics/{{id}}" id="secondary">Editar</a>
-    <form action="/playerstatistics/photo-playerstatistic/{{id}}" method="POST" encType="multipart/form-data">
-        <input type="file" id="input" name="sampleFile" accept="image/*" />
-        <input type="submit" id="button-edit">
-    </form>
-</center>
-</div>
-</div>
 {{else}}
 
 {{/each}}

@@ -1,6 +1,6 @@
 const coachs = (sequelize, type) => {
     return sequelize.define('coachs', {
-        id: {
+        idcoachs: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -8,9 +8,8 @@ const coachs = (sequelize, type) => {
         
         name_coach: type.STRING,
         coach_mail: type.STRING,
-        phone: type.INTEGER,
-        coaching_team: type.STRING,
-        photo:type.STRING,
+        phonecoach: type.INTEGER,
+        photocoach:type.STRING,
 
         createCalendars: {
             type: 'TIMESTAMP',

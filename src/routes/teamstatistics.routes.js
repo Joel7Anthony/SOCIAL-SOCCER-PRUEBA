@@ -14,5 +14,5 @@ router.get('/delete-teamstatistics/:id',isLoggedIn,teamstatisticsController.dele
 router.get('/edit-teamstatistics/:id',isLoggedIn,teamstatisticsController.getTeamstatistic);
 router.post('/edit-teamstatistics/:id',isLoggedIn,teamstatisticsController.updateTeamstatistic);
 
-router.post('/photo-teamstatistics/:id',isLoggedIn,  photoTeamstatisticsController.updatePhoto);
+router.post('/photo-teamstatistic/:id',isLoggedIn,  photoTeamstatisticsController.updatePhoto);
 module.exports = router;

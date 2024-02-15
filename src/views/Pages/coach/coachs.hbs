@@ -3,71 +3,42 @@
   <link rel="stylesheet" type="text/css" href="/css/teams.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
 <body>
   <header>
     <nav class="navbar navbar-expand">
-        <div class="container">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                ATRAS
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-</header>
-  <center><h3>ENTRENADORES</h3></center>
+      <div class="container">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            ATRAS
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <center>
+    <h3>ENTRENADORES</h3>
+  </center>
   <div class="form-container4" id="form-container4">
     <form action="/coachs/coachs" method="POST">
       <label for="nombre entrenador">NOMBRE ENTRENADOR</label>
-      <input
-        id="numeroe"
-        name="name_coach"
-        type="text"
-        placeholder=""
-        class="form-control"
-      />
-  <option value="selecionar equipo XD">Seleciona a tu equipo</option>
-        <select id="country" name="country" class="btn btn-secondary col-12" required>
-         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+      <input id="numeroe" name="name_coach" type="text" placeholder="" class="form-control" />
+      <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+      <select id="country" name="country" class="btn btn-secondary col-12" required>
+        <option value="selecionar equipo XD">Seleciona a tu equipo </option>
         {{#each teams}}
-                <option value="{{name_team}}">{{name_team}}</option>
-        {{/each}}        
-        </select>
+        <option value="{{idteams}}">{{name_team}}</option>
+        {{/each}}
+      </select>
       <label for="nombre">CORREO ENTRENADOR</label>
-      <input
-        id="nombree"
-        name="coach_mail"
-        type="text"
-        placeholder=""
-        class="form-control"        
-        required
-      />
-  
-      <label for="telefono">TELEFONO</label>
-      <input
-        id="telefono"
-        name="phone"
-        type="text"
-        placeholder=""
-        class="form-control"
-        required
-      />
-     <label for="entrenador equipo">ENTRENADOR EQUIPO</label>
-      <input
-        id="entrenador equipo"
-        name="coaching_team"
-        type="text"
-        placeholder=""
-        class="form-control"
-        required
-      />
+      <input id="nombree" name="coach_mail" type="text" placeholder="" class="form-control" required />
 
+      <label for="telefono">TELEFONO</label>
+      <input id="telefono" name="phonecoach" type="text" placeholder="" class="form-control" required />
+      
       </select>
       <br>
       <center><input type="submit" value="Guardar"></center>
-     </form>
+    </form>
   </div>
-  
-  
- 

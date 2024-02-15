@@ -19,7 +19,7 @@ Teams.postTeam = async (req, res) => {
     const newLink = {
         name_president,
         name_team,
-        photo,
+        phototeam:photo,
         color,
         creationdate,
         rol,
