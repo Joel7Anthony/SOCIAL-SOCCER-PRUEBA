@@ -44,20 +44,17 @@
                                     <span class="nav_name">PERFIL</span>
                                 </a>
                                 <ul>
-                                    <li><a href="/users/list-users">lista pa</a></li>
+
+                                    <li><a href="/users/list-users">LISTA</a></li>
                                 </ul>
                             </li>
-                            <a href="/users/list-users" class="nav_link active">
-                                <i class="fa-solid fa-user-secret"></i>
-                                <span class="nav_name">USUARIOS</span>
-                            </a>
                             <li>
                                 <a href="/teams/add" class="nav_link active">
                                     <i class="fa-solid fa-shield-heart"></i>
                                     <span class="nav_name"> EQUIPOS</span>
                                 </a>
                                 <ul>
-                                    <li><a href="/teams/list-teams">Lista falota</a></li>
+                                    <li><a href="/teams/list-teams">LISTA</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -66,34 +63,61 @@
                                     <span class="nav_name"> Partido</span>
                                 </a>
                                 <ul>
-                                    <li><a href="/games/list-games">lista falopa</a></li>
+                                    <li><a href="/games/list-games">LISTA</a></li>
                                 </ul>
                             </li>
-                            <a href="/players/add" class="nav_link active">
-                                <i class="fa-solid fa-people-group"></i>
-                                <span class="nav_name">JUGADORES</span>
-                            </a>
-                            <a href="/playerstatistics/add" class="nav_link active">
-                                <i class="fa-solid fa-chart-simple"></i>
-                                <span class="nav_name">ESTADISTICAS JUGADOR</span>
-                            </a>
-                            <a href="/comunications/add" class="nav_link active">
-                                <i class="fa-solid fa-newspaper"></i>
-                                <span class="nav_name">NOTICIA</span>
-                            </a>
-                            <a href="/coachs/add" class="nav_link active">
-                                <i class="fa-regular fa-futbol"></i>
-                                <span class="nav_name">ENTRENADOR</span>
-                            </a>
-                            <a href="/teamstatistics/add" class="nav_link active">
-                                <i class="fa-solid fa-chart-line"></i>
-                                <span class="nav_name">ESTADISTICAS</span>
-                            </a>
+                            <li>
+                                <a href="/players/add" class="nav_link active">
+                                    <i class="fa-solid fa-people-group"></i>
+                                    <span class="nav_name">JUGADORES</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/players/list-players">LISTA</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/playerstatistics/add" class="nav_link active">
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                    <span class="nav_name">ESTADISTICAS JUGADOR</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/playerstatistics/list-playerstatistics">LISTA</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/comunications/add" class="nav_link active">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                    <span class="nav_name">NOTICIA</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/comunications/list-comunications">LISTA</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/coachs/add" class="nav_link active">
+                                    <i class="fa-regular fa-futbol"></i>
+                                    <span class="nav_name">ENTRENADOR</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/coachs/list-coachs">LISTA</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/teamstatistics/add" class="nav_link active">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    <span class="nav_name">ESTADISTICAS</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/teamstatistics/list-teamstatistics">LISTA</a></li>
+                                </ul>
+                            </li>
                         </div>
 
                 </ul>
-                <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
-                            class="nav_name">Salir de seccion</span> </a>
+                <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Salir
+                        de seccion</span> </a>
             </nav>
         </div>
         {{/if}}

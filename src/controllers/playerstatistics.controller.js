@@ -21,11 +21,17 @@ Playerstatistics.getAddPlayerstatistics = async (req, res) => {
 Playerstatistics.postPlayerstatistic = async (req, res) => {
   const id= req.user.id 
   const {
-  country, attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
+  country, physical, duels, shot, defense, pass, ability
     } = req.body;
-    const newLink = { teamIdteams:country,
+    const newLink = { 
+      teamIdteams:country,
       userId: id,
-        attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
+      physical,
+      duels,
+      shot,
+      defense,
+      pass,
+      ability
     };
     await pool.query('INSERT INTO playerstatistics set ? ', [newLink]);
     req.flash('success', 'Agregado correctamente');
@@ -50,9 +56,9 @@ Playerstatistics.deletePlayerstatistic = async (req, res) => {
   //Se amostrara lo que se actualizao 
   Playerstatistics.updatePlayerstatistic = async (req, res) => {
     const { idstats } = req.params;
-    const {attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance } = req.body;
+    const {physical, duels, shot, defense, pass, ability } = req.body;
     const newLink = {
-        attacK, speed, shootingpower, endurance, ballControl, assault, shortpass, passover, dribbling, agility, balance
+        physical, duels, shot, defense, pass, ability
     };
     console.log({ idstats, newLink });
     await pool.query("UPDATE playerstatistics set ? WHERE idstats = ?", [newLink, idstats]);

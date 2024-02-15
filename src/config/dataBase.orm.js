@@ -5,20 +5,20 @@ let sequelize;
 
 // Usar URI de conexión si está disponible
 if (MYSQL_URI) {
-    sequelize = new Sequelize(MYSQL_URI);
+  sequelize = new Sequelize(MYSQL_URI);
 } else {
-    // Configuración para parámetros individuales
-    sequelize = new Sequelize(MYSQLDATABASE, MYSQLUSER, MYSQLPASSWORD, {
-        host: MYSQLHOST,
-        port: MYSQLPORT,
-        dialect: 'mysql',
-        pool: {
-            max: 5,
-            min: 1,
-            acquire: 30000,
-            idle: 10000
-        }
-    });
+  // Configuración para parámetros individuales
+  sequelize = new Sequelize(MYSQLDATABASE, MYSQLUSER, MYSQLPASSWORD, {
+    host: MYSQLHOST,
+    port: MYSQLPORT,
+    dialect: 'mysql',
+    pool: {
+      max: 5,
+      min: 1,
+      acquire: 30000,
+      idle: 10000
+    }
+  });
 }
 
 const usersModel = require('../models/user.model');
@@ -63,7 +63,7 @@ const results = resultsModel(sequelize, Sequelize);
 const splitstates = splitstatesModel(sequelize, Sequelize);
 const games = gamesModel(sequelize, Sequelize);
 const splitdetails = splitdetailsModel(sequelize, Sequelize);
-const participants =participantsModel(sequelize, Sequelize);
+const participants = participantsModel(sequelize, Sequelize);
 const coachs = coachsModel(sequelize, Sequelize);
 
 //Relaciones
@@ -116,9 +116,8 @@ playerstatistics.belongsTo(teams);
 teams.hasMany(comunications);
 comunications.belongsTo(teams);
 
-
-/*teams.hasMany( teamstatitics);
-teamstatitics.belongsTo(teams);*/
+teams.hasMany(teamstatitics);
+teamstatitics.belongsTo(teams);
 
 
 

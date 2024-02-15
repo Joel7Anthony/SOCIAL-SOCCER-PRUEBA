@@ -16,7 +16,10 @@ Games.postGame = async (req, res) => {
         escudo, team1, team2,date
     } = req.body;
     const newLink = {
-        escudo, team1, team2,date
+        escudo, 
+        team1, 
+        team2,
+        date
     };
     await pool.query('INSERT INTO games set ?', [newLink]);
     //FLASH
@@ -45,7 +48,10 @@ Games.updateGame = async (req, res) => {
     const { escudo, team1, team2,date
     } = req.body;
     const newLink = {
-        escudo, team1, team2,date
+        escudo, 
+        team1, 
+        team2,
+        date
     };
     console.log({ id, newLink })
     await pool.query('UPDATE games set ? WHERE id = ?', [newLink, id]);

@@ -19,7 +19,7 @@ Teams.postTeam = async (req, res) => {
     const newLink = {
         name_president,
         name_team,
-        phototeam:photo,
+        phototeam: photo,
         color,
         creationdate,
         rol,
@@ -50,7 +50,12 @@ Teams.getTeam = async (req, res) => {
 Teams.updateTeam = async (req, res) => {
     const { idteams } = req.params;
     const { name_president, name_team, color, creationdate, rol, categori } = req.body;
-    const newLink = { name_president, name_team, color, creationdate, rol, categori };
+    const newLink = { name_president, 
+        name_team, 
+        color, 
+        creationdate, 
+        rol, 
+        categori };
     console.log({ idteams, newLink });
     await pool.query("UPDATE teams set ? WHERE idteams = ?", [newLink, idteams]);
     req.flash("success", "Editado Correctamente");

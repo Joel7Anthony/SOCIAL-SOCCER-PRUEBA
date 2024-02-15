@@ -24,7 +24,13 @@ Comunications.postComunication = async (req, res) => {
     title, newsdescription, president, newsimage, publicationdate, newsauthor, country
   } = req.body;
   const newLink = {
-    title, newsdescription, president, newsimage, publicationdate, newsauthor, teamIdteams:country,
+    title, 
+    newsdescription, 
+    president, 
+    newsimage, 
+    publicationdate, 
+    newsauthor, 
+    teamIdteams:country,
     userId: id
   };
   await pool.query('INSERT INTO comunications set ?', [newLink]);
