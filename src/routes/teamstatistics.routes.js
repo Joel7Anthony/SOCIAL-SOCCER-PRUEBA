@@ -10,9 +10,9 @@ router.get('/',isLoggedIn, teamstatisticsController.getListTeamstatistics);
 router.post('/teamstatistics',isLoggedIn,teamstatisticsController.postTeamstatistic);
 router.get('/add',isLoggedIn, teamstatisticsController.getAddTeamstatistics);
 router.get('/list-teamstatistics',isLoggedIn,teamstatisticsController.getListTeamstatistics);
-router.get('/delete-teamstatistics/:id',isLoggedIn,teamstatisticsController.deleteTeamstatistic);
-router.get('/edit-teamstatistics/:id',isLoggedIn,teamstatisticsController.getTeamstatistic);
-router.post('/edit-teamstatistics/:id',isLoggedIn,teamstatisticsController.updateTeamstatistic);
+router.get('/delete-teamstatistics/:idstatistic',isLoggedIn,teamstatisticsController.deleteTeamstatistic);
+router.get('/edit-teamstatistics/:idstatistic',isLoggedIn,teamstatisticsController.getTeamstatistic);
+router.post('/edit-teamstatistics/:idstatistic',isLoggedIn,teamstatisticsController.updateTeamstatistic);
 
-router.post('/photo-teamstatistic/:id',isLoggedIn,  photoTeamstatisticsController.updatePhoto);
+router.post('/photo-teamstatistic/:idstatistic',isLoggedIn,  photoTeamstatisticsController.updatePhoto);
 module.exports = router;

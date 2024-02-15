@@ -5,7 +5,7 @@ const { isLoggedIn } = require('../lib/auth');
 const photoTeamstatistics = {};
 
 photoTeamstatistics.updatePhoto = async (req, res) => {
-    const { id } = req.params;
+    const { idstatistic} = req.params;
     let sampleFile;
     let uploadPath;
 
@@ -20,7 +20,7 @@ photoTeamstatistics.updatePhoto = async (req, res) => {
 
     sampleFile.mv(uploadPath, function (err) {
         if (err) return res.status(500).send(err);
-        pool.query('UPDATE teamstatistics SET logo = ? WHERE id = ?', [sampleFile.name, id])
+        pool.query('UPDATE teamstatistics SET logo = ? WHERE idstatistic = ?', [sampleFile.name, idstatistic])
         req.flash('success', 'Foto actualizado');
         res.redirect('/teamstatistics');
 
