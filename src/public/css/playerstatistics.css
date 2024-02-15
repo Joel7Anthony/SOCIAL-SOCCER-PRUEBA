@@ -172,55 +172,66 @@ h2 {
 
  }
  
- 
- #table-playerstatistics {
-    width: 100vh;
-    border-collapse: collapse;
-    border-radius: 1em;
+ .card__image {
+    width: 10em;
+    height: 10em;
+    margin: 3px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3em;
+ }
+
+
+ #container-players {
+    width: 60%;
+    padding: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
     margin-top: 2em;
-    color: white;
-    background-color:#4f7358;
-    overflow-x: auto; /* Agrega desbordamiento horizontal */
+    border: 1px solid black;
+    margin-bottom: 2em;
+    border-radius: 1em;
+ }
+
+ #line{
+    width: 97%;
+    background-color: aliceblue;
+    text-align: center;
+    margin: 0.5em;
+ }
+
+#data-one {
+    /*border: 1px solid black;*/
+    padding: 0.5em;
+    /*float: left;*/
+    margin: 1em;
+    margin-bottom: 3em;
 }
 
- #header-playerstatistics {
-    margin-top: 0.5em;
-    
- }
+#data-two {
+    /*border: 1px solid black;*/
+    padding: 0.5em;
+    float: right;
+    margin: 1em;
+    margin-bottom: 2em;
+    transform: translateY(-110%);
+}
 
- th {
-    height: 3em;
-    border-top: 1px solid white;
-    border-bottom: 3px solid white ;
-    text-align: center;
-    padding: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 0.7em;
- }
+tr, td{
+    padding: 0.5em;
+    margin: 0.5em;
+    border-bottom: 1px solid black;
+}
 
+td {
+    padding-left: 3em;
+}
+ 
 
- td {
-    border-bottom: 4px solid white;
-    text-align: center;
-    font-size: 0.7em;
-    padding: 5px;
-    border: 1px solid white;
- }
-
- /*tr:hover {
-    background-color: rgb(95, 160, 235);
- }*/
-
- .card__image {
-    width: 4em;
-    height: 4em;
-    margin: 3px;
-    margin-left:0.4em;
- }
+#card-button {
+    margin-left: auto;
+    margin-right: auto;
+}
 
  #input {
     width: 12em;
@@ -296,7 +307,7 @@ h2 {
        font-size: 0.6em;
     }
     #button-edit , #boton-añadir {
-        width: 5em;
+        width: 6em;
         font-size: 0.7em;
     }
 
