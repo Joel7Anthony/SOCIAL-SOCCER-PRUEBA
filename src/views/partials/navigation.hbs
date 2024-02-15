@@ -1,9 +1,11 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <body id="body-pd">
     <div class="container">
         <header class="header" id="header">
-                {{#if user}}
+            {{#if user}}
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
 
             <div class="dropdown">
@@ -27,54 +29,73 @@
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="/" class="nav_logo"> <i class="fa-solid fa-futbol"></i><span class="nav_logo-name">SOCIAL SOCCER</span> </a>
+                <ul>
+                    <div> <a href="/" class="nav_logo"> <i class="fa-solid fa-futbol"></i><span
+                                class="nav_logo-name">SOCIAL SOCCER</span> </a>
 
-                    <div class="nav_list">
-                        <a href="/" class="nav_link active">
-                            <i class='fas fa-home nav_icon'></i>
-                            <span class="nav_name">INICIO</span>
-                        </a>
-                        <a href="/users/profile" class="nav_link active">
-                            <i class="fa-solid fa-address-card"></i> 
-                            <span class="nav_name">PERFIL</span>
-                        </a>
-                        <a href="/users/list-users" class="nav_link active">
-                            <i class="fa-solid fa-user-secret"></i>
-                            <span class="nav_name">USUARIOS</span>
-                        </a>
-                        <a href="/teams/add" class="nav_link active">
-                            <i class="fa-solid fa-shield-heart"></i>
-                            <span class="nav_name"> EQUIPOS</span>
-                        </a>
-                        <a href="/games/add" class="nav_link active">
-                            <i class="fa-solid fa-trophy"></i>
-                            <span class="nav_name"> Partido</span>
-                        </a>
-                        <a href="/players/add" class="nav_link active">
-                            <i class="fa-solid fa-people-group"></i>
-                            <span class="nav_name">JUGADORES</span>
-                        </a>
-                        <a href="/playerstatistics/add" class="nav_link active">
-                            <i class="fa-solid fa-chart-simple"></i>
-                            <span class="nav_name">ESTADISTICAS JUGADOR</span>
-                        </a>
-                        <a href="/comunications/add" class="nav_link active">
-                            <i class="fa-solid fa-newspaper"></i>
-                            <span class="nav_name">NOTICIA</span>
-                        </a>
-                        <a href="/coachs/add" class="nav_link active">
-                            <i class="fa-regular fa-futbol"></i>
-                            <span class="nav_name">ENTRENADOR</span>
-                        </a>
-                        <a href="/teamstatistics/add" class="nav_link active">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span class="nav_name">ESTADISTICAS</span>
-                        </a>
-                    </div>
-                </div> <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
-                        class="nav_name">Salir de seccion</span> </a>
+                        <div class="nav_list">
+                            <a href="/" class="nav_link active">
+                                <i class='fas fa-home nav_icon'></i>
+                                <span class="nav_name">INICIO</span>
+                            </a>
+                            <li>
+                                <a href="/users/profile" class="nav_link active">
+                                    <i class="fa-solid fa-address-card"></i>
+                                    <span class="nav_name">PERFIL</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/users/list-users">lista pa</a></li>
+                                </ul>
+                            </li>
+                            <a href="/users/list-users" class="nav_link active">
+                                <i class="fa-solid fa-user-secret"></i>
+                                <span class="nav_name">USUARIOS</span>
+                            </a>
+                            <li>
+                                <a href="/teams/add" class="nav_link active">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                    <span class="nav_name"> EQUIPOS</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/teams/list-teams">Lista falota</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/games/add" class="nav_link active">
+                                    <i class="fa-solid fa-trophy"></i>
+                                    <span class="nav_name"> Partido</span>
+                                </a>
+                                <ul>
+                                    <li><a href="/games/list-games">lista falopa</a></li>
+                                </ul>
+                            </li>
+                            <a href="/players/add" class="nav_link active">
+                                <i class="fa-solid fa-people-group"></i>
+                                <span class="nav_name">JUGADORES</span>
+                            </a>
+                            <a href="/playerstatistics/add" class="nav_link active">
+                                <i class="fa-solid fa-chart-simple"></i>
+                                <span class="nav_name">ESTADISTICAS JUGADOR</span>
+                            </a>
+                            <a href="/comunications/add" class="nav_link active">
+                                <i class="fa-solid fa-newspaper"></i>
+                                <span class="nav_name">NOTICIA</span>
+                            </a>
+                            <a href="/coachs/add" class="nav_link active">
+                                <i class="fa-regular fa-futbol"></i>
+                                <span class="nav_name">ENTRENADOR</span>
+                            </a>
+                            <a href="/teamstatistics/add" class="nav_link active">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span class="nav_name">ESTADISTICAS</span>
+                            </a>
+                        </div>
+
+                </ul>
+                <a href="/logout" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                            class="nav_name">Salir de seccion</span> </a>
             </nav>
         </div>
-       {{/if}}
+        {{/if}}
     </div>
     <!--Container Main start-->

@@ -33,26 +33,26 @@ Teams.postTeam = async (req, res) => {
 };
 
 Teams.deleteTeam = async (req, res) => {
-    const { id } = req.params;
-    await pool.query("DELETE FROM teams WHERE ID = ?", [id]);
+    const { idteams } = req.params;
+    await pool.query("DELETE FROM teams WHERE idteams = ?", [idteams]);
     req.flash("success", "Eliminado correctamente");
     res.redirect("/teams/list-teams");
 };
 
 //actualizar//
 Teams.getTeam = async (req, res) => {
-    const { id } = req.params;
-    const team = await pool.query("SELECT * FROM teams WHERE id = ?", [id]);
+    const { idteams } = req.params;
+    const team = await pool.query("SELECT * FROM teams WHERE idteams = ?", [idteams]);
     res.render("Pages/team/edit-teams", { team: team[0] });
 };
 
 //se mostrara actualizado en la lista//
 Teams.updateTeam = async (req, res) => {
-    const { id } = req.params;
+    const { idteams } = req.params;
     const { name_president, name_team, color, creationdate, rol, categori } = req.body;
     const newLink = { name_president, name_team, color, creationdate, rol, categori };
-    console.log({ id, newLink });
-    await pool.query("UPDATE teams set ? WHERE id = ?", [newLink, id]);
+    console.log({ idteams, newLink });
+    await pool.query("UPDATE teams set ? WHERE idteams = ?", [newLink, idteams]);
     req.flash("success", "Editado Correctamente");
     res.redirect("/teams/list-teams");
 };

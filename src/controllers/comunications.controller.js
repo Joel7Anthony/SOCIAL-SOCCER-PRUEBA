@@ -9,7 +9,7 @@ const Comunications = {};
 Comunications.getListComunications = async (req, res) => {
   const comunications = await pool.query('SELECT * FROM  comunications');
   res.render('Pages/comunication/list-comunications', { comunications })
-};
+}; 
 
 //Agregar 
 Comunications.getAddComunications = async (req, res) => {

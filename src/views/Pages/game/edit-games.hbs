@@ -2,14 +2,14 @@
 
 <form action="/games/edit-games/{{game.id}}" method="POST">  
         <h2>Añadir Juego</h2>
-        <label for="titulo">Nombre del Juego</label>
-        <input type="text" value="{{game.namegame}}" name="namegame" class="form-control" placeholder="Editar Nombre del Juego "/ >
+        <label for="titulo">Rival local</label>
+        <input type="text" value="{{game.team1}}" name="team1" class="form-control" placeholder="Rival local"/ >
 
-        <label for="descripcion">Descripción del Juego</label>
-        <textarea type="text" value="{{game.descripciongame}}" name="descripciongame" class="form-control" placeholder="Editar Descipcion del Juego"></textarea>
+        <label for="descripcion">Rival visitante</label>
+        <textarea type="text" value="{{game.team2}}" name="team2" class="form-control" placeholder="Rival visitante"></textarea>
 
-        <label for="autor">Agregar lugar del Juego</label>
-        <input type="text" value="{{game.locationgame}}" name="locationgame" class="form-control" placeholder="Editar Lugar del juego" />
+        <label for="autor">Fecha de partido</label>
+        <input type="date" value="{{game.date}}" name="date" class="form-control" placeholder="Fecha de partido" />
 
         <div id="guardarBotton">
             <input type="submit" value="Guardar" />

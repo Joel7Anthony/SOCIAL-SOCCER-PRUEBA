@@ -116,10 +116,8 @@ playerstatistics.belongsTo(teams);
 teams.hasMany(comunications);
 comunications.belongsTo(teams);
 
-/*teams.hasMany(games);
-games.belongsTo(teams);
 
-teams.hasMany( teamstatitics);
+/*teams.hasMany( teamstatitics);
 teamstatitics.belongsTo(teams);*/
 
 

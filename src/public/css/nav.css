@@ -148,6 +148,37 @@ a {
     height: 100vh
 }
 
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+};
+
+
+
+nav ul a{
+    box-sizing: border-box;
+    color: white;
+    background: black;
+    display: block;
+    width: 100%;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+nav ul ul a{
+    background: #c8c810;
+}
+ nav ul ul {
+height: 0px;
+overflow: hidden;
+transition: 0.3s;
+}
+
+nav ul li:hover ul{
+    height: 80px;
+
+    } 
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 1rem) 0 0 0;

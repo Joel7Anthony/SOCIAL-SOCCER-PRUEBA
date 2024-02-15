@@ -9,13 +9,13 @@ router.get('/', isLoggedIn, teamsController.getListTeams);
 router.post('/teams', isLoggedIn,teamsController.postTeam);
 router.get('/add',isLoggedIn,  teamsController.getAddTeams);
 router.get('/list-teams', isLoggedIn, teamsController.getListTeams);
-router.get('/delete-teams/:id', isLoggedIn, teamsController.deleteTeam);
-router.get('/edit-teams/:id', isLoggedIn, teamsController.getTeam);
-router.post('/edit-teams/:id', isLoggedIn, teamsController.updateTeam);
+router.get('/delete-teams/:idteams', isLoggedIn, teamsController.deleteTeam);
+router.get('/edit-teams/:idteams', isLoggedIn, teamsController.getTeam);
+router.post('/edit-teams/:idteams', isLoggedIn, teamsController.updateTeam);
 
 //views profile
 
-router.post('/photo-team/:id', isLoggedIn, photoTeamsController.updatePhoto);
+router.post('/photo-team/:idteams', isLoggedIn, photoTeamsController.updatePhoto);
 
 
 

@@ -2,15 +2,17 @@
 
 <form action="/games/games" method="POST">
 
+        
         <h2>Añadir Juego</h2>
-        <label for="titulo">Nombre del Juego</label>
-        <input type="text" name="namegame" placeholder="Agrega nombre del juego" class="form-control">
 
-        <label for="descripcion">Descripción del Juego</label>
-        <textarea type="text" name="descripciongame" placeholder="Agrega descipcion del juego" class="form-control"></textarea>
+        <label for="titulo">Fecha de partido</label>
+        <input type="date" name="date" placeholder="Fecha de partido" class="form-control">
 
-        <label for="autor">Agregar lugar del Juego</label>
-        <input type="text" name="locationgame" placeholder="Agrega el lugar del juego" class="form-control">
+        <label for="titulo">Rival local</label>
+        <input type="text" name="team1" placeholder="Equipo 1" class="form-control">
+
+        <label for="titulo">Rival visitante</label>
+        <input type="text" name="team2" placeholder="Equipo 2" class="form-control">
 
         <div id="guardarBotton">
             <input type="submit" value="Guardar" />
