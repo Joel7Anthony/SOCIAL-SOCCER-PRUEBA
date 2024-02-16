@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="/css/lit.css">
+<h6>LISTA DE ENTRENADORES</h6>
+<link rel="stylesheet" href="/css/coach.css">
 {{#each coachs}}
-<div class="card-body" id="lcb ">
-
-
-    <p>{{name_president}}</p>
-    <div class="noticia-img">
+<form action="/coachs/photo-coach/{{idcoachs}}" method="POST" encType="multipart/form-data">
+ 
+<div class="container" id="lcb ">
+    <div class="card">
 
         {{#if photocoach}}
         <img class="card__image" src="/{{photocoach}}" loading="lazy" alt="User Profile">
@@ -12,24 +12,29 @@
         <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
         {{/if}}
 
-    </div>
-
-
-    <p>{{name_coach}}</p>
-    <p>{{coach_mail}}</p>
-    <p>{{phonecoach}}</p>
-    <p>{{name_team}}</p>
-
-
-    <center>
+<p>{{name_president}}</p>
+<p>{{name_coach}}</p>
+<p>{{coach_mail}}</p>
+<p>{{phonecoach}}</p>
+<p>{{name_team}}</p>
+    
+   
+    
+<center>
         <a href="/coachs/delete-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;"
-            class="danger">Eliminar</a>
-        <a href="/coachs/edit-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;" class="secondary">Editar</a>
-        <form action="/coachs/photo-coach/{{idcoachs}}" method="POST" encType="multipart/form-data">
-            <input type="file" name="sampleFile" accept="image/*" />
+            <button type="button" class="btn btn-primary btn-sm">ELIMINAR</button>
+            <br>
+
+        <a href="/coachs/edit-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;" 
+           <button type="button" class="btn btn-primary">Editar</a></button>
+           </center>
+           <br>
+            <input type="file" name="sampleFile" accept="image/*"/>
+            <br>
             <input type="submit">
         </form>
     </center>
+    </div>  
 
 </div>
 </th>
