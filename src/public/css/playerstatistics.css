@@ -188,19 +188,21 @@ h2 {
  }
 
  .card__image {
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
     margin: 1em;
-    margin-bottom: 3em;
+    margin-right: 2em;
+    margin-bottom: 4em;
  }
 #card-stast{
-    width: 75%;
+    width: 80%;
     border: 1px solid black;
     text-align: center;
     margin-bottom: 1em;
     float: right;
     display: flexbox;
-    margin-top: -13em;
+    margin-top: -14em;
+    font-size: 13px;
 }
 #card-name {
     width: 100%;
@@ -219,10 +221,10 @@ h2 {
  }
 
  #caja2, #caja3, #caja4, #caja5, #caja6, #caja7 {
-    width: 13%;
+    width: 10%;
     background-color: #0f2615 ;
     border: 1px solid #0f2615;
-    padding: 1em;
+    padding: 0.8em;
     margin: 5px;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -246,7 +248,7 @@ h2 {
 
  #danger {
     background-color: red;
-    padding: 4px;
+    padding: 3px;
     border-radius: 0.5em;
     margin: 0.5em;
     color: black;
@@ -257,7 +259,7 @@ h2 {
 
  #secondary {
     background-color: green;
-    padding: 4px;
+    padding: 3px;
     border-radius: 0.5em;
     margin: 0.5em;
  }
@@ -284,6 +286,7 @@ h2 {
   
   }
 
+
 }
  /*dispositivos moviles*/ 
   @media only screen and (max-width: 767px) {
@@ -306,12 +309,14 @@ h2 {
   }
   #button-edit , #boton-añadir {
     width: 5em;
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
   #secondary, #danger  {
-    width: 5em;
+    width: 4em;
     font-size: 0.6em;
+    padding: 1px;
+    display: inline-block;
     
 }
 
