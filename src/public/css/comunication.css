@@ -15,6 +15,15 @@ h2 {
     color: #ffffff;
 }
 
+#titulo,
+#descripcion,
+#autor,
+#fecha,
+#selecionar {
+    color: white;
+}
+
+
 label {
     display: block;
     margin: 10px 0;

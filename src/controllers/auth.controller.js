@@ -12,7 +12,8 @@ Auth.viwssingin = async (req, res) => {
   console.log(teams[0])
   if (teams[0] == undefined) {
     await sql.query('create view teamscoachs as SELECT t.name_team,c.* FROM teams t join  coachs c on c.teamIdteams = t.idteams')
-    /* await sql.query(create) */
+    await sql.query('create view teamscomunications as SELECT t.name_president,c.* FROM teams t join  comunications c on c.teamIdteams = t.idteams')
+
   }
   res.render('auth/signin');
 };
