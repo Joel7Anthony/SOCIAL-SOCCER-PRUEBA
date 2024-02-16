@@ -35,6 +35,6 @@ Auth.signup = async (req, res, next) => {
     failureRedirect: '/signin',
     failureFlash: true
   });
-}
+} 
 
-module.exports = Auth
+module.exports = Auth 
