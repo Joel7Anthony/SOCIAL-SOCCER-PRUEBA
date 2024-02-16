@@ -10,6 +10,7 @@ const games = (sequelize, type) => {
         escudo1: type.STRING,
         date: type.STRING,
         escudo2:type.STRING,
+        time:type.INTEGER,
 
         createGames: {
             type: 'TIMESTAMP',
