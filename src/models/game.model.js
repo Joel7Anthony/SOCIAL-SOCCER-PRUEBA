@@ -7,8 +7,9 @@ const games = (sequelize, type) => {
         },
         team1: type.STRING,
         team2: type.STRING,
-        escudo: type.STRING,
+        escudo1: type.STRING,
         date: type.STRING,
+        escudo2:type.STRING,
 
         createGames: {
             type: 'TIMESTAMP',

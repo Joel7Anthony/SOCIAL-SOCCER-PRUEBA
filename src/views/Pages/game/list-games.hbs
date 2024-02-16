@@ -21,37 +21,24 @@
     </div>
 
     <div class="contet-fecha">
-        {{!-- <div class="perfil-usuario-header">
-            <div class="perfil-usuario-portada">
-                <div class="perfil-usuario-avatar">
-                    {{#if escudo}}
-                    <img src="/{{game.escudo}}" loading="lazy" alt="User Profile">
-                    {{else}}
-                    <img src="/not-found/not-found-image.png" alt="..." alt="User Profile">
-                    {{/if}}
 
-                    <button type="button" class="boton-avatar">
-                        <a class="far fa-image" href="#modal"></a>
-                    </button>
-                </div>
-
-                <form id="modal" class="modal" action="/games/image-game" method="POST" encType="multipart/form-data">
-                    <div class="modal_container">
-                        <div class="drag-area">
-                            <input type="file" name="sampleFile" accept="image/*" />
-                            <input type="submit">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div> --}}
         <h4 class="nombre">
+            {{#if escudo1}}
+            <img class="card__image" src="/{{escudo1}}" loading="lazy" alt="User Profile">
+            {{else}}
+            <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+            {{/if}}
             <p>{{team1}}</p>
         </h4>
         <h4 class="resultado">0</h4>
         <h4>X</h4>
         <h4 class="resultado">0</h4>
         <h4 class="nombre">
+            {{#if escudo2}}
+            <img class="card__image" src="/{{escudo2}}" loading="lazy" alt="User Profile">
+            {{else}}
+            <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+            {{/if}}
             <p>{{team2}}</p>
         </h4>
         <td class="td-campos" id="td-campos">
@@ -73,8 +60,15 @@
                     </button>
                 </a>
             </div>
-
+     <form action="/games/photo-game/{{id}}" method="POST" encType="multipart/form-data">
+                <input type="file" name="sampleFile" accept="image/*" />
+                <input type="submit">
+            </form>
         </td>
+        <form action="/games/photos-game/{{id}}" method="POST" encType="multipart/form-data">
+            <input type="file" name="sampleFile" accept="image/*" />
+            <input type="submit">
+        </form>
     </div>
 
 </div>

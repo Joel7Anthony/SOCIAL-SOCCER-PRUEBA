@@ -14,6 +14,7 @@ Teams.getAddTeams = async (req, res) => {
 };
 
 Teams.postTeam = async (req, res) => {
+    const id=req.user.id
     const { name_president, name_team, photo, color, creationdate, rol, categori } =
         req.body;
     const newLink = {
@@ -24,6 +25,7 @@ Teams.postTeam = async (req, res) => {
         creationdate,
         rol,
         categori,
+        userId: id
 
     };
     await pool.query("INSERT INTO teams set ?", [newLink]);

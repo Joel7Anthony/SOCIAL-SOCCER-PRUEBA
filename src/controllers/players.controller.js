@@ -9,7 +9,7 @@ const Players = {};
 
 
 Players.getListPlayers = async (req, res) => {
-  const players = await pool.query('SELECT * FROM  players');
+  const players = await pool.query('SELECT * FROM  players INNER JOIN teams');
   res.render('Pages/player/list-players', { players });
 };
 

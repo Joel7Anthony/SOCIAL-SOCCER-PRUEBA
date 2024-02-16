@@ -7,24 +7,26 @@ const Playerstatistics = {};
 
 //Censeguir lista
 Playerstatistics.getListPlayerstatistics = async (req, res) => {
-    const playerstatistics = await pool.query('SELECT * FROM playerstatistics');
+    const playerstatistics = await pool.query('SELECT * FROM playerstatistics INNER JOIN teams');
     res.render('Pages/playerstatistic/list-playerstatistics', { playerstatistics });
 }; 
 
 //agregar
 Playerstatistics.getAddPlayerstatistics = async (req, res) => {
   const teams = await pool.query ('SELECT * FROM teams'); 
-    res.render('Pages/playerstatistic/playerstatistics', {teams});
+  const players = await pool.query ('SELECT * FROM players' ); 
+  res.render('Pages/playerstatistic/playerstatistics', {teams, players});
 };
 
 //Publicar
 Playerstatistics.postPlayerstatistic = async (req, res) => {
   const id= req.user.id 
   const {
-  country, name, physical, duels, shot, defense, pass, ability
+  country, name, physical, duels, shot, defense, pass, ability, nombre
     } = req.body;
     const newLink = { 
       teamIdteams:country,
+      playerIdplayers:nombre,
       userId: id,
       name,
       physical,

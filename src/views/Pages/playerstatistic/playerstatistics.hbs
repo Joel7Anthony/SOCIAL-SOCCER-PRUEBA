@@ -1,58 +1,64 @@
 <link rel="stylesheet" href="/css/playerstatistics.css">
 <form action="/playerstatistics/playerstatistics" method="POST">
 
-<h1>Estadisticas de Jugador</h1>
-<div id="container">
-    <h2>Resultados</h2>
-    <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+    <h1>Estadisticas de Jugador</h1>
+    <div id="container">
+        <h2>Resultados</h2>
+        <option value="selecionar equipo XD">Seleciona a tu equipo</option>
         <select id="country" name="country" class="btn btn-secondary col-12" required>
-         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
-        {{#each teams}}
-                <option value="{{idteams}}">{{name_team}}</option>
-        {{/each}}        
+            <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+            {{#each teams}}
+            <option value="{{idteams}}">{{name_team}}</option>
+            {{/each}}
         </select>
-    
-    <div class="form-group">
-        <label for="posicion">Nombre: </label><br>
-        <input type="text" name="name" class="form-control" placeholder="Nombre" autofocus />
-    </div>
-    <div class="form-group">
-        <label for="pts">Físico: </label><br>
-        <input type="number" name="physical" class="form-control" placeholder="Físico" autofocus />
-    </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Duelos:</label><br>
-        <input type="number" name="duels" class="form-control" placeholder="Duelos" autofocus />
-    </div>
+        <select id="country" name="nombre" class="btn btn-secondary col-12" required>
+            <option value="selecionar tu nombre">Seleciona a tu nombre </option>
+            {{#each players}}
+            <option value="{{idplayers}}">{{playername}}</option>
+            {{/each}}
+        </select>
 
-    <div class="form-group">
-        <label for="totales-gc">Tiro:</label><br>
-        <input type="number" name="shot" class="form-control" placeholder="Tiro" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="posicion">Nombre: </label><br>
+            <input type="text" name="name" class="form-control" placeholder="Nombre" autofocus />
+        </div>
+        <div class="form-group">
+            <label for="pts">Físico: </label><br>
+            <input type="number" name="physical" class="form-control" placeholder="Físico" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Defensa:</label><br>
-        <input type="number" name="defense" class="form-control" placeholder="Defensa" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Duelos:</label><br>
+            <input type="number" name="duels" class="form-control" placeholder="Duelos" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Pase:</label><br>
-        <input type="number" name="pass" class="form-control" placeholder="Pase" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Tiro:</label><br>
+            <input type="number" name="shot" class="form-control" placeholder="Tiro" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Habilidad:</label><br>
-        <input type="number" name="ability" class="form-control" placeholder="Habilidad" autofocus />
-    </div>
-    
-    <div id="inputBox">
-        <input type="submit" value="Guardar" id="button1"/>
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Defensa:</label><br>
+            <input type="number" name="defense" class="form-control" placeholder="Defensa" autofocus />
+        </div>
 
-    <div >
-            <input type="submit" value="Cancelar" id="cancelButton"/>
+        <div class="form-group">
+            <label for="totales-gc">Pase:</label><br>
+            <input type="number" name="pass" class="form-control" placeholder="Pase" autofocus />
+        </div>
+
+        <div class="form-group">
+            <label for="totales-gc">Habilidad:</label><br>
+            <input type="number" name="ability" class="form-control" placeholder="Habilidad" autofocus />
+        </div>
+
+        <div id="inputBox">
+            <input type="submit" value="Guardar" id="button1" />
+        </div>
+
+        <div>
+            <input type="submit" value="Cancelar" id="cancelButton" />
+        </div>
     </div>
-</div>
 </form>
-

@@ -6,12 +6,12 @@ const teams = require("../models/team.model");
 const Coachs = {};
 
 Coachs.getListCoachs = async (req, res) => {
-    const coachs = await pool.query("SELECT * FROM  teamscoachs");
+    const coachs = await pool.query("SELECT * FROM  coachs INNER JOIN teams");
     res.render("Pages/coach/list-coachs", { coachs });
 };
 
 Coachs.getAddCoachs = async (req, res) => {
-    const teams = await pool.query('SELECT * from teams')
+    const teams = await pool.query('SELECT * from teams ')
     res.render("Pages/coach/coachs", { teams });
 };
 

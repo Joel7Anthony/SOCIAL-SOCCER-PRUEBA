@@ -119,6 +119,8 @@ comunications.belongsTo(teams);
 teams.hasMany(teamstatitics);
 teamstatitics.belongsTo(teams);
 
+players.hasMany(playerstatistics);
+playerstatistics.belongsTo(players);
 
 
 // Exportar el objeto sequelize

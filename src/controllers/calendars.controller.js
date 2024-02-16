@@ -56,7 +56,7 @@ Calendars.updateCalendar = async (req, res) => {
 
 //Agregar    
 Calendars.getAddCalendars = async (req, res) => {
-    const games = await pool.query('SELECT * FROM calendars');
+    const calendars = await pool.query('SELECT * FROM calendars');
     res.render('calendars/calendar/calendars', {calendars});
 };
 
@@ -65,3 +65,4 @@ module.exports = Calendars;
 
 
 
+ 

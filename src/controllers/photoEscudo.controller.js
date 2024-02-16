@@ -1,6 +1,6 @@
 const pool = require("../config/database.sql");
 const games = require("../models/game.model");
-//const { isLoggedIn } = require('../lib/auth');
+const { isLoggedIn } = require('../lib/auth');
 
 const photoGame = {};
 
@@ -20,7 +20,7 @@ photoGame.updatePhoto = async (req, res) => {
 
     sampleFile.mv(uploadPath, function (err) {
         if (err) return res.status(500).send(err);
-        pool.query('UPDATE games SET escudo1 = ? WHERE id = ?', [sampleFile.name, id])
+        pool.query('UPDATE games SET escudo2 = ? WHERE id = ?', [sampleFile.name, id])
         req.flash('success', 'Foto actualizado');
         res.redirect('/games');
 
