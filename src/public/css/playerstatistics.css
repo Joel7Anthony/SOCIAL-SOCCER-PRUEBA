@@ -33,7 +33,10 @@ h2 {
     text-align: center;
     color: black;
 }
-
+#country{
+    color: black;
+    background-color: white;
+}
 #button1 {
     background-color: green;
     width: 100%;
@@ -163,69 +166,77 @@ h2 {
 #boton-añadir {
     background-color: green;
     width: 5em;
-    padding: 7px;
+    padding: 5px;
     border-radius: 0.5em;  
  }
 
  #button-add {
     margin-top: 2em;
+    margin-bottom: 2em;
 
  }
  
- 
- #table-playerstatistics {
-    width: 100vh;
-    border-collapse: collapse;
-    border-radius: 1em;
+ #card-body {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3em;
-    margin-top: 2em;
-    color: white;
-    background-color:#4f7358;
-    overflow-x: auto; /* Agrega desbordamiento horizontal */
-}
-
- #header-playerstatistics {
-    margin-top: 0.5em;
-    
+    margin-bottom: 4em;
+    margin-top: 4em;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 2em;
  }
-
- th {
-    height: 3em;
-    border-top: 1px solid white;
-    border-bottom: 3px solid white ;
-    text-align: center;
-    padding: 5px;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 0.7em;
- }
-
-
- td {
-    border-bottom: 4px solid white;
-    text-align: center;
-    font-size: 0.7em;
-    padding: 5px;
-    border: 1px solid white;
- }
-
- /*tr:hover {
-    background-color: rgb(95, 160, 235);
- }*/
 
  .card__image {
-    width: 4em;
-    height: 4em;
-    margin: 3px;
-    margin-left:0.4em;
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    margin-bottom: 3em;
+ }
+#card-stast{
+    width: 75%;
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom: 1em;
+    float: right;
+    display: flexbox;
+    margin-top: -13em;
+}
+#card-name {
+    width: 100%;
+    background-color: #0f2615;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+}
+ #caja1 {
+    font-size: 1.2em;
+    border-bottom: 1px solid black;
+    width: 100%;
+    background-color: #4f7358;
+    border-collapse: collapse;
+    color: white;
+ }
+
+ #caja2, #caja3, #caja4, #caja5, #caja6, #caja7 {
+    width: 13%;
+    background-color: #0f2615 ;
+    border: 1px solid #0f2615;
+    padding: 1em;
+    margin: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: white;
  }
 
  #input {
     width: 12em;
     color: white;
     border-radius: 0.5em;
+    margin-top: 0.5em;
  }
 
  #button-edit {
@@ -235,80 +246,78 @@ h2 {
 
  #danger {
     background-color: red;
-    padding: 2px;
+    padding: 4px;
     border-radius: 0.5em;
+    margin: 0.5em;
+    color: black;
+ }
+ #danger:hover {
+    background-color: rgb(227, 81, 81);
  }
 
  #secondary {
     background-color: green;
-    padding: 2px;
+    padding: 4px;
     border-radius: 0.5em;
+    margin: 0.5em;
  }
 
- #add {
-    color: black ;
-    margin: 1em;
-    background-color: green;
-    padding: 2px;
-    border-radius:0.5em ;
+ #secondary:hover {
+    background-color: #0bd13c;
  }
 
- #add, #boton-añadir:hover {
+#boton-añadir:hover {
     background-color: rgb(14, 207, 50);
  }
 
  
+/*tablets - compùtadoreas*/
+@media only screen and (min-width: 768px) {
+   
+    #card-body {
+      width: 95%; 
+      margin: 0 auto; 
+    }
+  
+    #card-title{
+      font-size: 2em; 
+  
+  }
 
-
- /*.buscador {
-    text-align: right;
-    margin-right: 2em;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
+}
+ /*dispositivos moviles*/ 
+  @media only screen and (max-width: 767px) {
+    #card-body {
+      width: 95%; 
+      margin: 0 auto; /
+    }
+  
+     #caja2, #caja3, #caja4, #caja5, #caja6, #caja7 {
+        width: calc(16% - 12px); /* Reduciendo un poco para evitar el desbordamiento */
+    }
+    
+    #card-title, #card-body, #card-stast {
+      font-size:0.6em; /* Tamaño de fuente más pequeño */
+    }
+    
+    .card__image {
+        width: 4em;
+        height: 4em;
+  }
+  #button-edit , #boton-añadir {
+    width: 5em;
+    font-size: 0.7em;
 }
 
-.buscador input {
-    border: 1px solid rgb(96, 96, 96);
-    border-radius: 5px;
-    width: 200px;
-    height: 25px;
-    text-align: center;
-}*/
+  #secondary, #danger  {
+    width: 5em;
+    font-size: 0.6em;
+    
+}
 
-@media screen and (max-width: 768px) {
-    #table-playerstatistics {
-        width: 95%;
-        padding: 0.6em;
-    }
- }
- 
- @media screen and (max-width: 600px) {
-    #table-playerstatistics {
-        width: 95%; /* Ajustado para dispositivos móviles */
-        font-size: 0.6em; /* Reducir el tamaño del texto para dispositivos móviles */
-    }
- 
-     th, #button-add{
-       font-size: 0.6em;
-    }
-    td {
-       font-size: 0.6em;
-    }
-    #button-edit , #boton-añadir {
-        width: 5em;
-        font-size: 0.7em;
-    }
-
-    #secondary, #danger  {
-        width: 5em;
-        font-size: 0.6em;
-        
-    }
-
-    #boton-añadir {
-        width: 5em;
-        font-size: 0.6em;
-        padding: 3px;
-    }
+  #boton-añadir {
+    width: 5em;
+    font-size: 0.6em;
+    padding: 3px;
+}
  }

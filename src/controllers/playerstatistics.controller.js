@@ -9,7 +9,7 @@ const Playerstatistics = {};
 Playerstatistics.getListPlayerstatistics = async (req, res) => {
     const playerstatistics = await pool.query('SELECT * FROM playerstatistics');
     res.render('Pages/playerstatistic/list-playerstatistics', { playerstatistics });
-};
+}; 
 
 //agregar
 Playerstatistics.getAddPlayerstatistics = async (req, res) => {
@@ -21,11 +21,12 @@ Playerstatistics.getAddPlayerstatistics = async (req, res) => {
 Playerstatistics.postPlayerstatistic = async (req, res) => {
   const id= req.user.id 
   const {
-  country, physical, duels, shot, defense, pass, ability
+  country, name, physical, duels, shot, defense, pass, ability
     } = req.body;
     const newLink = { 
       teamIdteams:country,
       userId: id,
+      name,
       physical,
       duels,
       shot,
@@ -47,18 +48,18 @@ Playerstatistics.deletePlayerstatistic = async (req, res) => {
   };
   
   //Actualizar Comunicado 
-  Playerstatistics.getPlayerstatistic = async (req, res) => {
+  Playerstatistics.getPlayerstatistic = async (req, res) => { 
     const { idstats } = req.params;
     const playerstatistic = await pool.query('SELECT * FROM playerstatistics WHERE idstats = ?', [idstats]);
     res.render('Pages/playerstatistic/edit-playerstatistics', { playerstatistic: playerstatistic[0] });
   };
   
-  //Se amostrara lo que se actualizao 
+  //Se amostrara lo que se actualizao  
   Playerstatistics.updatePlayerstatistic = async (req, res) => {
     const { idstats } = req.params;
-    const {physical, duels, shot, defense, pass, ability } = req.body;
+    const {name, physical, duels, shot, defense, pass, ability } = req.body;
     const newLink = {
-        physical, duels, shot, defense, pass, ability
+        name, physical, duels, shot, defense, pass, ability
     };
     console.log({ idstats, newLink });
     await pool.query("UPDATE playerstatistics set ? WHERE idstats = ?", [newLink, idstats]);

@@ -5,14 +5,14 @@ const playerstatistics = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        photo:type.STRING, 
-        physical:type.STRING,
-        duels:type.STRING,
-        shot:type.STRING,
-        defense:type.STRING,
-        pass:type.STRING,
-        ability:type.STRING,
-
+        photo:type.STRING,
+        name: type.STRING,
+        physical: type.STRING,
+        duels: type.STRING,
+        shot: type.STRING,
+        defense: type.STRING,
+        pass: type.STRING, 
+        ability: type.STRING,
 
         createPlayerstatistics: {
             type: 'TIMESTAMP',
