@@ -11,6 +11,7 @@ const games = (sequelize, type) => {
         date: type.STRING,
         escudo2:type.STRING,
         time:type.INTEGER,
+        referee:type.STRING,
 
         createGames: {
             type: 'TIMESTAMP',

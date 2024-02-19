@@ -14,7 +14,7 @@ Games.getListGames = async (req, res) => {
 Games.postGame = async (req, res) => {
     const id=req.user.id
     const {
-        escudo1, team1, team2,date,escudo2
+        escudo1, team1, team2,date,escudo2,time,referee,
     } = req.body;
     const newLink = {
         escudo1, 
@@ -22,6 +22,8 @@ Games.postGame = async (req, res) => {
         team2,
         date,
         escudo2,
+        time,
+        referee,
         userId: id
     };
     await pool.query('INSERT INTO games set ?', [newLink]);
@@ -48,14 +50,16 @@ Games.getGame = async (req, res) => {
 //actualizar
 Games.updateGame = async (req, res) => {
     const { id } = req.params;
-    const { escudo1, team1, team2,date,escudo2
+    const { escudo1, team1, team2,date,escudo2,time,referee,
     } = req.body;
     const newLink = {
         escudo1, 
         team1, 
         team2,
         date,
-        escudo2
+        escudo2,
+        time,
+        referee,
     };
     console.log({ id, newLink })
     await pool.query('UPDATE games set ? WHERE id = ?', [newLink, id]);
