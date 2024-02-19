@@ -60,7 +60,7 @@ Calendars.getAddCalendars = async (req, res) => {
     res.render('calendars/calendar/calendars', {calendars});
 };
 
-module.exports = Calendars;
+module.exports = Calendars;  
 
 
 
