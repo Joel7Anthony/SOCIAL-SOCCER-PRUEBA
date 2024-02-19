@@ -1,18 +1,12 @@
 <link rel="stylesheet" href="/css/teams.css" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 <script src="/js/buscador/buscador.js"></script>
 <div id="cliente-listar-container">
 
   <div id="cliente-listar-contenedor">
 
-    <p
-      id="titulo-gestion"
-      class="titulo-gestion"
-      style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;"
-    >Gestión de Equipos</p>
+    <p id="titulo-gestion" class="titulo-gestion"
+      style="padding-top: 20px;  margin: 0 auto; text-align:center; font-size: 25px;">Gestión de Equipos</p>
 
     <br>
     <div class="buscador">
@@ -28,83 +22,90 @@
       <table class="table-gestion-clientes" id="table-gestion-clientes">
         <thead class="thead-titulos" id="thead-titulos">
           <tr class="fila-titulos" id="fila-titulos">
-            <th
-              class="th-titulos-esquina-izquierda"
-              id="th-titulos-esquina-izquierda"
-            >
+            <th class="th-titulos-esquina-izquierda" id="th-titulos-esquina-izquierda">
               <p>Nombre Director</p>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center> <p>Nobre del Equipo</p> </center>
+              <center>
+                <p>Nobre del Equipo</p>
+              </center>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center> <p>Color</p></center>
+              <center>
+                <p>Color</p>
+              </center>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center> <p>Fecha Creacion</p></center>
+              <center>
+                <p>Fecha Creacion</p>
+              </center>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center><p>Rol</p></center>
+              <center>
+                <p>Rol</p>
+              </center>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center><p>Categoria</p></center>
+              <center>
+                <p>Categoria</p>
+              </center>
             </th>
             <th class="th-titulos" id="th-titulos">
-              <center><p>Editar</p></center>
+              <center>
+                <p>Editar</p>
+              </center>
             </th>
-            <th
-              class="th-titulos-esquina-derecha"
-              id="th-titulos-esquina-derecha"
-              colspan="2"
-            >
-              <center> <p>Borrar</p></center>
+            <th class="th-titulos-esquina-derecha" id="th-titulos-esquina-derecha" colspan="2">
+              <center>
+                <p>Borrar</p>
+              </center>
             </th>
           </tr>
         </thead>
         {{#each teams}}
-          <tbody>
-            <tr class="fila-campos" id="fila-campos">
-              <td class="td-campos" id="td-campos">
-                <p>{{name_president}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <p>{{name_team}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <p>{{color}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <p>{{creationdate}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <p>{{rol}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <p>{{categori}}</p>
-              </td>
-              <td class="td-campos" id="td-campos">
-                <div>
-                  <a href="/teams/edit-teams/{{idteams}}">
-                    <button type="editar">
-                      <i class="fas fa-pencil-alt"></i>
-                    </button>
-                  </a>
-                </div>
+        <tbody>
+          <tr class="fila-campos" id="fila-campos">
+            <td class="td-campos" id="td-campos">
+              <p>{{name_president}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <p>{{name_team}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <p>{{color}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <p>{{creationdate}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <p>{{rol}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <p>{{categori}}</p>
+            </td>
+            <td class="td-campos" id="td-campos">
+              <div>
+                <a href="/teams/edit-teams/{{idteams}}">
+                  <button type="editar">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                </a>
+              </div>
 
-              </td>
+            </td>
 
-              <td class="td-campos" id="td-campos">
-                <div>
-                  <a href="/teams/delete-teams/{{idteams}}">
-                    <button type="eliminar">
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </a>
-                </div>
+            <td class="td-campos" id="td-campos">
+              <div>
+                <a href="/teams/delete-teams/{{idteams}}">
+                  <button type="eliminar">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                </a>
+              </div>
 
-              </td>
-            </tr>
-          </tbody>
+            </td>
+          </tr>
+        </tbody>
         {{/each}}
 
       </table>
