@@ -1,41 +1,57 @@
-
 <link rel="stylesheet" href="/css/players.css">
-    <div class="card text-center border border-primary">
-     <div id="title"><h4 class="card-title text-uppercase" style="color: rgb(255, 255, 255);">
+<div class="card text-center border border-primary">
+    <div id="title">
+        <h4 class="card-title text-uppercase" style="color: rgb(255, 255, 255);">
             Lista de Jugadores
-        </h4></div>
+        </h4>
     </div>
-</div> 
-<div class="card-body">
-{{#each players}}
-<div class="card-body">
-    {{#if photo}}
-    <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
-    {{else}}
-    <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
-    {{/if}}
-    <br><div id="datos"></br>
-    <div id="data-one"><p>Nombre Jugador:   {{playername}}</p></div>
-    <div id="data-two"><p>Edad:   {{age}}</p></div>
-    <div id="data-three"><p>Fecha de Nacimiento:    {{birthdate}}</p></div>
-    <div id="data-four"><p>Numero de Camiseta:  {{tshirtnumber}}</p></div>
-    <div id="data-five"><p>Equipo:  {{name_team}}</p></div>
-    <br>
-    <center>
-        <a href="/palyers/delete-players/{{idplayers}}" class="danger">Eliminar</a>
-        <a href="/players/edit-players/{{idplayers}}" class="secondary">Editar</a>
-    </center>
-    </br>
-    <center>
-        <form action="/players/photo-player/{{idplayers}}" method="POST" encType="multipart/form-data">
-            <input type="file" id="input" name="sampleFile" accept="image/*" />
-            <input type="submit" id="button-edit">
-        </form>
-    </center>
-
 </div>
-{{else}}
-<center> <p>No existen registros guardados</p>
-    <a href="/players/add" id="add"> Agrega uno haciendo click aquí</a>
-</center>
-{{/each}}
+</div>
+<div class="card-body">
+    {{#each players}}
+    <div class="card-body">
+        {{#if photo}}
+        <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
+        {{else}}
+        <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+        {{/if}}
+        <br>
+        <div id="datos"></br>
+            <div id="data-one">
+                <p>Nombre Jugador: {{playername}}</p>
+            </div>
+            <div id="data-two">
+                <p>Edad: {{age}}</p>
+            </div>
+            <div id="data-three">
+                <p>Fecha de Nacimiento: {{birthdate}}</p>
+            </div>
+            <div id="data-four">
+                <p>Numero de Camiseta: {{tshirtnumber}}</p>
+            </div>
+            <div id="data-five">
+                <p>Equipo: {{name_team}}</p>
+            </div>
+            <div id="data-six">
+                <p>Posicion de juego {{position}}</p>
+            </div>
+            <br>
+            <center>
+                <a href="/players/delete-players/{{idplayers}}" class="danger">Eliminar</a>
+                <a href="/players/edit-players/{{idplayers}}" class="secondary">Editar</a>
+            </center>
+            </br>
+            <center>
+                <form action="/players/photo-player/{{idplayers}}" method="POST" encType="multipart/form-data">
+                    <input type="file" id="input" name="sampleFile" accept="image/*" />
+                    <input type="submit" id="button-edit">
+                </form>
+            </center>
+
+        </div>
+        {{else}}
+        <center>
+            <p>No existen registros guardados</p>
+            <a href="/players/add" id="add"> Agrega uno haciendo click aquí</a>
+        </center>
+        {{/each}}

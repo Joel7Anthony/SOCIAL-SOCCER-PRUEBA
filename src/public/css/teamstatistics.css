@@ -170,6 +170,8 @@ h2 {
     border-radius: 1em;
     margin-bottom: 1em;
 }
+
+
  #boton-añadir {
     background-color: green;
     width: 5em;
@@ -179,9 +181,35 @@ h2 {
 
  #button-add {
     margin-top: 2em;
+    color: white;
 
  }
- 
+#line1, #line2{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    height: 0.1em;
+    width: 50%;
+    
+}
+
+ #conatiner-sub {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+ }
+
+ /*CONTENEDOR DE LA TABLA*/
+  #tabla-estadisticas{
+    background-color: #0f2615;
+    padding: 1em;
+    margin-bottom: 3em;
+    background-size: cover;
+  }
+
+  /*TABLA*/
 #table-teamstatistics {
     width: 95%;
     border-collapse: collapse;
@@ -191,17 +219,16 @@ h2 {
     margin-bottom: 3em ;
     margin-top: 2em;
     color: white;
-    background-color:#4f7358;
  }
  #header-teamstatistics {
     margin-top: 0.5em;
-   
+   background-color: #4f7358;
     
  }
 
  th {
     height: 3em;
-    border-bottom: 4px solid white ;
+    border-bottom: 1px solid white ;
     text-align: center;
     padding: 5px;
     padding-left: 1em;
@@ -215,7 +242,7 @@ h2 {
     text-align: center;
     font-size: 1em;
     padding: 5px;
-    border-bottom: 4px solid white;
+    border-bottom: 1px solid white;
  }
 
 
@@ -229,15 +256,18 @@ h2 {
 
 
  #danger {
-    background-color: red;
-    padding: 2px;
+    background-color:white;
+    padding: 5px;
     border-radius: 0.5em;
+    margin-bottom: 1em;
+    display: inline-block;
  }
 
  #secondary {
-    background-color: green;
-    padding: 2px;
+    background-color: white;
+    padding: 5px;
     border-radius: 0.5em;
+    margin-top: 1em;
  }
 
  #add {
@@ -253,14 +283,15 @@ h2 {
  }
 
   #input {
-    width: 15em;
+    width: 9.5em;
     color: white;
     border-radius: 0.5em;
  }
 
  #button-edit {
-    width: 5em;
+    width: 4em;
     border-radius: 1em ;
+    padding: 1px;
  }
 
 /*-----------------------------------------------------------------------------------------------*/
@@ -289,15 +320,21 @@ h2 {
     }
 
     #secondary, #danger  {
-        width: 5em;
         font-size: 0.6em;
+        padding: 2px;
         
     }
+
 
     #boton-añadir {
         width: 5em;
         font-size: 0.6em;
         padding: 3px;
+    }
+
+    #input {
+        width: 14em;
+        font-size: 0.6em;
     }
  }
  

@@ -4,60 +4,41 @@
     <h2>Editar resultados</h2>
 
     <div class="form-group">
-        <label for="posicion">Ataque:</label>
-        <input type="number" value="{{playerstatistic.attacK}}" name="attacK" class="form-control"
-                    placeholder="Ataque" />
+        <label for="posicion">Nombre:</label>
+        <input type="text" value="{{playerstatistic.name}}" name="name" class="form-control"
+                    placeholder="Nombre" />
     </div>
     <div class="form-group">
-        <label for="pts">Velocidad:</label>
-        <input type="number" value="{{playerstatistic.speed}}" name="speed" class="form-control"
-                    placeholder="Velocidad" />
+        <label for="pts">Físico:</label>
+        <input type="number" value="{{playerstatistic.physical}}" name="physical" class="form-control"
+                    placeholder="Físico" />
+    
+    <div class="form-group">
+        <label for="totales-gc">Duelos:</label>
+        <input type="number" value="{{playerstatistic.duels}}" name="duels" class="form-control"
+                    placeholder="Duelos" />
     </div>
     <div class="form-group">
-        <label for="totales-gf">Potencia de tiro:</label>
-        <input type="number" value="{{playerstatistic.shootingpower}}" name="shootingpower" class="form-control"
-                    placeholder="Potencia de tiro" />
+        <label for="totales-gc">Tiro:</label>
+        <input type="number" value="{{playerstatistic.shot}}" name="shot" class="form-control"
+                    placeholder="Tiro" />
     </div>
     <div class="form-group">
-        <label for="totales-gc">Resistencia:</label>
-        <input type="number" value="{{playerstatistic.endurance}}" name="endurance" class="form-control"
-                    placeholder="Resistencia" />
+        <label for="totales-gc">Defensa:</label>
+        <input type="number" value="{{playerstatistic.defense}}" name="defense" class="form-control"
+                    placeholder="Defensa" />
     </div>
     <div class="form-group">
-        <label for="totales-gc">Control del Balón:</label>
-        <input type="number" value="{{playerstatistic.ballControl}}" name="ballControl" class="form-control"
-                    placeholder="Control del Balón" />
+        <label for="totales-gc">Pase:</label>
+        <input type="number" value="{{playerstatistic.pass}}" name="pass" class="form-control"
+                    placeholder="Pase" />
     </div>
     <div class="form-group">
-        <label for="totales-gc">Agresión:</label>
-        <input type="number" value="{{playerstatistic.assault}}" name="assault" class="form-control"
-                    placeholder="Agresión" />
+        <label for="totales-gc">Habilidad:</label>
+        <input type="number" value="{{playerstatistic.ability}}" name="ability" class="form-control"
+                    placeholder="Habilidad" />
     </div>
-    <div class="form-group">
-        <label for="totales-gc">Pase corto:</label>
-        <input type="number" value="{{playerstatistic.shortpass}}" name="shortpass" class="form-control"
-                    placeholder="Pase corto" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Pase largo:</label>
-        <input type="number" value="{{playerstatistic.passover}}" name="passover" class="form-control"
-                    placeholder="Pase largo" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Dribbling:</label>
-        <input type="number" value="{{playerstatistic.dribbling}}" name="dribbling" class="form-control"
-                    placeholder="dribbling" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Agilidad:</label>
-        <input type="number" value="{{playerstatistic.agility}}" name="agility" class="form-control"
-                    placeholder="Agilidad" />
-    </div>
-    <div class="form-group">
-        <label for="totales-gc">Equilibrio:</label>
-        <input type="number" value="{{playerstatistic.balance}}" name="balance" class="form-control"
-                    placeholder="Equilibrio" />
-    </div>
+
     
     <div id="inputBox">
         <input type="submit" value="Guardar" id="button2" />

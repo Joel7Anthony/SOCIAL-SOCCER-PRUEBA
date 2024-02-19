@@ -12,8 +12,6 @@ Auth.viwssingin = async (req, res) => {
   console.log(teams[0])
   if (teams[0] == undefined) {
     await sql.query('create view teamscoachs as SELECT t.name_team,c.* FROM teams t join  coachs c on c.teamIdteams = t.idteams')
-    await sql.query('create view teamscomunications as SELECT t.name_president,c.* FROM teams t join  comunications c on c.teamIdteams = t.idteams')
-
   }
   res.render('auth/signin');
 };
@@ -36,6 +34,6 @@ Auth.signup = async (req, res, next) => {
     failureRedirect: '/signin',
     failureFlash: true
   });
-}
+} 
 
-module.exports = Auth
+module.exports = Auth 

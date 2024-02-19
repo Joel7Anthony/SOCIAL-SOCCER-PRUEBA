@@ -7,7 +7,7 @@ const Comunications = {};
 
 //Conseguir lista De comunicado 
 Comunications.getListComunications = async (req, res) => {
-  const comunications = await pool.query('SELECT * FROM  comunications');
+  const comunications = await pool.query('SELECT * FROM  comunications INNER JOIN teams');
   res.render('Pages/comunication/list-comunications', { comunications })
 }; 
 

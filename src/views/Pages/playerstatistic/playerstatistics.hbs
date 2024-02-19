@@ -1,78 +1,64 @@
 <link rel="stylesheet" href="/css/playerstatistics.css">
 <form action="/playerstatistics/playerstatistics" method="POST">
 
-<h1>Estadisticas de Jugador</h1>
-<div id="container">
-    <h2>Resultados</h2>
-    <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+    <h1>Estadisticas de Jugador</h1>
+    <div id="container">
+        <h2>Resultados</h2>
+        <option value="selecionar equipo XD">Seleciona a tu equipo</option>
         <select id="country" name="country" class="btn btn-secondary col-12" required>
-         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
-        {{#each teams}}
-                <option value="{{idteams}}">{{name_team}}</option>
-        {{/each}}        
+            <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+            {{#each teams}}
+            <option value="{{idteams}}">{{name_team}}</option>
+            {{/each}}
         </select>
-    
-    <div class="form-group">
-        <label for="posicion">Ataque: </label><br>
-        <input type="number" name="attacK" class="form-control" placeholder="Ataque" autofocus />
-    </div>
-    <div class="form-group">
-        <label for="pts">Velocidad: </label><br>
-        <input type="number" name="speed" class="form-control" placeholder="Velocidad" autofocus />
-    </div>
-   
-    <div class="form-group">
-        <label for="totales-gc">Potencia de tiro:</label><br>
-        <input type="number" name=" shootingpower" class="form-control" placeholder="Potencia de tiro" autofocus />
-    </div>
+        <option value="selecionar equipo XD">Seleciona</option>
+        <select id="country" name="nombre" class="btn btn-secondary col-12" required>
+            <option value="selecionar tu nombre">Seleciona a tu nombre </option>
+            {{#each players}}
+            <option value="{{idplayers}}">{{playername}}</option>
+            {{/each}}
+        </select>
 
-    <div class="form-group">
-        <label for="totales-gc">Resistencia:</label><br>
-        <input type="number" name="endurance" class="form-control" placeholder="Resistencia" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="posicion">Nombre: </label><br>
+            <input type="text" name="name" class="form-control" placeholder="Nombre" autofocus />
+        </div>
+        <div class="form-group">
+            <label for="pts">Físico: </label><br>
+            <input type="number" name="physical" class="form-control" placeholder="Físico" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Control del Balón:</label><br>
-        <input type="number" name="ballControl" class="form-control" placeholder="Control del balón" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Duelos:</label><br>
+            <input type="number" name="duels" class="form-control" placeholder="Duelos" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Agresión:</label><br>
-        <input type="number" name="assault" class="form-control" placeholder="Agresión" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Tiro:</label><br>
+            <input type="number" name="shot" class="form-control" placeholder="Tiro" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Pase corto</label><br>
-        <input type="number" name="shortpass" class="form-control" placeholder="Pase corto" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Defensa:</label><br>
+            <input type="number" name="defense" class="form-control" placeholder="Defensa" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Pase largo:</label><br>
-        <input type="number" name="passover" class="form-control" placeholder="Pase largo" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Pase:</label><br>
+            <input type="number" name="pass" class="form-control" placeholder="Pase" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Dribbling:</label><br>
-        <input type="number" name="dribbling" class="form-control" placeholder="Dribbling" autofocus />
-    </div>
+        <div class="form-group">
+            <label for="totales-gc">Habilidad:</label><br>
+            <input type="number" name="ability" class="form-control" placeholder="Habilidad" autofocus />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Agilidad:</label><br>
-        <input type="number" name="agility" class="form-control" placeholder="Agilidad" autofocus />
-    </div>
+        <div id="inputBox">
+            <input type="submit" value="Guardar" id="button1" />
+        </div>
 
-    <div class="form-group">
-        <label for="totales-gc">Equilibrio:</label><br>
-        <input type="number" name=" balance" class="form-control" placeholder="Equilibrio" autofocus />
+        <div>
+            <input type="submit" value="Cancelar" id="cancelButton" />
+        </div>
     </div>
-    
-    <div id="inputBox">
-        <input type="submit" value="Guardar" id="button1"/>
-    </div>
-
-    <div >
-            <input type="submit" value="Cancelar" id="cancelButton"/>
-    </div>
-</div>
 </form>
-

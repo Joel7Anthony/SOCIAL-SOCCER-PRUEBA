@@ -1,72 +1,74 @@
 <link rel="stylesheet" href="/css/playerstatistics.css">
-    <div class="card text-center border border-primary">
-        <h3 id="card-title text-uppercase" >
-            Lista de estadisticas jugadores
-        </h3>
-    </div>
-<div id="button-add">Añadir estadistica del jugador: <button><a href="/playerstatistics/add" id="boton-añadir" style="text-decoration: none; color: inherit;">Añadir
-    </a></button>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<div class="card text-center border border-primary">
+    <h3 id="card-title text-uppercase">
+        Lista de estadisticas jugadores
+    </h3>
+</div>
+<div id="button-add">Añadir estadistica del jugador: <button><a href="/playerstatistics/add" id="boton-añadir"
+            style="text-decoration: none; color: inherit;">Añadir <i class="fa-regular fa-square-plus"></i>
+        </a></button>
 </div>
 
-<table id="table-playerstatistics">
-    <thead id="#header-playerstatistics">
-
-        <tr>
-            <th></th>
-            <th>Ataque</th>
-            <th>Velocidad</th>
-            <th>Potencia de tiro</th>
-            <th>Resistencia</th>
-            <th>Control del Balón</th>
-            <th>Agresión</th>
-            <th>Pase corto</th>
-            <th>Pase largo</th>
-            <th>Dribbling</th>
-            <th>Agilidad</th>
-            <th>Equilibrio</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-
 {{#each playerstatistics}}
-    <tr>
-    <td>
+<div id="card-body">
+
+    <div id="card-name">
+        <p> <b> {{name}}</b> </p>
+    </div>
+
     {{#if photo}}
     <img class="card__image" src="/{{photo}}" loading="lazy" alt="User Profile">
     {{else}}
     <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
     {{/if}}
-    </td>
 
-    <td><p>   {{attacK}}</p></td>
-    <td><p> {{speed}}</p></td>
-    <td><p>  {{shootingpower}}</p></td>
-    <td><p>  {{endurance}}</p></td>
-    <td><p>  {{ballControl}}</p></td>
-    <td><p>  {{assault}}</p></td>
-    <td><p>  {{shortpass}}</p></td>
-    <td><p>  {{passover}}</p></td>
-    <td><p>  {{dribbling}}</p></td>
-    <td><p>  {{agility}}</p></td>
-    <td><p>  {{balance}}</p></td>
-    <td><p>{{name_team}}</p></td>
-    <td>
+
+    <div id="card-stast">
+        <div id="caja1">
+            <p><b>ESTADISTICAS JUGADOR</b></p>
+        </div>
+        <div id="caja3">
+            <p> Equipo <br><b> {{name_team}}</b></p>
+        </div>
+        <div id="caja3">
+            <p> Nombre <br><b> {{playername}}</b></p>
+        </div>
+        <div id="caja2">
+            <p> Fisico<br><b style="color: white;">{{physical}}</b></p>
+        </div>
+        <div id="caja3">
+            <p> Duelos <br><b> {{duels}}</b></p>
+        </div>
+        <div id="caja4">
+            <p> Tiro <br><b> {{shot}}</b></p>
+        </div>
+        <div id="caja5">
+            <p> Defensa <br><b>{{defense}}</b></p>
+        </div>
+        <div id="caja6">
+            <p> Pase <br><b>{{pass}}</b></p>
+        </div>
+        <div id="caja7">
+            <p> Habilidad <br><b> {{ability}}</b></p>
+        </div>
+    </div>
     <center>
-        <a href="/playerstatistics/delete-playerstatistics/{{idstats}}" id="danger">Eliminar</a>
-        <a href="/playerstatistics/edit-playerstatistics/{{idstats}}" id="secondary">Editar</a> 
+        <a href="/playerstatistics/delete-playerstatistics/{{idstats}}" id="danger">Eliminar <i
+                class="fa-regular fa-trash-can"></i></a>
+        <a href="/playerstatistics/edit-playerstatistics/{{idstats}}" id="secondary">Editar <i
+                class="fa-solid fa-pen-to-square"></i></a>
         <form action="/playerstatistics/photo-playerstatistic/{{idstats}}" method="POST" encType="multipart/form-data">
             <input type="file" id="input" name="sampleFile" accept="image/*" />
             <input type="submit" id="button-edit">
         </form>
     </center>
-    </td>
 
-</tr>
-
+</div>
+<br><br>
 {{else}}
-<center> <p>No hay registro guardados a un </p>
+<center>
+    <p>No hay registro guardados a un </p>
     <a href="/playerstadistics/add"> Agrega uno haciendo click aqui</a>
 </center>
 {{/each}}
-

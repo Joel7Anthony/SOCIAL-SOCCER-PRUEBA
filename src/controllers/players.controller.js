@@ -9,7 +9,7 @@ const Players = {};
 
 
 Players.getListPlayers = async (req, res) => {
-  const players = await pool.query('SELECT * FROM  players');
+  const players = await pool.query('SELECT * FROM  players INNER JOIN teams');
   res.render('Pages/player/list-players', { players });
 };
 
@@ -22,20 +22,20 @@ Players.getAddPlayers = async (req, res) => {
 
 
 Players.postPlayer = async (req, res) => {
-  const id=req.user.id
+  const id = req.user.id
   const {
-    playername, age,birthdate,photo,tshirtnumber,position,positiondetail,country
+    playername, age, birthdate, photo, tshirtnumber, position, positiondetail, country
   } = req.body;
-  
+
   const newLink = {
-    playername, 
+    playername,
     age,
     birthdate,
     photo,
     tshirtnumber,
     position,
-    positiondetail, 
-    teamIdteams:country,
+    positiondetail,
+    teamIdteams: country,
     userId: id
 
   };
@@ -62,10 +62,10 @@ Players.getPlayer = async (req, res) => {
 };
 Players.updatePlayer = async (req, res) => {
   const { idplayers } = req.params;
-  const { playername, age,birthdate,photo,tshirtnumber,position,positiondetail
+  const { playername, age, birthdate, photo, tshirtnumber, position, positiondetail
   } = req.body;
   const newLink = {
-    playername, 
+    playername,
     age,
     birthdate,
     photo,
@@ -77,7 +77,7 @@ Players.updatePlayer = async (req, res) => {
   console.log({ idplayers, newLink })
   await pool.query('UPDATE players set ? WHERE idplayers = ?', [newLink, idplayers]);
   req.flash('success', 'Jugador editado Correctamenta');
-  res.redirect('/players/list-players');
+  res.redirect('/players/list-players'); 
 };
 
 
