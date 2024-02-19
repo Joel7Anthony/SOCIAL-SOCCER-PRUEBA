@@ -5,7 +5,7 @@
 
     <h2>Resultados </h2>
 
-    <option value="selecionar equipo XD">Seleciona a tu equipo</option>
+    <option id="selecionar">Seleciona a tu equipo</option>
         <select id="country" name="country" class="btn btn-secondary col-12" required>
          <option value="selecionar equipo XD">Seleciona a tu equipo </option>
         {{#each teams}}
@@ -13,21 +13,21 @@
         {{/each}}        
         </select>
     <div class="form-group">
-        <label for="equipo">Posición de la liga:</label> <br>
+        <label id="equipo">Posición de la liga:</label> <br>
         <input type="number" name="league_position" class="form-control" placeholder="Posición de la liga" autofocus />
     </div>
     <div class="form-group">
-        <label for="posicion">Goles </label><br>
+        <label id="posicion">Goles </label><br>
         <input type="number" name="goles" class="form-control" placeholder="Goles" autofocus />
     </div>
    <div class="form-group">
-    <label for="foundation_date">Fecha de fundación:</label><br>
+    <label id="foundation">Fecha de fundación:</label><br>
     <input type="date" id="foundation_date" name="foundation_date" class="form-control" autofocus />
 </div>
 
    
     <div class="form-group">
-        <label for="totales-gc">Número de jugadores</label><br>
+        <label id="totales">Número de jugadores</label><br>
         <input type="number" name="number_players" class="form-control" placeholder="Número de jugadores:" autofocus />
     </div>
     

@@ -23,6 +23,10 @@ h2 {
     color: white;
 }
 
+#country{
+    color: black;
+    background-color: white;
+}
 
 label {
     display: block;

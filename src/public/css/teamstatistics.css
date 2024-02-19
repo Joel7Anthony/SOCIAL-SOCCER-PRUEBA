@@ -17,8 +17,16 @@ h1 {
     padding: 1em;
     border-radius: 0.5em;
     font-size: 1.3em;
-    background-color: #4f7358;
+    background-color: #275925;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#selecionar,
+#equipo,
+#posicion,
+#foundation,
+#totales{
+    color: #fff;
 }
 
 #country{
@@ -44,6 +52,7 @@ h2 {
 
 
 #button1 {
+    color: #fff;
     background-color: green;
     margin-left: 0.5em;
     height: 2em;
@@ -54,6 +63,7 @@ h2 {
 }
 
 #cancelButton {
+    color: #fff;
     background-color: red;
     margin-left: 0.5em;
     height: 2em;
@@ -99,7 +109,7 @@ h2 {
     padding: 1em;
     border-radius: 0.5em;
     font-size: 1.3em;
-    background-color: #4f7358;
+    background-color: #275925;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
