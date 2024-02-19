@@ -2,6 +2,7 @@ body {
 	background-image: url("/images/bg.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+    font-family: "Inter", sans-serif;
 }
 * {
     margin: 0;
@@ -12,7 +13,7 @@ body {
 
  
 h3  {
-   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Inter", sans-serif;
    background-color: #075985;
    padding: 11px;
    color: #040404;
@@ -31,10 +32,8 @@ form {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 80px;
     height: 520px;
-    box-shadow: 5px 10px 50px #0c0c0c;
-    
-    
-}
+    box-shadow: 5px 10px 50px #0c0c0c;   
+};
 
 
 

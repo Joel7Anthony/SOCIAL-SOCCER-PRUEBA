@@ -10,7 +10,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-
+    font-family: "Inter", sans-serif;
     margin-bottom: 1.25rem;
 }
 

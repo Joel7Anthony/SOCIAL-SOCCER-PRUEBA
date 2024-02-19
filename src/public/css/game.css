@@ -6,7 +6,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(24, 23, 51, 0.7);
-    font-family: 'Bungee', sans-serif;
+    font-family: "Inter", sans-serif;
     box-sizing: border-box; /
 }
 
@@ -18,7 +18,7 @@ h2 {
 label {
     display: block;
     margin: 10px 0;
-    font-family: 'Bungee', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 input,
