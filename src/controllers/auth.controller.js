@@ -14,7 +14,7 @@ Auth.viwssingin = async (req, res) => {
     await sql.query('create view teamscoachs as SELECT t.name_team,c.* FROM teams t join  coachs c on c.teamIdteams = t.idteams')
   }
   res.render('auth/signin');
-};
+}; 
 
 
 Auth.signin = async (req, res, next) => {

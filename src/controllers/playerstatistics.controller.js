@@ -7,7 +7,7 @@ const Playerstatistics = {};
 
 //Censeguir lista
 Playerstatistics.getListPlayerstatistics = async (req, res) => {
-    const playerstatistics = await pool.query('SELECT * FROM playerstatistics INNER JOIN teams');
+    const playerstatistics = await pool.query('SELECT * FROM playerstatistics INNER JOIN teams, players');
     res.render('Pages/playerstatistic/list-playerstatistics', { playerstatistics });
 }; 
 
