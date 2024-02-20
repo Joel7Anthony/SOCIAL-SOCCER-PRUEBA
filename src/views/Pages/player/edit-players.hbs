@@ -32,7 +32,7 @@
             </div>
             <div id="inputBox">
                 <label>Fecha de Nacimiento</label>
-                <input type="text" value="{{player.birthdate}}" name="birthdate" class="form-control"
+                <input type="date" value="{{player.birthdate}}" name="birthdate" class="form-control"
                     placeholder="Fecha de Nacimiento" />
             </div>
             <div id="inputBox">
@@ -42,13 +42,15 @@
             </div>
 
             <div id="inputBox">
-                <label>Numero de Camiseta</label>
-                <input type="text" value="{{player.position}}" name="position" class="form-control"
-                    placeholder="Numero de Camiseta" />
-            </div>
-
+                <label>Posición de Juego</label>
+                     <select type="option" value="{{player.position}}" name="position">
+                      <option value="Aquero"> Arquero </option>
+                      <option value="Defensa"> Defensa </option>
+                      <option value="Mediocampista"> Mediocampista </option>
+                      <option value="Delantero"> Delantero </option>
+                     </select>
             <div id="inputBox">
-                <center><input type="submit" value="Guardar" /></center><center>
+                <center><input type="submit" value="Guardar" /></center>
             </div>
         </div>
     </form>

@@ -15,9 +15,10 @@
   <title>Jugador</title>
 <body>
 
+  <div>
   <section>
     <h1>Agregar Jugadores</h1>
-    <form>
+    <div>
         <option value="selecionar equipo XD">Seleciona a tu equipo</option>
         <select id="country" name="country" class="btn btn-secondary col-12" required>
          <option value="selecionar equipo XD">Seleciona a tu equipo </option>
@@ -37,14 +38,19 @@
       <label for="tshirtnumber">Número de Camiseta:</label>
       <input type="text" id="numeroCamiseta" name="tshirtnumber" required>
 
-      <label for="tshirtnumber">Posicion en la que juegas:</label>
-      <input type="text" id="posicion" name="position" required>
-
+      <label for="position">Posición de Juego:</label>
+        <select type="option" id="position" name="position" required>
+          <option value="Arquero"> Arquero </option>
+          <option value="Defensa"> Defensa </option>
+          <option value="Mediocampista"> Mediocampista </option>
+          <option value="Delantero"> Delantero </option>
+        </select>
       <div id="inputBox">
         <center><input type="submit" value="Agregar" id="button2" /></center> 
+      </div>
     </div>
-    </form>
 
   </section>
+  </div>
 
 </form>
