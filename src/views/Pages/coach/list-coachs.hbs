@@ -1,44 +1,48 @@
-<h6>LISTA DE ENTRENADORES</h6>
-<link rel="stylesheet" href="/css/coach.css">
-{{#each coachs}}
-<form action="/coachs/photo-coach/{{idcoachs}}" method="POST" encType="multipart/form-data">
- 
-<div class="container" id="lcb ">
-    <div class="card">
-
-        {{#if photocoach}}
-        <img class="card__image" src="/{{photocoach}}" loading="lazy" alt="User Profile">
-        {{else}}
-        <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
-        {{/if}}
-
-<p>{{name_president}}</p>
-<p>{{name_coach}}</p>
-<p>{{coach_mail}}</p>
-<p>{{phonecoach}}</p>
-<p>{{name_team}}</p>
-    
-   
-    
-<center>
-        <a href="/coachs/delete-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;"
-            <button type="button" class="btn btn-primary btn-sm">ELIMINAR</button>
-            <br>
-
-        <a href="/coachs/edit-coachs/{{idcoachs}}" style="text-decoration: none; color: inherit;" 
-           <button type="button" class="btn btn-primary">Editar</a></button>
-           </center>
-           <br>
-            <input type="file" name="sampleFile" accept="image/*"/>
-            <br>
-            <input type="submit">
-        </form>
-    </center>
-    </div>  
-
+<div class="col-md-12">
+    <div class=" text-center border border-primary">
+        <div style="display: flex; justify-content: center; padding: 10px;">
+            <h3 class="card-title text-uppercase" style="margin: 0;">
+                ENTRENADORES </h3>
+        </div>
+    </div>
 </div>
-</th>
-</form>
+<link rel="stylesheet" href="/css/coach.css">
+<center>
+    <p>No hay registro guardados a un </p>
+    <a href="/coachs/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{#each coachs}}
+<div class="container mx-auto mt-4">
+    <div class="row g-0">
+        <div class="col-4">
+            <div class="card" style="width: 26rem;">
+                {{#if photocoach}}
+                <img class="card__image" src="/{{photocoach}}" loading="lazy" alt="User Profile">
+                {{else}}
+                <img src="/not-found/not-found-image.png" class="card__image" alt="..." alt="User Profile">
+                {{/if}}
+                <div class="card-body">
+                    <h5 class="card-title">{{name_president}}</h5>
+                    <h5 class="card-text">{{name_coach}}</h5>
+                    <p class="card-text">{{coach_mail}}</p>
+                    <h5 class="card-text">{{phonecoach}}</h5>
+                    <h5 class="card-text">{{name_team}}</h5>
+                    <center>
+                        <a href="/coachs/delete-coachs/{{idcoachs}}" type="button" class="btn btn-primary btn-sm"><i
+                                class="fa-solid fa-trash"></i></i>Eliminar</a>
+                        <a href="/coachs/edit-coachs/{{idcoachs}}" type="button" class="btn btn-primary btn-sm"><i
+                                class="fa-solid fa-pen-to-square"></i></i>Editar</a>
+                        <br><br>
+                        <form action="/coachs/photo-coach/{{idcoachs}}" method="POST" encType="multipart/form-data">
+                            <input type="file" name="sampleFile" accept="image/*" />
+                            <input type="submit">
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {{else}}
 <center>
     <p>No hay registro guardados a un </p>

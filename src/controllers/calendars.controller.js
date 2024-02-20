@@ -8,7 +8,6 @@ const Calendars ={};
 Calendars.getListCalendars = async (req, res) => {
     const calendars = await pool.query('SELECT * FROM calendars');
     res,render('Pages/calendar/list-calendars', {calendars});
-
 };
 
 Calendars.postCalendar = async (req, res) => {
