@@ -1,14 +1,95 @@
 /* Estilos para agregar jugadores */
 form {
-    max-width: 600px;
-    margin: 0 auto; 
-    background-color: #275925;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(23, 51, 27, 0.7);
-    font-family: 'Bungee', sans-serif;
-    box-sizing: border-box;
+  position: absolute;
+  left: 470px;
+  top: 237px;
+  width: 870px;
+  height: 676px;
+  outline: solid 2px #344735;
+  outline-offset: -1px;
+  background-color: #4f7358;
+  box-shadow: 0px 4px 4px 0px #00000040;
 }
+.Titulo {
+  color: #fff;
+  font-size: 35px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 737px;
+  top: 110px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+.Boxtitle {
+  position: absolute;
+  left: 328px;
+  top: 99px;
+  width: 1134px;
+  height: 65px;
+  outline: solid 2px #344735;
+  outline-offset: -1px;
+  background-color: #0f2615;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.lineleft {
+  position: absolute;
+  left: 327px;
+  top: 129px;
+  width: 392px;
+  height: 4px;
+  background-color: #d9d9d9;
+}
+
+.lineright {
+  position: absolute;
+  left: 1071px;
+  top: 129px;
+  width: 392px;
+  height: 4px;
+  background-color: #d9d9d9;
+}
+
+.menubox {
+  left: 800px;
+  top: 306px;
+  width: 528px;
+  height: 42px;
+  background-color: #0f2615;
+}
+
+.label1 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 18%;
+  left: 649px;
+  top: 278px;
+  width: 161px;
+  height: min-content;
+  flex-direction: column;
+}
+
+.selEquipo{
+  opacity: 0.5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  left: 816px;
+  top: 318px;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
 h1 {
     text-align: center;
     color: #ffffff;
@@ -20,6 +101,7 @@ h2 {
     margin-bottom: 20px; /* Espacio inferior para separar del contenido */
 }
 
+
 .subtitulo {
     font-size: 20px;
     color: #ffffff;
@@ -27,14 +109,18 @@ h2 {
 }
 
 .label-container {
-    margin-bottom: 10px;
+    color: #4f7358;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 649px;
+    top: 278px;
+    width: 161px;
+    height: min-content;
+    flex-direction: column;
 }
 
-label {
-    display: block;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
 
 .select-container {
     position: relative;
@@ -44,15 +130,16 @@ label {
 select,
 input[type="text"],
 input[type="number"],
-input[type="date"] {
-    width: calc(100% - 20px); /* Ajuste para el borde */
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #275925;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #b1f5c7; /* Fondo blanco */
-    color: #275925; /* Texto oscuro */
+input[type="date"]  {
+  left: 641px;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 18%;
+  margin-right: 18%;
+  top: 398px;
+  width: 528px;
+  height: 42px;
+  background-color: #b1f5c7;
 }
 
 /* Personalización de la apariencia de la flecha del select */
@@ -81,6 +168,7 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #1dbe2d;
 }
+
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
     form {

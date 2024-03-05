@@ -2,51 +2,46 @@
   @import
   url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 </style>
-    
-    <div class="col-md-12" style="margin-bottom: 5px; ">
-        <div class="card text-center border border-primary">
-            <h3 class="card-title text-uppercase" style="color: rgb(255, 255, 255);">
-                Jugadores
-            </h3>
-        </div>
-    </div>
+<div class="Boxtitle"></div>
+<div class="lineleft"></div>
+<div class="lineright"></div>
+<div class="Titulo">Agregar Jugadores</div>
+
 <link rel="stylesheet" href="/css/players.css" />
 <form action="/players/players" method="POST">
   <title>Jugador</title>
 <body>
-
   <div>
   <section>
-    <h1>Agregar Jugadores</h1>
     <div>
-        <option value="selecionar equipo XD">Seleciona a tu equipo</option>
-        <select id="country" name="country" class="btn btn-secondary col-12" required>
-         <option value="selecionar equipo XD">Seleciona a tu equipo </option>
+        <div class="label1">Equipo:</div>
+        <select id="country" name="country" class="menubox" required>
+         <div class="selEquipo">Seleciona a tu equipo </option>
         {{#each teams}}
                 <option value="{{idteams}}">{{name_team}}</option>
         {{/each}}        
       </select>
-      <label for="playername">Nombre Jugador:</label>
+      <div for="playername" class="label1">Nombre del Jugador:</div>
       <input type="text" id="nombre" name="playername" placeholder="Nombre Jugador" required>
 
-      <label for="age">Edad:</label>
+      <div for="age" class="label1">Edad:</div>
       <input type="number" id="edad" name="age" required>
 
-      <label for="birthdate">Fecha de Nacimiento:</label>
+      <div for="birthdate" class="label1">Fecha de Nacimiento:</div>
       <input type="date" id="fechaNacimiento" name="birthdate" required>
 
-      <label for="tshirtnumber">Número de Camiseta:</label>
+      <div for="tshirtnumber" class="label1">Número de Camiseta:</div>
       <input type="text" id="numeroCamiseta" name="tshirtnumber" required>
 
-      <label for="position">Posición de Juego:</label>
-        <select type="option" id="position" name="position" required>
+      <div for="position" class="label1">Posición de Juego:</div>
+        <select type="option" class="menubox" name="menubox" required>
           <option value="Arquero"> Arquero </option>
           <option value="Defensa"> Defensa </option>
           <option value="Mediocampista"> Mediocampista </option>
           <option value="Delantero"> Delantero </option>
         </select>
       <div id="inputBox">
-        <center><input type="submit" value="Agregar" id="button2" /></center> 
+        <center><input type="submit" value="Agregar" id="button2" /></center>
       </div>
     </div>
 
