@@ -8,39 +8,28 @@
     <form action="/players/edit-players/{{player.idplayers}}" method="POST">
         <div id="logo"></div>
 
-        <option value= "selecionar equipo XD">Seleciona a tu equipo</option>
-        <select id="country" name="country" class="btn btn-secondary col-12" required>
+        <div class= "label1">Seleciona a tu equipo</div>
+        <select id="country" name="country" class="menubox" required>
          <option value="selecionar equipo XD">Seleciona a tu equipo </option>
         {{#each teams}}
                 <option value="{{idteams}}">{{name_team}}</option>
         {{/each}}        
       </select>
-        <div id="input">
-            <div id="inputBox">
-                <label>Nombre del Jugador</label>
+      <div class= "label1">Nombre del Jugador</div>
                 <input type="text" value="{{player.playername}}" name="playername" class="form-control"
                     placeholder="Nombre del jugador" />
-            </div>
-
-            <div id="inputBox">
-                <label>Edad del jugador</label>
-                <input type="text" value="{{player.age}}" class="form-control" name="age" placeholder="Edad del jugador"
-                    autofocus />
-            </div>
-            <div id="inputBox">
-                <label>Fecha de Nacimiento</label>
+       
+       <Div class="label1">Edad del jugador</div>
+       <input type="text" value="{{player.age}}" class="form-control" name="age" placeholder="Edad del jugador"
+       autofocus />
+                <div class="label1">Fecha de Nacimiento</div>
                 <input type="date" value="{{player.birthdate}}" name="birthdate" class="form-control"
                     placeholder="Fecha de Nacimiento" />
-            </div>
-            <div id="inputBox">
-                <label>Numero de Camiseta</label>
+                <div class="label1">Numero de Camiseta</div>
                 <input type="text" value="{{player.tshirtnumber}}" name="tshirtnumber" class="form-control"
                     placeholder="Numero de Camiseta" />
-            </div>
-
-            <div id="inputBox">
-                <label>Posición de Juego</label>
-                     <select type="option" value="{{player.position}}" name="position">
+                <div class="label1">Posición de Juego</div>
+                     <select type="option" value="{{player.position}}" class="menubox" name="position">
                       <option value="Aquero"> Arquero </option>
                       <option value="Defensa"> Defensa </option>
                       <option value="Mediocampista"> Mediocampista </option>
